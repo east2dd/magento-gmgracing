@@ -43,13 +43,13 @@ $areas = get_terms( 'area', array( 'parent' => 0 ) );
 </script>
 
 <div id="dealers">
-  <div class="featured"> <!-- <div id="map-canvas"></div></div> -->
+  <div class="featured"><div id="map-canvas"></div></div>
   <div class="container">
-   <!-- <div class="stockist-types">
+    <div class="stockist-types">
       <span><img src="<?php bloginfo("template_directory")?>/images/icon-logo-red.png"> &dash; Authorized GMG Installation Center</span>
       <span><img src="<?php bloginfo("template_directory")?>/images/icon-logo-yellow.png"> &dash; Platinum GMG Stockist</span>
       <span><img src="<?php bloginfo("template_directory")?>/images/icon-logo-blue.png"> &dash; Premier GMG Stockist</span>
-    </div> -->
+    </div>
     <div class="row">
       <div class="col-sm-3">
         <h1 class="page-title">STOCKISTS</h1>

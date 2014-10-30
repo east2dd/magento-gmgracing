@@ -30,7 +30,7 @@ if (version_compare(phpversion(), '5.2.0', '<')===true) {
 }
 if ( strpos($_SERVER['REQUEST_URI'], 'index.php/admin') === FALSE )
 {
-require_once('/var/www/gmgracing.com/public_html/wp-load.php');
+require_once('../wp-load.php');
 }
 /**
  * Error reporting

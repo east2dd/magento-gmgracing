@@ -25,11 +25,10 @@
                 <?php
                     foreach($makes as $make)
                     {
-                        $args = array( 'child_of' => $make->term_id);
-                        $models = get_terms( 'project-model', $args);
-
-                        foreach($models as $model)
+                        $model_ids = get_term_children( $make->term_id, 'project-model' );
+                        foreach($model_ids as $model_id)
                         {
+                            $model = get_term_by('id', $model_id, 'project-model');
                             ?>
                             <h5 class="project-category"><span><?php echo $make->name; ?></span><span>&nbsp;&gt;&nbsp;</span><strong><?php echo $model->name; ?></strong></h5>
                             <?php
@@ -38,7 +37,7 @@
                             'tax_query' => array(
                                 array(
                                     'taxonomy' => 'project-model',
-                                    'terms' => $model->term_id,
+                                    'terms' => $model_id,
                                     'field' => 'id'
                                 )
                             ),

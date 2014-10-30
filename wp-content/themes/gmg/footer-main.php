@@ -31,7 +31,7 @@
 						<p class="blackline"></p>
 						
 						<p class="social">
-							<a href="http://www.instagram.com/gmgracing"><img src="<?php bloginfo('template_directory') ?>/images/link-instagram.png" /></a>&nbsp;
+							<a href="http://www.instagram.com/TeamGMG"><img src="<?php bloginfo('template_directory') ?>/images/link-instagram.png" /></a>&nbsp;
 							<a href="http://www.facebook.com/TeamGMG"><img src="<?php bloginfo('template_directory') ?>/images/link-facebook.png" /></a>&nbsp;
 							<a href="https://twitter.com/#!/gmgracing"><img src="<?php bloginfo('template_directory') ?>/images/link-twitter.png" /></a> &nbsp;
 							<a href="http://www.flickr.com/photos/61989451@N08/"><img src="<?php bloginfo('template_directory') ?>/images/link-flickr.png" /></a>
@@ -113,8 +113,8 @@
             lat: 33.703788, lng: -117.923513, title: 'Global Motorsports Group',
             infoWindow: { content: '<p>3210 South Shannon Street Santa Ana, California 92704</p>' } 
         });
-        //$('#map').hide();
     });
+
 </script>
 <!-- End -->
 <?php wp_footer(); ?>
