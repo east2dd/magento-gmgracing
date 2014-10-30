@@ -1,0 +1,128 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Template for Mage_Page_Block_Html
+ */
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html dir="ltr" lang="en-US"
+ xmlns:og='http://opengraphprotocol.org/schema/'
+ xmlns:fb='http://www.facebook.com/2008/fbml'>
+<head>
+<?php echo $this->getChildHtml('head') ?>
+</head>
+<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+<?php echo $this->getChildHtml('after_body_start') ?>
+<?php echo $this->getChildHtml('global_notices') ?>
+<?php echo $this->getChildHtml('header') ?>
+    <div id="main-bod2">
+		<?php if (stripos ( Mage::app ()->getRequest ()->getRequestUri (), '/checkout/onepage/' ) !== false && !in_array($this->getRequest()->getParam('login'), array('register', 'guest')) && !Mage::getSingleton('customer/session')->isLoggedIn()):?>
+		<div id="main-bod-inner2" class="white_bg">
+			<?php echo $this->getChildHtml('breadcrumbs') ?>
+			<?php echo $this->getChildHtml('global_messages') ?>
+<div class="account-login">
+	<div class="top-links">
+       <div class="text-right">
+            <a href="<?php echo $this->getUrl('customer/account/login') ?>">LOGIN</a> | 
+            <?php if ($this->helper('customer')->isLoggedIn()): ?>
+                <a href="<?php echo $this->getUrl('wishlist') ?>">WISHLIST</a>
+            <?php else: ?>
+                <a href="<?php echo $this->getUrl('customer/account/create') ?>">CREATE ACCOUNT</a>
+            <?php endif ?> 
+            | <a href="<?php echo $this->getUrl('checkout/cart') ?>" class="active">MY CART</a> 
+            | <a href="<?php echo $this->getUrl('customer/account') ?>">ACCOUNT DETAILS</a> 
+            | <a href="<?php echo $this->getUrl('customer/address') ?>">ADDRESS BOOK</a> 
+            | <a href="<?php echo $this->getUrl('sales/order/history') ?>">MY ORDERS</a>
+        </div>
+    </div>
+    <div class="page-title">
+        <h1 class="caps"><?php echo $this->__('SHOPPING CART') ?></h1>
+    </div>
+
+	<div class="breadcrumbs text-right">
+        SHOPPING CART &#62;&#62; <span>CHECKOUT</span>
+    </div>    
+	<h1 id="gotham_title" style="width:435px; border-bottom:1px #000 solid;text-align: left;height:22px;font-size:18px;margin-left:30px;" class="caps"><?php echo $this->__('CHECKOUT') ?></h1>
+	<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+	<form action="<?php echo $this->getUrl('customer/account/loginPost') ?>" method="post" id="login-form">
+    <input name="context" type="hidden" value="checkout" />
+        <div class="col2-set" style="padding-top:20px;">
+            <div class="col-2 new-users" style="width:48%;height:386px">
+                <div class="content" style="padding:0 20px 0 20px">
+                    <div style="float:left;clear:both">
+                    <h3 class="login-head tr_gotham-bold" style="height:22px;"><?php echo $this->__('CREATE AN ACCOUNT') ?></h3>
+                    <p class="gotham" style="padding:10px 0 0 5px;"><?php echo $this->__('By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.') ?></p>
+					<img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN);?>frontend/default/gmg_store/images/register.jpg" class="pointer right" style="margin-top: 50px;margin-right:20px;" onclick="window.location='<?php echo $this->getUrl('checkout/onepage') ?>?login=register';" />
+                	</div>
+                	<div style="float:left;clear:both;padding-top:30px;">
+                	<h3 class="login-head tr_gotham-bold" style="height:22px;float:left;"><?php echo $this->__('CHECKOUT AS A GUEST') ?></h3>
+                    <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN);?>frontend/default/gmg_store/images/tr_continue_guest.png" class="pointer right" style="margin-top: 50px;margin-right:20px;" onclick="window.location='<?php echo $this->getUrl('checkout/onepage') ?>?login=guest';" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 registered-users" style="width:48%;height:386px">
+                <div class="content" style="padding:0 20px 0 20px">
+                    <h3 class="login-head tr_gotham-bold" style="height:22px;"><?php echo $this->__('Registered Customers') ?></h3>
+                    	<div class="input-box" style="float:left;margin-top:15px">
+                                <div style="float:left;width:180px"><div style="padding-top:5px;"><label for="email" class="tr_gotham-medium"><?php echo $this->__('EMAIL ADDRESS:') ?></label></div></div><div style="float:left"><input type="text" name="login[username]" value="<?php echo $this->htmlEscape($this->getUsername()) ?>" id="email" class="input-text required-entry validate-email" title="<?php echo $this->__('Email Address') ?>" style="float:left;width:215px;height:21px;border:0" /><div style="float:left;color:#fff;font-size:40px;margin:-9px 0 0 10px;">&#8226;</div></div>
+                        </div>
+                        <div class="input-box" style="float:left;margin-top:5px">
+                                <div style="float:left;width:180px"><div style="padding-top:5px;"><label for="pass" class="tr_gotham-medium"><?php echo $this->__('PASSWORD:') ?></label></div></div><div style="float:left"><input type="password" name="login[password]" class="input-text required-entry validate-password" id="pass" title="<?php echo $this->__('Password') ?>" style="float:left;width:215px;height:21px;border:0" /><div style="float:left;color:#fff;font-size:40px;margin:-9px 0 0 10px;">&#8226;</div><div style="clear:both;height:1px">&nbsp;</div>
+                                <div style="float:left;color:#fff;font-size:20px;margin:-7px 0 0 5px;">&#8226;</div><div class="tr_gotham-medium" style="color:#fff;float:left;font-size:10px;margin:-1px 0 0 2px;">REQUIRED</div></div>
+                        </div>
+                    <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN);?>frontend/default/gmg_store/images/sign-in.jpg" class="pointer right" style="margin-right:20px;" onclick="jQuery('#login-form').submit()" />
+                </div>
+            </div>
+        </div>
+    </form>
+    <script type="text/javascript">
+    //<![CDATA[
+        var dataForm = new VarienForm('login-form', true);
+    //]]>
+    </script>
+</div>
+<p>&nbsp;</p>
+		</div>
+		<?php else: ?>
+		<div class="white_bg row">
+			<div id="main-bod-inner1" class="col-sm-8">
+				<?php echo $this->getChildHtml('breadcrumbs') ?>
+				<?php echo $this->getChildHtml('global_messages') ?>
+				<?php echo $this->getChildHtml('content') ?>
+			</div>
+			<div id="main-bod-inner-sidebar"  class="col-sm-4"><?php echo $this->getChildHtml('left') ?></div>
+			<div class="clear"></div>
+		</div>
+		<?php endif ?>
+	</div>
+<?php echo $this->getChildHtml('footer') ?>
+<?php echo $this->getChildHtml('before_body_end') ?>
+<?php echo $this->getAbsoluteFooter() ?>
+</body>
+</html>

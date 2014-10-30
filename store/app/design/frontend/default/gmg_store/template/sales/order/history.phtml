@@ -1,0 +1,103 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<style type="text/css">
+<!--
+.tr_success-msg {background-color:#026BB7;border-color:#026BB7;text-align:center;color:#fff}
+.tr_success-msg ul li {padding:5px;padding-top:15px}
+.tr_success-msg ul li span {color:#fff;font-size:24px}
+-->
+</style>
+<div class="cart row">
+	<div class="top-links">
+       <div class="text-right">
+            <a href="<?php echo $this->getUrl('customer/account/login') ?>">LOGIN</a> | 
+            <?php if ($this->helper('customer')->isLoggedIn()): ?>
+                <a href="<?php echo $this->getUrl('wishlist') ?>">WISHLIST</a>
+            <?php else: ?>
+                <a href="<?php echo $this->getUrl('customer/account/create') ?>">CREATE ACCOUNT</a>
+            <?php endif ?> 
+            | <a href="<?php echo $this->getUrl('checkout/cart') ?>">MY CART</a> 
+            | <a href="<?php echo $this->getUrl('customer/account') ?>">ACCOUNT DETAILS</a> 
+            | <a href="<?php echo $this->getUrl('customer/address') ?>">ADDRESS BOOK</a> 
+            | <a href="<?php echo $this->getUrl('sales/order/history') ?>" class="active">MY ORDERS</a>
+        </div>
+    </div>
+    <div class="page-title">
+        <h1 class="caps"><?php echo $this->__('MY ORDERS') ?></h1>
+    </div>
+
+	<div class="breadcrumbs text-right">
+    ACCOUNT &#62;&#62; <span>MY ORDERS</span>
+    </div>
+    <p>&nbsp;</p>
+    <div style="margin-bottom:5px">
+	<?php echo $this->getPagerHtml(); ?>
+	</div>
+    <?php echo str_replace(array('success-msg','<span>The account information has been saved.</span>'), array('success-msg tr_success-msg','<img src="' . Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/default/gmg_store/images/tr_icon_check.png" style="margin-top:-10px;" /> <span>THE ACCOUNT INFORMATION HAS BEEN SAVED</span>'), $this->getMessagesBlock()->getGroupedHtml()) ?>
+    <div style="float:right;width:230px;background-color:#333;color:#fff;font-size:12px;padding:15px;margin-right:15px;font-family:Helvetica">
+    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('cust-serv')->toHtml() ?>
+    </div>
+	<h1 id="gotham_title" style="width:435px; border-bottom:1px #000 solid;text-align: left;height:22px;font-size:18px;margin-left:30px;margin-bottom:20px;" class="caps"><?php echo $this->__('ORDERS') ?></h1>
+	<?php $_orders = $this->getOrders(); ?>
+	<?php if($_orders->getSize()): ?>
+	<table border="0" cellspacing="0" cellpadding="3" style="width:670px;margin-left:30px">
+	<tr>
+	<td class="gotham_light" style="font-size:12px;border-bottom:1px solid #000;line-height:16px;">ORDER PLACED</td>
+	<td class="gotham_light" style="font-size:12px;border-bottom:1px solid #000;line-height:16px">ORDER NUMBER</td>
+	<td class="gotham_light" style="font-size:12px;border-bottom:1px solid #000;line-height:16px">DELIVERY STATUS</td>
+	<td class="gotham_light" style="font-size:12px;border-bottom:1px solid #000;line-height:16px">VIEW DETAILS</td>
+	</tr>
+	<tr>
+	<td colspan="4">&nbsp</td>
+	</tr>
+	<?php $i=0; foreach ($_orders as $_order): $i++; ?>
+	<tr style="font-family:Helvetica;font-size:12px;height:40px;background-color:<?php echo ($i%2==0 ? '#fff' : '#cdcdcd')?>">
+	<td style="vertical-align:middle"><?php echo $this->formatDate($_order->getCreatedAtStoreDate(), 'long') ?></td>
+	<td style="vertical-align:middle"><?php echo $_order->getRealOrderId() ?></td>
+	<td style="vertical-align:middle"><?php echo $_order->getStatusLabel() ?></td>
+	<td style="vertical-align:middle"><a href="<?php echo $this->getViewUrl($_order) ?>"><img src="<?php echo $this->getSkinUrl('images/tr_view_details_btn.png') ?>" /></a></td>
+	</tr>
+	<?php endforeach; ?>
+	</table>
+	<?php else: ?>
+	<div class="tr_gotham-medium" style="margin-top:50px;margin-left:30px;font-size:14px;padding:10px;">
+	YOU HAVE NO RECENT ORDERS AT THIS TIME
+	</div>
+	<?php endif ?>
+</div>
+<p style="height:70px">&nbsp;</p>
+<style type="text/css">
+<!--
+.tr_recently_viewed_header {
+	height:20px;border-bottom:1px solid #000;color:#000;
+}
+.tr_recently_viewed_header span {
+	background-color:#fff;border-bottom:5px solid #fff;font-size:18px;
+}
+-->
+</style>
+<?php echo $this->getLayout()->createBlock ( 'reports/product_viewed' )->setTemplate ( "reports/product_viewed.phtml" )->toHtml () ?>

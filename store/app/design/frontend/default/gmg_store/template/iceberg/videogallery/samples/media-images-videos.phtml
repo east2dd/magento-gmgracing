@@ -1,0 +1,189 @@
+<?php
+/**
+ * This is a modified version of the core catalog/product/view/media.phtml
+ * Any changes you had made to the previous media file must be changed here as well for changes to take effect.
+ * System > Configuration > Video Gallery > Display Style > Style 04
+ */
+?>
+
+<?php
+$_product    = $this->getProduct();
+$_helper     = $this->helper('catalog/output');
+$imagesBlock = $this->getLayout()->createBlock('catalog/product_view_media');
+
+$isMobile = $this->isMobile();
+
+// Go Through Images and Videos and combine them into one data structure sorted by position
+$arr = array();
+
+foreach ($imagesBlock->getGalleryImages() as $imgObj)
+{
+	$key = (int)$imgObj->getPositionDefault();
+	if (!isset($arr[$key]))
+	{
+		$arr[$key] = array();
+	}
+	$arr[$key][] = $imgObj;
+}
+
+foreach ($this->getVideoGallery() as $vidArr)
+{
+	$key = (int)$vidArr['position_default'];
+	if (!isset($arr[$key]))
+	{
+		$arr[$key] = array();
+	}
+	$arr[$key][] = $vidArr;
+}
+
+ksort($arr);
+
+$mediaArr = array();
+foreach ($arr as $a)
+{
+	foreach ($a as $b)
+	{
+		$mediaArr[] = $b;
+	}
+}
+?>
+
+
+
+<?php
+$width_thumb  = 75;
+$height_thumb = 75;
+
+$width_regular  = 265;
+$height_regular = 265;
+
+$width_full  = 700;
+$height_full = 700;
+
+$c = floor(($width_thumb - 33) / 2);
+$w = ($width_thumb+14) * count($mediaArr);
+?>
+
+
+<style>
+.product-view .product-img-box .more-views ul{margin:0}
+.product-view .product-img-box .more-views li a{width:<?php echo $width_thumb?>px;height:<?php echo $height_thumb?>px}
+.video-gallery-links li a.video-thumb span{margin:22px 0 0 22px;}
+.video-gallery-links li a.video-thumb span{margin:<?php echo $c?>px 0 0 <?php echo $c?>px}
+.m-video-thumb{overflow:hidden;border:2px solid #DDDDDD}
+
+/*
+.video-gallery-links {margin:0; width:<?php echo $w?>px;}
+.video-gallery-links-container{width:265px; height:100px; overflow:hidden;position:relative}
+*/
+</style>
+
+
+<div id="vg-style-04">
+
+<?php  /* Main Image */ ?>
+
+<?php if ($_product->getImage() != 'no_selection' && $_product->getImage()): ?>
+<p class="product-image">
+    <a href="<?php echo $this->helper('catalog/image')->init($_product, 'image')->keepFrame(false)->resize($width_full,$height_full); ?>" rel="iblightbox[]" target="_blank" title="<?php echo $this->htmlEscape($imagesBlock->getImageLabel()) ?>">
+    <?php
+        $_img = '<img id="image" src="'.$this->helper('catalog/image')->init($_product, 'image')->resize($width_regular, $height_regular).'" alt="'.$this->htmlEscape($imagesBlock->getImageLabel()).'" title="'.$this->htmlEscape($imagesBlock->getImageLabel()).'" />';
+        echo $_helper->productAttribute($_product, $_img, 'image');
+    ?>
+    </a>
+</p>
+<?php else: ?>
+<p class="product-image">
+    <a href="<?php echo $this->helper('catalog/image')->init($_product, 'image')->keepFrame(false)->resize($width_full,$height_full); ?>" rel="iblightbox[]" target="_blank" title="<?php echo $this->htmlEscape($imagesBlock->getImageLabel()) ?>">
+    <?php
+        $_img = '<img src="'.$this->helper('catalog/image')->init($_product, 'image')->resize($width_regular, $height_regular).'" alt="'.$this->htmlEscape($imagesBlock->getImageLabel()).'" title="'.$this->htmlEscape($imagesBlock->getImageLabel()).'" />';
+        echo $_helper->productAttribute($_product, $_img, 'image');
+    ?>
+    </a>
+</p>
+<?php endif; ?>
+
+
+
+<?php  /* Gallery */ ?>
+	<div class="more-views">
+
+<div class="video-gallery-links-container" id="video-gallery-links-container">
+
+<ul class="video-gallery-links" id="video-gallery-links">
+<?php foreach ($mediaArr as $item) : ?>
+
+	<?php if (is_object($item)) :?>
+	
+		<li>
+			<?php
+			$marginLeft = 0;
+			$marginTop  = 0;
+			$imagehelper = $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $item->getFile());
+			$imagehelper->__toString(); // Hack to load img dimensions
+			$resize_width = $width_thumb;
+	    	$resize_height = $height_thumb;
+	    	//$aspect = $width / $height;
+	    	$width  = $imagehelper->getOriginalWidth();
+	    	$height = $imagehelper->getOriginalHeight();
+	    	if($width > $height)
+	    	{
+	    		$resize_width = $resize_height = ceil($resize_height * $width / $height);
+	    		$marginLeft = -1 * floor(($resize_width-$width_thumb)/2.0);
+	    	}
+	    	elseif ($width < $height)
+	    	{
+	    		$resize_width = $resize_height = ceil($resize_width * $height / $width);
+	    		$marginTop = -1 * floor(($resize_height-$height_thumb)/2.0);
+	    	}
+        	?>
+        	
+			<a href="<?php echo $this->helper('catalog/image')->init($_product, 'image', $item->getFile())->keepFrame(false)->resize($width_full,$height_full); ?>" rel="iblightbox[gallery]" target="_blank" title="<?php echo $this->htmlEscape($item->getLabel()) ?>">
+				<img style="margin:<?php echo $marginTop ?>px 0 0 <?php echo $marginLeft ?>px" src="<?php echo $imagehelper->keepAspectRatio(true)->constrainOnly(false)->keepFrame(false)->resize($resize_width,$resize_width)?>" alt="<?php echo $this->htmlEscape($item->getLabel()) ?>" />
+			</a>
+		</li>
+		
+	<?php else: ?>
+		<li>
+			<?php
+			$marginLeft = 0;
+			$marginTop  = 0;
+			$imagehelper = $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $item['file']);
+			$imagehelper->__toString(); // Hack to load img dimensions
+			$resize_width = $width_thumb;
+	    	$resize_height = $height_thumb;
+	    	//$aspect = $width / $height;
+	    	$width  = $imagehelper->getOriginalWidth();
+	    	$height = $imagehelper->getOriginalHeight();
+	    	if($width > $height)
+	    	{
+	    		$resize_width = $resize_height = ceil($resize_height * $width / $height);
+	    		$marginLeft = -1 * floor(($resize_width-$width_thumb)/2.0);
+	    	}
+	    	elseif ($width < $height)
+	    	{
+	    		$resize_width = $resize_height = ceil($resize_width * $height / $width);
+	    		$marginTop = -1 * floor(($resize_height-$height_thumb)/2.0);
+	    	}
+			$_imageUrl = $imagehelper->keepAspectRatio(true)->constrainOnly(false)->keepFrame(false)->resize($resize_width,$resize_width);
+        	?>
+        
+			<?php if ($isMobile): ?>
+				<div class="m-video-thumb"><?php echo $this->getMobileEmbed($item, $width_thumb,$height_thumb, false); ?></div>
+			<?php else: ?>
+				<a class="video-thumb" modal="width=650;height=400" rel="iblightbox[gallery]" href="<?php echo $this->getVideoGalleryUrl( $item ); ?>" target="_blank" title="<?php echo $this->htmlEscape($item['label']) ?> " style="width:<?php echo $width_thumb?>px; height:<?php echo $height_thumb?>px">
+				<span></span>
+				<img style="margin:<?php echo $marginTop ?>px 0 0 <?php echo $marginLeft ?>px" src="<?php echo $_imageUrl?>" alt="<?php echo $this->htmlEscape($item['label']) ?>"  title="<?php echo $item['label'] . ($item['label'] && $item['description']? ' - ' : '')  .$this->htmlEscape($item['description']) ?>"/>
+				</a>
+			<?php endif; ?>
+		</li>
+	<?php endif; ?>
+	
+<?php endforeach; ?>
+</ul>
+</div>
+
+
+</div>
+</div>
+

@@ -1,0 +1,187 @@
+<?php
+/**
+ * This style shows how you can show the images and video in tabs
+ * - shows products and videos in separate tabs
+ * - plays video in place of main product image.
+ * 
+ * to use, please rename this file to media.phtml
+ * This is a modified version of the core catalog/product/view/media.phtml
+ * Any changes you had made to the previous media file must be changed here as well for changes to take effect.
+ * 
+ * System > Configuration > Video Gallery > Display Style > Style 03
+ */
+?>
+
+<?php
+    $_product = $this->getProduct();
+    $_helper = $this->helper('catalog/output');
+?>
+
+<?php if (count($this->getVideoGallery()) == 0): ?> 
+	
+	<?php
+	// If no videos in this product, then show only images
+	echo $this->getImagesMedia()
+	?>
+	
+<?php else: ?>
+<div id="vg-style-03">
+	<ul class="media_tabs">
+		<li id="image_tab" class="active"><a class="video-gallery-list-link" href="javascript:toggleImageVideoList('images')"><?php echo $this->__('Images'); ?></a></li>
+		<?php if (count($this->getVideoGallery()) > 0) : ?><li id="video_tab" class="last"><a class="video-gallery-list-link" href="javascript:toggleImageVideoList('videos')"><?php echo $this->__('Videos'); ?></a></li><?php endif;?>
+	</ul>
+	
+	<div id="product-media-images" class="media_box">
+		<?php echo $this->getImagesMedia(); ?>
+	</div>
+	
+	<div id="product-media-videos" style="display: none;" class="media_box">
+	
+		<div style="padding-bottom: 5px;">
+		<?php if (count($this->getVideoGallery()) > 0): ?>
+		    <?php foreach ($this->getVideoGallery() as $_video): ?>
+		        <div id="video-container-<?php echo $_video['value_id']; ?>" style="display: none; z-index: 5;"></div>
+		    <?php endforeach; ?>
+		<?php endif; ?>
+		</div>
+		
+		<?php if (count($this->getVideoGallery()) > 0): ?>
+		<div class="more-views">
+		    <h2><?php echo $this->__('Videos') ?></h2>
+			<?php if (count($this->getVideoGallery()) > 0): ?>
+		    <ul class="video-gallery-links">
+		    <?php foreach ($this->getVideoGallery() as $_video): ?>
+		        <li>
+					<a class="video-thumb" href="<?php echo $this->getVideoGalleryUrl( $_video ); ?>" style="width:78px; height:56px" target="_blank" onclick="<?php echo $this->getJsObjectName(); ?>.setVideo('<?php echo $_video['value_id']; ?>'); return false;" title="<?php echo $this->htmlEscape($_video['label']) ?>">
+						<span></span>
+						<img style="margin-top:-11px" src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_video['file'])->resize(78,78); ?>" width="78" height="78" alt="<?php echo $this->htmlEscape($_video['label']) ?>" />
+					</a>
+		        </li>
+		    <?php endforeach; ?>
+		    </ul>
+		    <?php endif;?>
+		</div>
+		<?php endif; ?>
+	</div>
+</div>
+
+<script type="text/javascript">
+VideoGallery_View = Class.create();
+VideoGallery_View.prototype = {
+		
+	width : 260,
+	height : 240,
+	container : '',
+	videoBlocks: new Array(),
+	
+	initialize : function(width, height , container ) {
+        this.width = width;
+        this.height = height;
+        this.container = container;
+    },
+	
+	setVideo : function(video_id)
+	{	
+    	if (!video_id)
+    	{
+    		return false;
+    	}
+    	
+    	if (this.prev_video && video_id != this.prev_video)
+    	{
+    		Element.hide('video-container-' + this.prev_video );
+    		$('video-container-' + this.prev_video).innerHTML = '';
+    	}
+    	
+    	this.prev_video = video_id;
+    	$('video-container-' + video_id).innerHTML = this.videoBlocks[video_id];
+    	Element.show( 'video-container-' + video_id );
+		return false;
+	},
+	
+	setPrevVideo : function()
+	{
+		this.setVideo(this.prev_video);
+	},
+	
+	setHeight : function ( height )
+	{
+		this.height = height;
+	},
+	
+	setWidth : function( width )
+	{
+		this.width = width;
+	},
+	
+	grow : function()
+	{
+		if( $('video-container-' + this.prev_video + ' video-object' ).getWidth() > 300 )
+		{
+			return this.shrink();
+		}
+		
+		new Effect.Scale( 'video-container-' + this.prev_video + ' video-object' , 240 );
+		Element.show( 'video-shrink');
+		Element.hide( 'video-grow');
+	},
+	
+	shrink : function( )
+	{
+		new Effect.Scale('video-container-' + this.prev_video + ' video-object' , 41.667 );
+		Element.show('video-grow');
+		Element.hide('video-shrink');
+	},
+	
+	hide : function()
+	{
+		$('video-container-' + this.prev_video).innerHTML = '';
+	}
+};
+
+function toggleImageVideoList( type )
+{
+	var vidL = $('product-media-videos');
+	var picL = $('product-media-images');
+
+	var vidT = $('video_tab');
+	var picT = $('image_tab');
+	
+	switch( type )
+	{
+		case 'images':
+			vidL.hide();
+			if (<?php echo $this->getJsObjectName(); ?> != "undefined")
+			{
+				<?php echo $this->getJsObjectName(); ?>.hide(); // This stops videos from playing in IE
+			}
+			picL.show();
+			vidT.className = 'last';
+			picT.className = 'active';
+			break;
+		case 'videos':
+			if (<?php echo $this->getJsObjectName(); ?> != "undefined")
+			{
+				<?php echo $this->getJsObjectName(); ?>.setPrevVideo();
+			}
+			<?php echo $this->getJsObjectName(); ?>.setVideo('<?php echo $this->getMainVideoId(); ?>');
+			vidL.show();
+			picL.hide();
+			vidT.className = 'active last';
+			picT.className = '';
+			break;
+	}
+}
+
+var <?php echo $this->getJsObjectName(); ?> = new VideoGallery_View( 260 , 150 , 'product-media-videos .product-video');
+
+<?php echo $this->getJsObjectName(); ?>.videoBlocks = new Array();
+<?php foreach ($this->getVideoGallery() as $_video): ?>
+	<?php echo $this->getJsObjectName(); ?>.videoBlocks['<?php echo $_video['value_id']; ?>'] = "<?php echo addslashes(str_replace(array("\n","\r"), " ",$this->getVideoObjectBlock($_video, 267, 240))); ?>" + "<div class='video-description'><?php echo addslashes(str_replace(array("\n","\r"),' ',$_video['description'])); ?></div>";
+<?php endforeach; ?>
+
+<?php echo $this->getJsObjectName(); ?>.setVideo('<?php echo $this->getMainVideoId();?>');
+</script>
+
+<?php endif?>
+

@@ -1,0 +1,87 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     default_modern
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?>
+<?php
+$session = Mage::getSingleton ( 'checkout/session' );
+$qty = 0;
+foreach ( $session->getQuote ()->getAllItems () as $item ) {
+	$qty = $qty + $item->getQty ();
+}
+if (Mage::getSingleton ( 'customer/session' )->isLoggedIn ()) {
+	$name = urlencode ( Mage::getSingleton ( 'customer/session' )->getCustomer ()->getName () );
+	$loggedin = 'true';
+} else {
+	$name = '';
+	$loggedin = 'false';
+}
+$vars = urlencode ( base64_encode ( serialize ( array ('loggedin' => $loggedin, 'cartqty' => $qty, 'name' => $name ) ) ) );
+?>
+
+<header>
+  <nav class="navbar navbar-default navbar-primary navbar-fixed-top" role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="<?php echo get_option('home'); ?>">
+        <img class="img-responsive" src="<?php bloginfo('template_directory') ?>/images/logo.png" name="logo" id="logo" title="Logo" alt="Logo" border="0" />
+      </a>
+      
+    </div>
+  
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <?php 
+            wp_nav_menu( array('menu' => 'Main Menu', 'theme_location' => 'primary', 'container'=> false, 'menu_class' =>'nav navbar-nav' ) ); 
+        ?>
+        <form id="search-form" class="navbar-left hidden-xs hidden-sm" role="search" action="/store/catalogsearch/result/">
+          <div class="form-group">
+            <input type="text" placeholder="Search" name="q">
+            <a class="clear" href="#"></a>
+          </div>
+        </form>
+        <form id="search-form" class="navbar-left visible-xs" role="search" action="/">
+          <div class="form-group">
+            <input type="text" placeholder="Search" name="s">
+            <a class="clear" href="#"></a>
+          </div>
+        </form>
+        <ul class="nav navbar-nav navbar-right hidden-sm">
+          <li><a href="/store/checkout/cart/">&nbsp;<img src="<?php bloginfo('template_directory') ?>/images/icon-cart-small.png"></a>&nbsp;</li>
+          <li><a href="/store/customer/account/login/">Login</a></li>
+        </ul>
+
+    </div>
+  </nav>
+</header>
+
+<div class="container">

@@ -1,0 +1,28 @@
+/* Video Gallery CSS */
+.video-gallery-links li a.video-thumb span{opacity:0.8;background: url("../images/video_play.png") no-repeat scroll 0 0 transparent; background-size:33px 66px; display:block;height:33px;margin:10px 0 0 22px;position:absolute;width:33px;}
+.video-gallery-links li a.video-thumb:hover span{opacity:1;background-position:0 -33px}
+
+/* Style 01 */
+#vg-style-01 {position:relative}
+
+/* Style 02 - Media tabbed 1 */
+#vg-style-02 {position:relative}
+#vg-style-02 ul.media-tabs{list-style: none; height:29px; border-bottom:1px solid #ccc; margin-bottom:7px}
+#vg-style-02 .media-tabs li{float:left;margin:0;border:1px solid #ccc;background-color:#ccc;height:28px}
+#vg-style-02 .media-tabs li.last{border-right:1px solid #ccc}
+#vg-style-02 .media-tabs li.active {font-weight:bold; background-color:#fff;border-width:1px 1px 0px 1px;height:29px}
+#vg-style-02 .media-tabs a {text-decoration: none; color: #333333;padding:4px 10px;display:block}
+#vg-style-02 .media-tabs .active a {color: #000000;}
+#vg-style-02 .more-views h2 {display:none}		 
+
+/* Media tabbed 2 */
+#vg-style-03 {position:relative}
+#vg-style-03 ul.media_tabs{list-style: none; height:29px; border-bottom:1px solid #ccc;}
+#vg-style-03 .media_tabs li{float:left;margin:0;border:1px solid #ccc;background-color:#ccc;height:28px}
+#vg-style-03 .media_tabs li.last{border-right:1px solid #ccc}
+#vg-style-03 .media_tabs li.active {font-weight:bold; background-color:#fff;border-width:1px 1px 0px 1px;height:29px}
+#vg-style-03 .media_tabs a {text-decoration: none; color: #333333;display:block;padding:4px 10px 5px 10px;}
+#vg-style-03 .media_tabs .active a {color: #000000;}
+#vg-style-03 .media_box {padding:10px 0; clear:both;}
+#vg-style-03 .video-description{padding-bottom:5px}
+

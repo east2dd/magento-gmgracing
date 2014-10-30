@@ -1,0 +1,209 @@
+---- TRACE : 1 -----
+************************************
+/inc/dbhelper.class.php:40 - PDO->__construct
+----------------------------------------
+Array
+(
+    [0] => mysql:host=localhost;port=3306;dbname=magento;charset=utf8
+    [1] => <<YOUR USERNAME>>
+    [2] => <<YOUR PASSWORD>>
+    [3] => Array
+        (
+            [1002] => SET NAMES utf8
+        )
+
+)
+
+/inc/magmi_engine.php:384 - DBHelper->initDb
+----------------------------------------
+Array
+(
+    [0] => localhost
+    [1] => magento
+    [2] => <<YOUR USERNAME>>
+    [3] => <<YOUR PASSWORD>>
+    [4] => 3306
+    [5] => 
+    [6] => net
+    [7] => 
+)
+
+/inc/magmi_engine.php:340 - Magmi_Engine->connectToMagento
+----------------------------------------
+Array
+(
+)
+
+/web/magmi_run.php:73 - Magmi_Engine->run
+----------------------------------------
+Array
+(
+    [0] => Array
+        (
+            [engine] => magmi_productimportengine:Magmi_ProductImportEngine
+            [run] => import
+            [logfile] => progress.txt
+            [profile] => default
+            [mode] => update
+            [__utmz] => 68392339.1318900744.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+            [__utma] => 68392339.1802581105.1318900744.1318900744.1318900744.1
+            [PHPSESSID] => 36b9909b0f1f7a9cba2f48c951727bbe
+            [_] => 
+        )
+
+)
+
++++++++++++++++++++++++++++++
+CONTEXT DUMP
++++++++++++++++++++++++++++++
+Magmi_ProductImportEngine Object
+(
+    [attrinfo] => Array
+        (
+        )
+
+    [attrbytype] => Array
+        (
+        )
+
+    [store_ids] => Array
+        (
+        )
+
+    [status_id] => Array
+        (
+        )
+
+    [attribute_sets] => Array
+        (
+        )
+
+    [prod_etype] => 
+    [sidcache] => Array
+        (
+        )
+
+    [mode] => update
+    [_attributehandlers:private] => 
+    [_current_row:private] => 
+    [_optidcache:private] => 
+    [_curitemids:private] => Array
+        (
+            [sku] => 
+        )
+
+    [_dstore:private] => Array
+        (
+        )
+
+    [_same:private] => 
+    [_currentpid:private] => 
+    [_extra_attrs:private] => 
+    [_profile:private] => 
+    [_defaultwsid:private] => 
+    [_wsids:private] => Array
+        (
+        )
+
+    [_sid_wsscope:private] => Array
+        (
+        )
+
+    [_sid_sscope:private] => Array
+        (
+        )
+
+    [_prodcols:private] => Array
+        (
+        )
+
+    [_stockcols:private] => Array
+        (
+        )
+
+    [_skustats:private] => Array
+        (
+        )
+
+    [_conf:protected] => Magmi_Config Object
+        (
+            [_defaultconfigname:private] => 
+            [_basedir:protected] => /home/ssftest/public_html/store/magmi/conf
+            [_confname:protected] => /home/ssftest/public_html/store/magmi/conf/magmi.ini
+            [_props:protected] => Array
+                (
+                    [DATABASE] => Array
+                        (
+                            [dbname] => magento
+                            [host] => localhost
+                            [user] => <<YOUR USERNAME>>
+                            [password] => <<YOUR PASSWORD>>
+                        )
+
+                    [MAGENTO] => Array
+                        (
+                            [basedir] => ../..
+                        )
+
+                    [GLOBAL] => Array
+                        (
+                            [step] => 0.5
+                        )
+
+                )
+
+            [inifile] => /home/ssftest/public_html/store/magmi/conf/magmi.ini
+            [_specialchars:protected] => Array
+                (
+                    ["] => :DQUOTE:
+                    ['] => :SQUOTE:
+                    [\t] => TAB
+                )
+
+        )
+
+    [_initialized:protected] => 1
+    [_exceptions:protected] => Array
+        (
+            [SQLSTATE[28000] [1045] Access denied for user '<<YOUR USERNAME>'@'localhost' (using password: YES)] => Array
+                (
+                    [0] => 1
+                    [1] => 1
+                )
+
+        )
+
+    [magversion] => 
+    [magdir] => ../..
+    [tprefix] => 
+    [_connected:protected] => 
+    [_activeplugins:protected] => 
+    [_pluginclasses:protected] => 
+    [_builtinplugins:protected] => Array
+        (
+            [itemprocessors] => /home/ssftest/public_html/store/magmi/plugins/inc/magmi_defaultattributehandler.php::Magmi_DefaultAttributeItemProcessor
+        )
+
+    [_excid:private] => 1
+    [logger] => FileLogger Object
+        (
+            [_fname:protected] => /home/ssftest/public_html/store/magmi/state/progress.txt
+        )
+
+    [_db:protected] => 
+    [_debug:protected] => 
+    [_laststmt:protected] => 
+    [_use_stmt_cache:protected] => 1
+    [_nreq:protected] => 
+    [_indbtime:protected] => 
+    [_intrans:protected] => 
+    [prepared:protected] => Array
+        (
+        )
+
+)
+
++++++++++++++++++++++++++++++
+END CONTEXT DUMP
++++++++++++++++++++++++++++++
+---- ENDTRACE : 1 -----

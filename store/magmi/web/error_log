@@ -1,0 +1,2 @@
+[01-Nov-2011 15:30:16] PHP Notice:  Undefined variable: pinst in /home/ssftest/public_html/store/magmi/web/magmi_utilities.php on line 111
+[01-Nov-2011 15:30:16] PHP Fatal error:  Call to a member function getWarning() on a non-object in /home/ssftest/public_html/store/magmi/web/magmi_utilities.php on line 111

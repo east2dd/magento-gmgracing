@@ -1,0 +1,136 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<style type="text/css">
+<!--
+.validation-advice {clear:none;margin-top:-11px}
+.tr_success-msg {background-color:#026BB7;border-color:#026BB7;text-align:center;color:#fff}
+.tr_success-msg ul li {padding:5px;padding-top:15px}
+.tr_success-msg ul li span {color:#fff;font-size:24px}
+-->
+</style>
+<div class="cart" style="margin-top:30px">
+   	<div style="width:100%;background-color:#333;height:40px">
+	&nbsp;
+	</div>
+	<div class="tr_gotham-medium" style="float:right;width:632px;background-color:#333;height:40px;font-size:14px;color:#fff;margin-bottom:-25px;">
+	<div style="padding: 15px 0 0 15px;"><a href="<?php echo $this->getUrl('customer/account/login') ?>" style="color:#fff">LOGIN</a> | <a href="<?php echo $this->getUrl('wishlist') ?>" style="color:#fff">WISHLIST</a> | <a href="<?php echo $this->getUrl('checkout/cart') ?>" style="color:#fff">MY CART</a> | <a href="<?php echo $this->getUrl('customer/account') ?>" style="color:#fff">ACCOUNT DETAILS</a> | <a href="<?php echo $this->getUrl('customer/address') ?>" style="color:#fff">ADDRESS BOOK<span style="position:absolute;margin-left:-75px;margin-top:17px;z-index:101"><img src="<?php echo $this->getSkinUrl('images/tr_nav_arrow_grey.png') ?>" style="width:34px;height:17px;" /></span></a> | <a href="<?php echo $this->getUrl('sales/order/history') ?>" style="color:#fff">MY ORDERS</a></div>
+	</div>
+    <div class="page-title">
+        <h1 id="gotham_title" style="width:960px; border-bottom:1px #000 solid;text-align: left; margin-left:15px;margin-bottom:4px;z-index:100;" class="caps"><?php echo strtoupper($this->getTitle()) ?></h1>
+    </div>
+    <div>
+	<img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN);?>frontend/default/gmg_store/images/grad.jpg" style="margin-top:1px;" />
+	</div>
+	<div class="tr_gotham-medium" style="float:right;height:20px;margin-top:-35px;margin-right:15px;font-size:12px;">
+    ACCOUNT &#62;&#62; <span style="background-color:#000;color:#fff"><?php echo strtoupper($this->getTitle()) ?></span>
+    </div>
+    <p>&nbsp;</p>
+    <?php echo str_replace(array('success-msg','<span>The account information has been saved.</span>'), array('success-msg tr_success-msg','<img src="' . Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/default/gmg_store/images/tr_icon_check.png" style="margin-top:-10px;" /> <span>THE ACCOUNT INFORMATION HAS BEEN SAVED</span>'), $this->getMessagesBlock()->getGroupedHtml()) ?>
+    <!-- BEGIN TR_ADDRESS_EDIT -->
+    <form action="<?php echo $this->getSaveUrl() ?>" method="post" id="form-validate">
+    <?php echo $this->getBlockHtml('formkey')?>
+    <input type="hidden" name="success_url" value="<?php echo $this->getSuccessUrl() ?>" />
+    <input type="hidden" name="error_url" value="<?php echo $this->getErrorUrl() ?>" />
+    <?php if (empty($_GET['tr_type'])): ?>
+    <div style="float:right;width:230px;background-color:#333;color:#fff;font-size:12px;padding:15px;margin-right:15px;font-family:Helvetica">
+    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('cust-serv')->toHtml() ?>
+    </div>
+    <?php endif ?>
+	<h1 id="gotham_title" style="width:435px; border-bottom:1px #000 solid;text-align: left;height:22px;font-size:18px;margin-left:30px;margin-bottom:20px;" class="caps"><?php if ($_GET['tr_type'] == 'billing') { echo ($_GET['tr_action'] == 'new' ? 'CREATE NEW' : 'EDIT') . ' BILLING ADDRESS'; } else if ($_GET['tr_type'] == 'shipping') { echo ($_GET['tr_action'] == 'new' ? 'CREATE NEW' : 'EDIT') . ' SHIPPING ADDRESS'; } else { echo strtoupper($this->getTitle()); } ?></h1>
+	<div style="margin-left:30px;width:445px;">
+				<div style="float:left; width:210px">
+                	<label for="firstname" class="tr_gotham-light" style="font-size:12px"><em style="color:#ff0000">*</em> <?php echo $this->__('FIRST NAME') ?></label>
+                    <input type="text" name="firstname" id="firstname" value="<?php echo $this->htmlEscape($this->getAddress()->getFirstname()) ?>" title="<?php echo $this->__('FIRST NAME') ?>" class="input-text required-entry" style="margin-top:5px;margin-bottom:15px;width:200px;height:22px;border:1px solid #000" />
+                </div>
+				<div style="float:left;margin-left:17px; width:210px">
+					<label for="lastname" class="tr_gotham-light" style="font-size:12px"><em style="color:#ff0000">*</em> <?php echo $this->__('LAST NAME') ?></label>
+                    <input type="text" name="lastname" id="lastname" value="<?php echo $this->htmlEscape($this->getAddress()->getLastname()) ?>" title="<?php echo $this->__('LAST NAME') ?>" class="input-text required-entry" style="margin-top:5px;margin-bottom:15px;width:200px;height:22px;border:1px solid #000" />
+                </div>
+				<div style="clear:left;float:left; width:210px">
+					<label for="street_1" class="tr_gotham-light" style="font-size:12px"><em style="color:#ff0000">*</em> <?php echo $this->__('ADDRESS 1') ?></label>
+                    <input type="text" name="street[]" id="street_1" value="<?php echo $this->htmlEscape($this->getAddress()->getStreet(1)) ?>" title="<?php echo $this->__('ADDRESS 1') ?>" class="input-text required-entry" style="margin-top:5px;margin-bottom:15px;width:200px;height:22px;border:1px solid #000" />
+                </div>
+				<div style="float:left;margin-left:17px; width:210px">
+					<label for="street_2" class="tr_gotham-light" style="font-size:12px"> <?php echo $this->__('ADDRESS 2') ?></label>
+                    <input type="text" name="street[]" id="street_2" value="<?php echo $this->htmlEscape($this->getAddress()->getStreet(2)) ?>" title="<?php echo $this->__('ADDRESS 2') ?>" class="input-text" style="margin-top:5px;margin-bottom:15px;width:200px;height:22px;border:1px solid #000" />
+                </div>
+				<div style="clear:left;float:left; width:210px">
+					<label for="city" class="tr_gotham-light" style="font-size:12px"><em style="color:#ff0000">*</em> <?php echo $this->__('CITY') ?></label>
+                    <input type="text" name="city" id="city" value="<?php echo $this->htmlEscape($this->getAddress()->getCity()) ?>" title="<?php echo $this->__('CITY') ?>" class="input-text required-entry" style="margin-top:5px;margin-bottom:15px;width:200px;height:22px;border:1px solid #000" />
+                </div>
+				<div style="float:left;margin-left:17px; width:105px">
+					<label for="region_id" class="tr_gotham-light" style="font-size:12px"><em style="color:#ff0000">*</em> <?php echo $this->__('STATE') ?></label>
+					<select id="region_id" name="region_id" title="State/Province" class="validate-select" style="margin-top:5px;margin-bottom:15px;width:95px;height:28px;border:1px solid #000;font-size: 12px; padding:0px; padding-top:4px;padding-bottom:2px;">
+                           <option value="">Please select region, state or province</option>
+                        <?php $states = array("1"=>"Alabama","2"=>"Alaska","3"=>"American Samoa","4"=>"Arizona","5"=>"Arkansas","6"=>"Armed Forces Africa","7"=>"Armed Forces Americas","8"=>"Armed Forces Canada","9"=>"Armed Forces Europe","10"=>"Armed Forces Middle East","11"=>"Armed Forces Pacific","12"=>"California","13"=>"Colorado","14"=>"Connecticut","15"=>"Delaware","16"=>"District of Columbia","17"=>"Federated States Of Micronesia","18"=>"Florida","19"=>"Georgia","20"=>"Guam","21"=>"Hawaii","22"=>"Idaho","23"=>"Illinois","24"=>"Indiana","25"=>"Iowa","26"=>"Kansas","27"=>"Kentucky","28"=>"Louisiana","29"=>"Maine","30"=>"Marshall Islands","31"=>"Maryland","32"=>"Massachusetts","33"=>"Michigan","34"=>"Minnesota","35"=>"Mississippi","36"=>"Missouri","37"=>"Montana","38"=>"Nebraska","39"=>"Nevada","40"=>"New Hampshire","41"=>"New Jersey","42"=>"New Mexico","43"=>"New York","44"=>"North Carolina","45"=>"North Dakota","46"=>"Northern Mariana Islands","47"=>"Ohio","48"=>"Oklahoma","49"=>"Oregon","50"=>"Palau","51"=>"Pennsylvania","52"=>"Puerto Rico","53"=>"Rhode Island","54"=>"South Carolina","55"=>"South Dakota","56"=>"Tennessee","57"=>"Texas","58"=>"Utah","59"=>"Vermont","60"=>"Virgin Islands","61"=>"Virginia","62"=>"Washington","63"=>"West Virginia","64"=>"Wisconsin","65"=>"Wyoming"); ?>
+                        <?php foreach ($states as $key=>$val):?>
+                        <option value="<?php echo $key?>"<?php if ((int) $key == (int) $this->getAddress()->getRegionId()) { echo ' selected="selected"'; } ?>><?php echo $val?></option>
+                        <?php endforeach ?>
+                        </select>
+                </div>
+				<div style="float:left;margin-left:10px; width:95px">
+					<label for="postcode" class="tr_gotham-light" style="font-size:12px"><em style="color:#ff0000">*</em> <?php echo $this->__('ZIP CODE') ?></label>
+                    <input type="text" name="postcode" id="postcode" value="<?php echo $this->htmlEscape($this->getAddress()->getPostcode()) ?>" title="<?php echo $this->__('ZIP CODE') ?>" class="input-text required-entry" style="margin-top:5px;margin-bottom:15px;width:85px;height:22px;border:1px solid #000" />
+                </div>
+				<input type="hidden" name="country_id" value="US" />
+				<?php if (empty($_GET['tr_type']) || $_GET['tr_type'] == 'billing'): ?>
+				<input type="hidden" name="default_billing" value="1" />
+				<?php endif ?>
+				<?php if (empty($_GET['tr_type']) || $_GET['tr_type'] == 'shipping'): ?>
+				<input type="hidden" name="default_shipping" value="1" />
+				<?php endif ?>
+		<div style="clear:left;float:left; width:210px">
+					<label for="telephone" class="tr_gotham-light" style="font-size:12px"><em style="color:#ff0000">*</em> <?php echo $this->__('TELEPHONE') ?></label>
+                    <input type="text" name="telephone" id="telephone" value="<?php echo $this->htmlEscape($this->getAddress()->getTelephone()) ?>" title="<?php echo $this->__('telephone') ?>" class="input-text required-entry" style="margin-top:5px;margin-bottom:15px;width:200px;height:22px;border:1px solid #000" />
+		</div>
+		<div style="clear:left;float:left;margin-top:10px; width:210px">
+		<span for="telephone" class="tr_gotham-light" style="font-size:12px"><em style="color:#ff0000">*</em> REQUIRED FIELDS</span>
+		</div>
+	<div style="float:right;margin-bottom:20px;margin-right:15px;">
+    	<input type="image" src="<?php echo $this->getSkinUrl('images/tr_submit_btn.png') ?>" />
+    </div>
+	</div>
+    </form>
+    <!-- END TR_ADDRESS_EDIT -->
+</div>
+<script type="text/javascript">
+//<![CDATA[
+    var dataForm = new VarienForm('form-validate', true);
+//]]>
+</script>
+<p style="height:110px">&nbsp;</p>
+<style type="text/css">
+<!--
+.tr_best_selling_header {
+	height:20px;border-bottom:1px solid #000;color:#000;
+}
+.tr_best_selling_header span {
+	background-color:#fff;border-bottom:5px solid #fff;font-size:18px;
+}
+-->
+</style>
+<?php echo $this->getLayout()->createBlock ( 'core/template' )->setTemplate ( "catalog/product/list/best_selling.phtml" )->toHtml () ?>

@@ -1,0 +1,166 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<style type="text/css">
+<!--
+.validation-advice {clear:none;margin-top:-11px}
+.tr_success-msg {background-color:#026BB7;border-color:#026BB7;text-align:center;color:#fff}
+.tr_success-msg ul li {padding:5px;padding-top:15px}
+.tr_success-msg ul li span {color:#fff;font-size:24px}
+#tr_address_popup {
+-moz-box-shadow: 0 0 10px 5px #aaa;
+-webkit-box-shadow: 0 0 10px 5px#aaa;
+box-shadow: 0 0 10px 5px #aaa;
+border:1px solid #000;
+background-color:#fff;
+position:absolute;
+top:170px;
+left:49px;
+width:90%;
+height:500px;
+z-index:999999;
+padding-top:20px;
+display:none;
+}
+-->
+</style>
+<div class="cart row">
+<div id="tr_address_popup"></div>
+	<div class="top-links">
+       <div class="text-right">
+            <a href="<?php echo $this->getUrl('customer/account/login') ?>">LOGIN</a> | 
+            <?php if ($this->helper('customer')->isLoggedIn()): ?>
+                <a href="<?php echo $this->getUrl('wishlist') ?>">WISHLIST</a>
+            <?php else: ?>
+                <a href="<?php echo $this->getUrl('customer/account/create') ?>">CREATE ACCOUNT</a>
+            <?php endif ?> 
+            | <a href="<?php echo $this->getUrl('checkout/cart') ?>">MY CART</a> 
+            | <a href="<?php echo $this->getUrl('customer/account') ?>">ACCOUNT DETAILS</a> 
+            | <a href="<?php echo $this->getUrl('customer/address') ?>" class="active">ADDRESS BOOK</a> 
+            | <a href="<?php echo $this->getUrl('sales/order/history') ?>">MY ORDERS</a>
+        </div>
+    </div>
+    <div class="page-title">
+        <h1 class="caps">ADDRESS BOOK</h1>
+    </div>
+
+	<div class="breadcrumbs text-right">
+    ACCOUNT &#62;&#62; <span>ADDRESS BOOK</span>
+    </div>
+    <p>&nbsp;</p>
+    <?php echo str_replace(array('success-msg','<span>The account information has been saved.</span>'), array('success-msg tr_success-msg','<img src="' . Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/default/gmg_store/images/tr_icon_check.png" style="margin-top:-10px;" /> <span>THE ACCOUNT INFORMATION HAS BEEN SAVED</span>'), $this->getMessagesBlock()->getGroupedHtml()) ?>
+    <div style="float:right;width:230px;background-color:#333;color:#fff;font-size:12px;padding:15px;margin-right:15px;font-family:Helvetica">
+    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('cust-serv')->toHtml() ?>
+    </div>
+	<h1 id="gotham_title" style="width:435px; border-bottom:1px #000 solid;text-align: left;height:22px;font-size:18px;margin-left:30px;margin-bottom:20px;" class="caps">SHIPPING ADDRESS</h1>
+	<?php if($_pAddsses = Mage::getSingleton('customer/session')->getCustomer()->getDefaultShipping()): ?>
+	<div style="margin-left:30px;margin-top:30px;width:435px;" class="gotham_light">
+	<p class="tr_gotham-medium" style="font-size:12px;margin-bottom:0;"><?php echo strtoupper(Mage::getSingleton('customer/session')->getCustomer()->getAddressById($_pAddsses)->getStreet(1)); ?></p>
+	<address style="font-size:10px;">
+        <?php echo strtoupper($this->getAddressHtml(Mage::getSingleton('customer/session')->getCustomer()->getAddressById($_pAddsses))) ?>
+    </address><br />
+    <a href="javascript:void(0)" onclick="tr_addressPopup('shipping','edit','<?php echo $_pAddsses ?>');" style="margin:0;padding:0;font-size:10px;border-bottom:1px solid #888">EDIT SHIPPING ADDRESS</a><br />
+    <a href="#" onclick="return deleteAddress('<?php echo $_pAddsses ?>');" style="font-size:10px;border-bottom:1px solid #888;margin:0;padding:0;">REMOVE SHIPPING ADDRESS</a>
+	</div>
+	<?php endif ?>
+	<div style="width:435px;margin-top:30px;margin-left:30px;margin-bottom:90px">
+    <div style="float:right;margin-top:5px;margin-bottom:20px">
+    	<input type="image" src="<?php echo $this->getSkinUrl('images/tr_add_new_shipping_btn.png') ?>" onclick="tr_addressPopup('shipping','new')" />
+    </div>
+   	</div>
+	<h1 id="gotham_title" style="width:435px; border-bottom:1px #000 solid;text-align: left;height:22px;font-size:18px;margin-left:30px;margin-bottom:20px;" class="caps">BILLING ADDRESS</h1>
+	<?php if($_pAddsses = Mage::getSingleton('customer/session')->getCustomer()->getDefaultBilling()): ?>
+	<div style="margin-left:30px;margin-top:30px;width:435px;" class="gotham_light">
+	<p class="tr_gotham-medium" style="font-size:12px;margin-bottom:0;"><?php echo strtoupper(Mage::getSingleton('customer/session')->getCustomer()->getAddressById($_pAddsses)->getStreet(1)); ?></p>
+	<address style="font-size:10px;">
+        <?php echo strtoupper($this->getAddressHtml(Mage::getSingleton('customer/session')->getCustomer()->getAddressById($_pAddsses))) ?>
+    </address><br />
+    <a href="javascript:void(0)" onclick="tr_addressPopup('billing','edit','<?php echo $_pAddsses ?>');" style="margin:0;padding:0;font-size:10px;border-bottom:1px solid #888">EDIT BILLING ADDRESS</a><br />
+    <a href="#" onclick="return deleteAddress('<?php echo $_pAddsses ?>');" style="font-size:10px;border-bottom:1px solid #888;margin:0;padding:0;">REMOVE BILLING ADDRESS</a>
+	</div>
+	<?php endif ?>
+	<div style="width:435px;margin-top:30px;margin-left:30px;margin-bottom:90px">
+    <div style="float:right;margin-top:5px;margin-bottom:20px">
+    	<input type="image" src="<?php echo $this->getSkinUrl('images/tr_add_new_billing_btn.png') ?>" onclick="tr_addressPopup('billing','new')" />
+    </div>
+   	</div>
+	<?php if($_pAddsses = $this->getAdditionalAddresses()): ?>
+    <h1 id="gotham_title" style="width:435px; border-bottom:1px #000 solid;text-align: left;height:22px;font-size:18px;margin-left:30px;margin-bottom:20px;" class="caps">ADDITIONAL ADDRESSES</h1>
+	        <?php foreach($_pAddsses as $_address): ?>
+	<div style="margin-left:30px;margin-top:30px;width:435px;" class="gotham_light">
+	<p class="tr_gotham-medium" style="font-size:12px;margin-bottom:0;"><?php echo strtoupper($_address->getStreet(1)); ?></p>
+	<address style="font-size:10px;">
+        <?php echo strtoupper($this->getAddressHtml($_address)) ?>
+    </address><br />
+    <a href="javascript:void(0)" onclick="tr_addressPopup('additional','edit','<?php echo $_address->getId() ?>');" style="margin:0;padding:0;font-size:10px;border-bottom:1px solid #888">EDIT ADDITIONAL ADDRESS</a><br />
+    <a href="#" onclick="return deleteAddress('<?php echo $_address->getId() ?>');" style="font-size:10px;border-bottom:1px solid #888;margin:0;padding:0;">REMOVE ADDITIONAL ADDRESS</a>
+	</div>
+			<?php endforeach ?>
+	<?php endif ?>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+	var dataForm = '';
+    function deleteAddress(addressId) {
+        if(confirm('<?php echo $this->__('Are you sure you want to delete this address?') ?>')) {
+            window.location='<?php echo $this->getDeleteUrl() ?>id/'+addressId;
+        }
+        return false;
+    }
+    function tr_addressPopup(type,action,id) {
+        if (action == 'edit') {
+			var url = 'edit/id/'+id;
+        } else {
+			var url = action;
+        }
+        jQuery('body').css('cursor','wait');
+		jQuery.get('<?php echo $this->getUrl('customer/address'); ?>'+url+'/?tr_type='+type+'&tr_action='+action,function (data) {
+			data = data.replace(/[\s\S]+\<\!\-\- BEGIN TR\_ADDRESS\_EDIT \-\-\>/,'');
+			data = data.replace(/\<\!\-\- END TR\_ADDRESS\_EDIT \-\-\>[\s\S]+/,'');
+			jQuery('#tr_address_popup').html(data);
+			jQuery('#tr_address_popup').show();
+			Cufon.refresh();
+			dataForm = new VarienForm('form-validate', true);
+	        jQuery('body').css('cursor','auto');
+	        jQuery('html,body').animate({
+	    		scrollTop : jQuery('#tr_address_popup').offset().top
+	    	}, 500);
+		});
+    }
+//]]>
+</script>
+<p style="height:110px">&nbsp;</p>
+<style type="text/css">
+<!--
+.tr_best_selling_header {
+	height:20px;border-bottom:1px solid #000;color:#000;
+}
+.tr_best_selling_header span {
+	background-color:#fff;border-bottom:5px solid #fff;font-size:18px;
+}
+-->
+</style>
+<?php echo $this->getLayout()->createBlock ( 'core/template' )->setTemplate ( "catalog/product/list/best_selling.phtml" )->toHtml () ?>

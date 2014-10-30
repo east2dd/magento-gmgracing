@@ -1,0 +1,137 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<style type="text/css">
+<!--
+.validation-advice {clear:none;margin-top:-11px}
+.tr_success-msg {background-color:#026BB7;border-color:#026BB7;text-align:center;color:#fff}
+.tr_success-msg ul li {padding:5px;padding-top:15px}
+.tr_success-msg ul li span {color:#fff;font-size:24px}
+-->
+</style>
+<div class="cart">
+	<div class="text-right">
+	   <div class="top-links">
+            <a href="<?php echo $this->getUrl('customer/account/login') ?>">LOGIN</a> 
+            | <a href="<?php echo $this->getUrl('wishlist') ?>">WISHLIST</a> 
+            | <a href="<?php echo $this->getUrl('checkout/cart') ?>">MY CART</a> 
+            | <a href="<?php echo $this->getUrl('customer/account') ?>" class="active">ACCOUNT DETAILS</a> 
+            | <a href="<?php echo $this->getUrl('customer/address') ?>">ADDRESS BOOK</a> 
+            | <a href="<?php echo $this->getUrl('sales/order/history') ?>">MY ORDERS</a>
+        </div>
+	</div>
+    <div class="page-title">
+        <h1 class="caps"><?php echo $this->__('ACCOUNT DETAILS') ?></h1>
+    </div>
+    
+	<div class="breadcrumbs">
+        ACCOUNT &#62;&#62; <span>ACCOUNT DETAILS</span>
+    </div>
+    
+    <p>&nbsp;</p>
+
+    <?php echo str_replace(array('success-msg','<span>The account information has been saved.</span>'), array('success-msg tr_success-msg','<img src="' . Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/default/gmg_store/images/tr_icon_check.png" style="margin-top:-10px;" /> <span>THE ACCOUNT INFORMATION HAS BEEN SAVED</span>'), $this->getMessagesBlock()->getGroupedHtml()) ?>
+    <form action="<?php echo $this->getUrl('customer/account/editPost') ?>" method="post" id="form-validate">
+    <input type="hidden" name="change_password" id="change_password" value="1" />
+    <?php echo $this->getBlockHtml('formkey')?>
+    <div style="float:right;width:230px;background-color:#333;color:#fff;font-size:12px;padding:15px;margin-right:15px;font-family:Helvetica">
+    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('cust-serv')->toHtml() ?>
+    </div>
+	<h1 id="gotham_title" style="width:435px; border-bottom:1px #000 solid;text-align: left;height:22px;font-size:18px;margin-left:30px;margin-bottom:20px;" class="caps"><?php echo $this->__('CHANGE YOUR EMAIL ADDRESS') ?></h1>
+	<div style="margin-left:30px;width:435px;">
+                <label for="email" class="tr_gotham-medium" style="font-size:12px"><em style="color:#ff0000">*</em><?php echo $this->__('Email Address') ?></label>
+                <div class="input-box">
+                    <input type="text" name="email" id="email" value="<?php echo $this->htmlEscape($this->getCustomer()->getEmail()) ?>" title="<?php echo $this->__('EMAIL ADDRESS') ?>" class="input-text required-entry validate-email" style="margin-top:5px;margin-bottom:15px;width:320px;height:22px;border:1px solid #000" />
+                </div>
+    <div style="width:435px;margin-bottom:90px">
+    <div style="float:right;margin-top:5px;margin-bottom:20px">
+    	<input type="image" src="<?php echo $this->getSkinUrl('images/tr_save_changes_btn.png') ?>" />
+    </div>
+   	</div>
+	</div>
+	<h1 id="gotham_title" style="width:435px; border-bottom:1px #000 solid;text-align: left;height:22px;font-size:18px;margin-left:30px;margin-bottom:20px;" class="caps"><?php echo $this->__('CHANGE YOUR PASSWORD') ?></h1>
+                <div style="margin-left:30px;width:800px;"><label for="current_password" class="tr_gotham-medium" style="font-size:12px"><em style="color:#ff0000">*</em><?php echo $this->__('CURRENT PASSWORD') ?></label>
+                <div class="input-box">
+                    <input type="password" title="<?php echo $this->__('Current Password') ?>" class="input-text required-entry" name="current_password" id="current_password" style="margin-top:5px;margin-bottom:15px;width:320px;height:22px;border:1px solid #000" />
+                </div>
+                <div class="field">
+                    <label for="password" class="tr_gotham-medium" style="font-size:12px"><em style="color:#ff0000">*</em><?php echo $this->__('NEW PASSWORD') ?></label>
+                    <div class="input-box">
+                        <input type="password" title="<?php echo $this->__('New Password') ?>" class="input-text required-entry validate-password" name="password" id="password" style="margin-top:5px;margin-bottom:15px;width:320px;height:22px;border:1px solid #000" />
+                        <span class="tr_gotham-medium" style="font-size:12px;margin-left:10px">YOUR PASSWORD MUST BE 6-10 CHARACTERS</span>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="confirmation" class="tr_gotham-medium" style="font-size:12px"><em style="color:#ff0000">*</em><?php echo $this->__('CONFIRM NEW PASSWORD') ?></label>
+                    <div class="input-box">
+                        <input type="password" title="<?php echo $this->__('Confirm New Password') ?>" class="input-text required-entry validate-cpassword" name="confirmation" id="confirmation" style="margin-top:5px;margin-bottom:15px;width:320px;height:22px;border:1px solid #000" />
+                    </div>
+                </div>
+    <div style="width:435px;margin-bottom:90px">
+    <div style="float:right;margin-top:5px;margin-bottom:20px">
+    	<input type="image" src="<?php echo $this->getSkinUrl('images/tr_save_changes_btn.png') ?>" />
+    </div>
+   	</div>
+   	
+    </div>
+    <h1 id="gotham_title" style="width:435px; border-bottom:1px #000 solid;text-align: left;height:22px;font-size:18px;margin-left:30px;margin-bottom:20px;" class="caps"><?php echo $this->__('EDIT YOUR NAME') ?></h1>
+		<div style="margin-left:30px;width:435px;">
+		<div class="field name-firstname">
+        <label for="firstname" class="tr_gotham-medium" style="font-size:12px"><em style="color:#ff0000">*</em> FIRST NAME</label>
+        <div class="input-box">
+            <input type="text" id="firstname" name="<?php echo $this->getFieldName('firstname')?>" value="<?php echo $this->htmlEscape($this->getCustomer()->getFirstname()) ?>" title="<?php echo $this->getStoreLabel('firstname') ?>" class="input-text required-entry" style="margin-top:5px;margin-bottom:15px;width:320px;height:22px;border:1px solid #000" />
+        </div>
+    </div>
+    <div class="field name-lastname">
+        <label for="lastname" class="tr_gotham-medium" style="font-size:12px"><em style="color:#ff0000">*</em> LAST NAME</label>
+        <div class="input-box">
+            <input type="text" id="lastname" name="<?php echo $this->getFieldName('lastname')?>" value="<?php echo $this->htmlEscape($this->getCustomer()->getLastname()) ?>" title="<?php echo $this->getStoreLabel('lastname') ?>" class="input-text required-entry" style="margin-top:5px;margin-bottom:15px;width:320px;height:22px;border:1px solid #000" />
+        </div>
+    </div>
+    <div style="float:right;margin-top:5px;margin-bottom:20px">
+    	<input type="image" src="<?php echo $this->getSkinUrl('images/tr_save_changes_btn.png') ?>" />
+    </div>
+    
+    </div>
+    </form>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+    var dataForm = new VarienForm('form-validate', true);
+//]]>
+</script>
+<p style="height:110px">&nbsp;</p>
+<style type="text/css">
+<!--
+.tr_recently_viewed_header {
+	height:20px;border-bottom:1px solid #000;color:#000;
+}
+.tr_recently_viewed_header span {
+	background-color:#fff;border-bottom:5px solid #fff;font-size:18px;
+}
+-->
+</style>
+<?php echo $this->getLayout()->createBlock ( 'reports/product_viewed' )->setTemplate ( "reports/product_viewed.phtml" )->toHtml () ?>

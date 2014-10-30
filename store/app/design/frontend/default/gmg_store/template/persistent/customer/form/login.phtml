@@ -1,0 +1,125 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Customer login form template
+ *
+ * @see Mage_Customer_Block_Form_Login
+ */
+?>
+<div class="account-login">
+	<div class="top-links">
+       <div class="text-right">
+            <a href="<?php echo $this->getUrl('customer/account/login') ?>" class="active">LOGIN</a> | 
+            <?php if ($this->helper('customer')->isLoggedIn()): ?>
+                <a href="<?php echo $this->getUrl('wishlist') ?>">WISHLIST</a>
+            <?php else: ?>
+                <a href="<?php echo $this->getUrl('customer/account/create') ?>">CREATE ACCOUNT</a>
+            <?php endif ?> 
+            | <a href="<?php echo $this->getUrl('checkout/cart') ?>">MY CART</a> 
+            | <a href="<?php echo $this->getUrl('customer/account') ?>">ACCOUNT DETAILS</a> 
+            | <a href="<?php echo $this->getUrl('customer/address') ?>">ADDRESS BOOK</a> 
+            | <a href="<?php echo $this->getUrl('sales/order/history') ?>">MY ORDERS</a>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-3 col-sm-4">
+            <h2 class="page-title"><?php echo $this->__('ACCOUNT') ?></h2>
+        </div>
+    </div>
+    <div class="breadcrumbs">
+        ACCOUNT &#62;&#62; <span>LOGIN</span>
+    </div>
+
+    <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+
+    <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="login-form" class="form-horizontal">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="new-users">
+                    <div class="content">
+                        <h3 class="login-head"><?php echo $this->__('CREATE AN ACCOUNT') ?></h3>
+                        <p><?php echo $this->__('By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.') ?></p>
+                        <div class="text-right">
+    					   <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN);?>frontend/default/gmg_store/images/register.jpg" class="pointer right" onclick="window.location='<?php echo $this->getCreateAccountUrl() ?><?php if($_GET['checkout']=='true'):?>?checkout=true<?php endif; ?>';" />
+                        </div>
+                    </div>
+    				<?php if($_GET['checkout']=='true'):?>
+    				<div class="content">
+                        <h3 class="login-head tr_gotham-bold"><?php echo $this->__('CHECKOUT AS A GUEST') ?></h3>
+                        <div class="text-right">
+    					   <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN);?>frontend/default/gmg_store/images/tr_continue_guest.png" class="pointer" onclick="window.location='<?php echo $this->getUrl('', array('_secure'=>true,'_nosid'=>true)); ?>checkout/onepage/?checkout=guest';" />
+                        </div>
+                    </div>
+    				<?php endif;?>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="registered-users">
+                    <div class="content">
+                        <h3 class="login-head"><?php echo $this->__('REGISTERED CUSTOMERS') ?></h3>
+                        
+                            <div class="form-group">
+                                <label for="email" class="col-sm-4 control-label"><?php echo $this->__('EMAIL ADDRESS:') ?></label>
+                                <div class="col-sm-8">
+                                  <input type="email" name="login[username]" value="<?php echo $this->htmlEscape($this->getUsername()) ?>" id="email" class="form-control input-text required-entry validate-email" title="<?php echo $this->__('Email Address') ?>"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="pass" class="col-sm-4 control-label"><?php echo $this->__('PASSWORD:') ?></label>
+                                <div class="col-sm-8">
+                                    <input type="password" name="login[password]" class="form-control input-text required-entry validate-password" id="pass" title="<?php echo $this->__('Password') ?>"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-8 col-sm-offset-4">
+                                    <a href="<?php echo $this->getUrl('customer/account/forgotpassword') ?>">FORGOT YOUR PASSWORD?</a>
+                                    <div class="text-right">
+                                        <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN);?>frontend/default/gmg_store/images/sign-in.jpg" class="pointer" onclick="jQuery('#login-form').submit()" />
+                                    </div>
+                                </div>
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php if($_GET['checkout']=='true'):?>
+        <input name="context" type="hidden" value="checkout" />
+        <?php endif; ?>
+    </form>
+    
+    <script type="text/javascript">
+    //<![CDATA[
+        var dataForm = new VarienForm('login-form', true);
+    //]]>
+    </script>
+
+    <p style="height:110px">&nbsp;</p>
+    <?php echo $this->getLayout()->createBlock ( 'reports/product_viewed' )->setTemplate ( "reports/product_viewed.phtml" )->toHtml () ?>
+</div>

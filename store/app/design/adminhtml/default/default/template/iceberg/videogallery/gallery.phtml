@@ -1,0 +1,179 @@
+<?php
+/**
+ * Template for block Iceberg_VideoGallery_Block_Adminhtml_Gallery_Content
+ * Controls the 'Videos' Attribute in the product edit page.
+ */
+?>
+<?php
+$_block = $this;
+$_orderCount = 1;
+/* @var $_block Iceberg_VideoGallery_Block_Adminhtml_Gallery_Content */
+?>
+
+<style type="text/css">
+/* Make video gallery Magento 1.3.x compatible */
+#video_gallery_content .cell-provider input.input-text{width:98%;}
+#video_gallery_content .cell-value input.input-text{width:98%;}
+#video_gallery_content .cell-description textarea{width:160px; height:90px;}
+
+/* Hide Create New Attribute Button */
+#create_attribute_<?php echo $this->getGroupId() ?>{display:none}
+</style>
+
+<div id="<?php echo $_block->getHtmlId() ?>" >
+<div class="grid">
+<table cellspacing="0" class="data border" id="<?php echo $_block->getHtmlId() ?>_grid" width="100%">
+    <col width="1" />
+    <col width="250"/>
+    <col />
+    <col width="70"  style="display:none"/>
+    <col width="100" style="display:none"/>
+    <col width="10" />
+    <col width="70" />
+    <col width="70" />
+    <thead>
+        <tr class="headings">
+            <th><?php echo Mage::helper('catalog')->__('Thumbnail') ?><br>[GLOBAL]</th>
+            <th><?php echo Mage::helper('videogallery')->__('Title') ?><br>[STORE VIEW]</th>
+            <th><?php echo Mage::helper('videogallery')->__('Description') ?><br>[STORE VIEW]</th>
+            <th style="display:none"><?php echo Mage::helper('videogallery')->__('Provider') ?></th>
+            <th style="display:none"><?php echo Mage::helper('videogallery')->__('Video Data') ?></th>
+            <th><?php echo Mage::helper('catalog')->__('Sort Order') ?><br>[STORE VIEW]</th>
+            <th><?php echo Mage::helper('catalog')->__('Exclude') ?><br>[STORE VIEW]</th>
+            <th class="last"><?php echo Mage::helper('catalog')->__('Remove') ?></th>
+        </tr>
+    </thead>
+    <tbody id="<?php echo $_block->getHtmlId() ?>_list">
+    <?php foreach( $_block->getVideos() as $video ) : $i=1;?>
+        <tr id="<?php echo $_block->getHtmlId() ?>-video-<?php echo $video['value_id']; ?>" class="preview">
+                <td class="cell-image"><div class="place-holder" onmouseover="<?php echo $_block->getJsObjectName(); ?>.loadImage('<?php echo $video['value_id']; ?>')"><span>Roll Over for preview</span></div><img src="<?php echo $video['url'] ?>" style="display: none;" alt="" width="100"></td>
+                <td class="cell-label">
+                	<input class="input-text" type="text" value="<?php echo $this->htmlEscape( $video['label'] ); ?>" onchange="<?php echo $_block->getJsObjectName(); ?>.updateVideo('<?php echo $video['value_id']; ?>')">
+                	<div    style="font-size:10px;margin-top:5px">INFO: <?php echo $video['provider']; ?> / <?php echo $video['value']; ?></div>
+                	<button style="font-size:11px;margin-top:5px" onclick="return <?php echo $_block->getHtmlId() ?>_customThumb(this);" class="scalable add" type="button"><span>Upload Custom Thumbnail</span></button>
+                	<div class="custom_thumb" style="padding-top:5px;display: none;"> <input type="file" name="custom_thumb_<?php echo $video['value_id']; ?>" /></div>
+                </td>
+                <td class="cell-description"><textarea class="input-text" onchange="<?php echo $_block->getJsObjectName(); ?>.updateVideo('<?php echo $video['value_id']; ?>')"><?php echo $this->htmlEscape( $video['description'] ); ?></textarea></td>
+                <td class="cell-provider" style="display:none"><input readonly class="input-text" type="text" value="<?php echo $video['provider']; ?>" onchange="<?php echo $_block->getJsObjectName(); ?>.updateVideo('<?php echo $video['value_id']; ?>')"></td>
+                <td class="cell-value" style="display:none"><input readonly class="input-text" type="text" size="5" value="<?php echo $video['value']; ?>" onchange="<?php echo $_block->getJsObjectName(); ?>.updateVideo('<?php echo $video['value_id']; ?>')"></td>
+                <td class="cell-position"><input class="input-text validate-number" value="<?php echo $_orderCount++; ?>" type="text" onchange="<?php echo $_block->getJsObjectName(); ?>.updateVideo('<?php echo $video['value_id']; ?>')"></td>
+                <td class="cell-disable a-center"><input onclick="<?php echo $_block->getJsObjectName(); ?>.updateVideo('<?php echo $video['value_id']; ?>')" <?php if( $video['disabled'] ) : ?>checked<?php endif; ?> type="checkbox"></td>
+                <td class="cell-remove a-center last"><input onclick="<?php echo $_block->getJsObjectName(); ?>.updateVideo('<?php echo $video['value_id']; ?>')" type="checkbox"></td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+<table cellspacing="0" class="data border" id="<?php echo $_block->getHtmlId() ?>_grid_addnew" width="100%">
+    <col width="250"/>
+    <col width="250"/>
+    <col style="display:none"/>
+    <col width="70" />
+    <col width="10"  style="display:none" />
+    <col width="120"  style="display:none" />
+    
+    <tfoot id="<?php echo $_block->getHtmlId() ?>_new_list">
+        <tr id="<?php echo $_block->getHtmlId() ?>-video-new" class="preview">
+                <td class="cell-url">
+                	<strong><?php echo Mage::helper('catalog')->__('Video URL') ?></strong> <br/>
+                	<input class="input-text" type="text" value="" name="<?php echo $_block->getElement()->getName() ?>[new_videos][0][url]"> <br/></td>
+                <td class="cell-label">
+                	<strong><?php echo Mage::helper('catalog')->__('Title') ?></strong> (Optional) <br/>
+                	<input class="input-text" type="text" value="" name="<?php echo $_block->getElement()->getName() ?>[new_videos][0][label]"></td>
+                <td style="display:none" class="cell-description"><textarea class="input-text" name="<?php echo $_block->getElement()->getName() ?>[new_videos][0][description]"></textarea></td>
+                <td class="cell-position"  style="display:none"><input class="input-text validate-number" type="text" value="<?php echo $_orderCount; ?>" name="<?php echo $_block->getElement()->getName() ?>[new_videos][0][position]"></td>
+                <td class="cell-disable a-center"  style="display:none"><input type="checkbox" value="checked" name="<?php echo $_block->getElement()->getName() ?>[new_videos][0][disabled]"></td>
+                <td><br/><?php echo $this->getAddVideoButton(); ?></td>
+        </tr>
+        <tr>
+        	<td style="border-top:0" colspan="3"><span style="font-size:11px">Supported Platforms: <?php echo implode(', ' , $this->getProviders() ); ?></span></td>
+        </tr>
+    </tfoot>
+</table>
+<div class="error a-center">
+	<strong id="<?php echo $_block->getHtmlId() ?>_error" style="display: none;">No supported videos were found at the given URL.</strong>
+</div>
+
+<table>
+<caption></caption>
+
+</table>
+</div>
+
+<br /><br />
+
+
+<?php if (Mage::helper('videogallery')->isVideoSuggestionsEnabled() == true) :?>
+
+<?php $suggestions = $_block->getYoutubeVideoSuggestions(); ?>
+
+<h2>Video Suggestions:</h2>
+<ul class="messages">
+    <li class="notice-msg">
+        <ul>
+            <li>
+            <?php echo Mage::helper('videogallery')->__('Video Suggestions from Youtube (Searched using Product Name and SKU)'); ?>
+            </li>
+        </ul>
+    </li>
+</ul>
+<div class="grid">
+
+<?php if (empty($suggestions) || is_string($suggestions)) :?>
+
+	<div><?php if (is_string($suggestions)): echo $suggestions; else: ?>No videos found.<?php endif; ?></div>
+
+<?php else:?>
+<table cellspacing="0" class="data border" id="<?php echo $_block->getHtmlId() ?>_grid" width="100%">
+    <col width="1" />
+    <col />
+    <col width="70" />
+    <col width="70" />
+    <thead>
+        <tr class="headings">
+            <th><?php echo Mage::helper('catalog')->__('Thumbnail') ?></th>
+            <th><?php echo Mage::helper('catalog')->__('Title') ?></th>
+            <th><?php echo Mage::helper('videogallery')->__('Site') ?></th>
+            <!--<th><?php echo Mage::helper('videogallery')->__('Video Data') ?></th>-->
+            <th class="last"><?php echo Mage::helper('catalog')->__('Add') ?></th>
+        </tr>
+    </thead>
+    <tbody id="<?php echo $_block->getHtmlId() ?>_suggestions_list">
+    <?php foreach($suggestions as $video) : ?>
+    <?php 
+    	$videoThumbnails = $video->getVideoThumbnails(); 
+    ?>
+        <tr id="<?php echo $_block->getHtmlId() ?>-video-<?php echo $video->getVideoId(); ?>" class="preview">
+                <td class="cell-image"><img src="<?php echo $videoThumbnails[0]['url']; ?>" alt="" width="100"></td>
+                <td class="cell-label">
+                	<strong><a href="<?php echo $video->getVideoWatchPageUrl(); ?>" target="_blank"><?php echo $this->htmlEscape( $video->getVideoTitle() ); ?></a></strong><br />
+                	<div style="height: 55px; overflow:hidden;"><?php echo $this->htmlEscape( $video->getVideoDescription() ); ?></div>
+                </td>
+                <td class="cell-provider">Youtube</td>
+                <!--<td class="cell-value"><?php echo $video->getVideoId(); ?></td>-->
+                <td class="cell-remove a-center last">
+                	<?php echo $this->getAddYoutubeVideoButton(
+                		$_block->getJsObjectName() . ".addYoutubeVideo('{$video->getVideoId()}','{$this->htmlEscape($video->getVideoWatchPageUrl())}', '{$this->htmlEscape( $videoThumbnails[0]['url'])}' , '".addslashes($this->htmlEscape( $video->getVideoTitle()))."', '".addslashes($this->htmlEscape($video->getVideoDescription()))."' );"
+                		. "$('" . $_block->getHtmlId() . "-video-" . $video->getVideoId() . "').remove();"
+                	); ?>
+                </td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+</div>
+<?php endif; ?>
+<?php endif; ?>
+
+<input type="hidden" id="<?php echo $_block->getHtmlId() ?>_save" name="<?php echo $_block->getElement()->getName() ?>[videos]" value="<?php echo $_block->htmlEscape($_block->getVideosJson()) ?>" />
+<script language="javascript" type="text/javascript" src="<?php echo $this->getJsUrl('iceberg/videogallery/adminhtml.js'); ?>"></script>
+<script type="text/javascript">
+//<![CDATA[
+var <?php echo $_block->getJsObjectName(); ?> = new VideoGallery_Admin('<?php echo $_block->getHtmlId() ?>' , '<?php echo $_block->getElement()->getName() ?>', '<?php echo $this->getVideoCheckUrl(); ?>' );
+
+function <?php echo $_block->getHtmlId() ?>_customThumb( el ) {
+	$( el ).up('td').down('.custom_thumb').show();
+
+	return false;
+}
+//]]>
+</script>

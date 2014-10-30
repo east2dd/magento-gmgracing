@@ -1,0 +1,45 @@
+<?php
+/**
+ * This is a modified version of the core catalog/product/view/media.phtml
+ * Any changes you had made to the previous media file must be changed here as well for changes to take effect.
+ * System > Configuration > Video Gallery > Display Style > Style 01
+ */
+?>
+
+<?php
+    $_product = $this->getProduct();
+    $_helper = $this->helper('catalog/output');
+?>
+
+<div style="position: relative;">
+<?php echo $this->getImagesMedia(); ?>
+	<?php if (count($this->getVideoGallery()) > 0): ?>
+	<div class="more-views">
+	    <h2><?php echo $this->__('Videos') ?></h2>
+	    <?php 
+		/**
+		 * Video Gallery Links. 
+		 *  Very similar in structure to the Images Gallery, this is for Videos.
+		 *  If adding functionality, note that destination link contains a flash video player.
+		 */
+		 ?>
+		<?php if (count($this->getVideoGallery()) > 0): ?>
+		<?php $isMobile = $this->isMobile(); ?>
+	    <ul class="video-gallery-links">
+	    <?php foreach ($this->getVideoGallery() as $_video): ?>
+	        <li>
+	        	<?php if ($isMobile): ?>
+	        		<div class="m-video-thumb"><?php echo $this->getMobileEmbed($_video, 78, 56); ?></div>
+	        	<?php else: ?>
+				<a class="video-thumb" modal="width=650;height=400" rel="iblightbox" href="<?php echo $this->getVideoGalleryUrl( $_video ); ?>" target="_blank" title="<?php echo $this->htmlEscape($_video['label']) ?> " style="width:78px; height:56px">
+					<span></span>
+					<img style="margin-top:-11px" src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_video['file'])->resize(78,78); ?>" width="78" height="78" alt="<?php echo $this->htmlEscape($_video['label']) ?>"  title="<?php echo $_video['label'] . ($_video['label'] && $_video['description']? ' - ' : '')  .$this->htmlEscape($_video['description']) ?>"/>
+				</a>
+				<?php endif; ?>
+	        </li>
+	    <?php endforeach; ?>
+	    </ul>
+	    <?php endif;?>
+	</div>
+	<?php endif; ?>
+</div>

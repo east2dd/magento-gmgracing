@@ -1,0 +1,214 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     default_modern
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Shopping cart template
+ *
+ * @see Mage_Checkout_Block_Cart
+ */
+if ($this->getRequest()->getParam('create') == "1"):
+?>
+<div class="account-create">
+	<div class="top-links">
+       <div class="text-right">
+            <a href="<?php echo $this->getUrl('customer/account/login') ?>">LOGIN</a> | 
+            <?php if ($this->helper('customer')->isLoggedIn()): ?>
+                <a href="<?php echo $this->getUrl('wishlist') ?>">WISHLIST</a>
+            <?php else: ?>
+                <a href="<?php echo $this->getUrl('customer/account/create') ?>" class="active">CREATE ACCOUNT</a>
+            <?php endif ?> 
+            | <a href="<?php echo $this->getUrl('checkout/cart') ?>">MY CART</a> 
+            | <a href="<?php echo $this->getUrl('customer/account') ?>">ACCOUNT DETAILS</a> 
+            | <a href="<?php echo $this->getUrl('customer/address') ?>">ADDRESS BOOK</a> 
+            | <a href="<?php echo $this->getUrl('sales/order/history') ?>">MY ORDERS</a>
+        </div>
+    </div>
+
+    <div class="page-title">
+        <h1 class="caps"><?php echo $this->__('CREATE ACCOUNT') ?></h1>
+    </div>   
+    
+	<div class="breadcrumbs text-right">
+        ACCOUNT &#62;&#62; <span>CREATE ACCOUNT</span>
+    </div>    
+	<?php //echo $this->getMessagesBlock()->getGroupedHtml() ?>
+    <div class="text-center">
+        THANK YOU FOR CREATING AN ACCOUNT
+        <div>
+            <a href="<?php echo $this->getUrl('') ?>"><img src="<?php echo $this->getSkinUrl('images/tr_start_shopping_btn.png') ?>"/></a>
+        </div>
+    </div>
+<p style="height:80px">&nbsp;</p>
+<style type="text/css">
+<!--
+.tr_best_selling_header {
+	height:20px;border-bottom:1px solid #000;color:#000;
+}
+.tr_best_selling_header span {
+	background-color:#fff;border-bottom:5px solid #fff;font-size:18px;
+}
+-->
+</style>
+<?php echo $this->getLayout()->createBlock ( 'core/template' )->setTemplate ( "catalog/product/list/best_selling.phtml" )->toHtml () ?>
+</div>
+<?php
+else:
+?>
+<div class="cart row">
+	<div class="top-links">
+	   <div class="text-right">
+            <a href="<?php echo $this->getUrl('customer/account/login') ?>">LOGIN</a> | 
+            <?php if ($this->helper('customer')->isLoggedIn()): ?>
+                <a href="<?php echo $this->getUrl('wishlist') ?>">WISHLIST</a>
+            <?php else: ?>
+                <a href="<?php echo $this->getUrl('customer/account/create') ?>">CREATE ACCOUNT</a>
+            <?php endif ?> 
+            | <a href="<?php echo $this->getUrl('checkout/cart') ?>" class="active">MY CART</a> 
+            | <a href="<?php echo $this->getUrl('customer/account') ?>">ACCOUNT DETAILS</a> 
+            | <a href="<?php echo $this->getUrl('customer/address') ?>">ADDRESS BOOK</a> 
+            | <a href="<?php echo $this->getUrl('sales/order/history') ?>">MY ORDERS</a>
+        </div>
+	</div>
+    <div class="page-title">
+        <h1 class="caps"><?php echo $this->__('SHOPPING CART') ?></h1>
+    </div>
+
+    <div class="breadcrumbs text-right">
+    SHOPPING CART &#62;&#62; <span>REVIEW YOUR ORDER</span>
+    </div>
+    <div class="page-title">
+    	<h2 class="caps">
+            <?php echo $this->__('REVIEW YOUR ORDER') ?>
+        </h2>
+    </div>
+
+	<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+    <?php echo $this->getChildHtml('form_before') ?>
+    <form action="<?php echo $this->getUrl('checkout/cart/updatePost') ?>" method="post" id="cart_form">
+        <fieldset>
+            <table id="shopping-cart-table" class="data-table cart-table">
+                <col />
+                <col />
+                <col />
+            <?php /*if ($this->helper('wishlist')->isAllowInCart()) : ?>
+                <col width="1" />
+            <?php endif*/ ?>
+            <?php if ($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
+                <col />
+            <?php endif; ?>
+            <?php if ($this->helper('tax')->displayCartPriceInclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
+                <col />
+            <?php endif; ?>
+                <col />
+            <?php if ($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
+                <col />
+            <?php endif; ?>
+            <?php if ($this->helper('tax')->displayCartPriceInclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
+                <col />
+            <?php endif; ?>
+                <!-- col width="1" / -->
+
+            <?php $mergedCells = ($this->helper('tax')->displayCartBothPrices() ? 2 : 1); ?>
+                <thead>
+                    <tr>
+                        <th rowspan="<?php echo $mergedCells; ?>" style="width:190px;padding-left:18px;padding-top:11px;padding-bottom:11px;border-bottom:0 !important;"><span class="nobr tr_gotham-medium" style="height:20px;font-size:13px;"><?php echo $this->__('Item') ?></span></th>
+                        <th rowspan="<?php echo $mergedCells; ?>" style="width:200px;padding-top:11px;padding-bottom:11px;border-bottom:0 !important;"><span class="nobr tr_gotham-medium" style="height:20px;font-size:13px;"><?php echo $this->__('Description') ?></span></th>
+                        <!--
+						<th rowspan="<?php echo $mergedCells; ?>"></th>
+                        <?php if ($this->helper('wishlist')->isAllowInCart()) : ?>
+                        <th rowspan="<?php echo $mergedCells; ?>" class="a-center"><span class="nobr"><?php echo $this->__('Move to Wishlist') ?></span></th>
+                        <?php endif ?>
+						-->
+                        <th rowspan="<?php echo $mergedCells; ?>" style="width:200px;padding-top:11px;padding-bottom:11px;border-bottom:0 !important;"><span class="tr_gotham-medium" style="width:150px;height:20px;font-size:13px;"><?php echo $this->__('Quantity') ?></span></th>
+						
+						<th colspan="<?php echo $mergedCells; ?>" style="width:200px;padding-top:11px;padding-bottom:11px;border-bottom:0 !important;"><span class="nobr tr_gotham-medium" style="height:20px;font-size:13px;"><?php echo $this->__('Unit Price') ?></span></th>
+						
+                        
+						<!--
+                        <th class="a-center" colspan="<?php echo $mergedCells; ?>"><?php echo $this->__('Subtotal') ?></th>
+						-->
+                        <!-- th rowspan="<?php echo $mergedCells; ?>" class="a-center">&nbsp;</th -->
+                    </tr>
+                    <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
+                    <tr>
+                        <th class="a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
+                        <th><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
+                        <th class="a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
+                        <th><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
+                    </tr>
+                    <?php endif; ?>
+                </thead>
+                <tfoot style="display:none;">
+                    <tr>
+                        <td colspan="50" class="a-right">
+                            <?php if($this->getContinueShoppingUrl()): ?>
+                                <button type="button" title="<?php echo $this->__('Continue Shopping') ?>" class="button btn-continue" onclick="setLocation('<?php echo $this->getContinueShoppingUrl() ?>')"><span><span><?php echo $this->__('Continue Shopping') ?></span></span></button>
+                            <?php endif; ?>
+                            <button type="submit" title="<?php echo $this->__('Update Shopping Cart') ?>" class="button btn-update"><span><span><?php echo $this->__('Update Shopping Cart') ?></span></span></button>
+                        </td>
+                    </tr>
+                </tfoot>
+                <tbody>
+                <?php foreach($this->getItems() as $_item): ?>
+                    <?php echo $this->getItemHtml($_item) ?>
+                <?php endforeach ?>
+                </tbody>
+            </table>
+            <script type="text/javascript">decorateTable('shopping-cart-table')</script>
+        </fieldset>
+    </form>
+    <div style="float:left;margin-left:260px;width:425px;font-size:11px">
+        <p class="tr_gotham-medium" style="padding-top:18px;">
+            Please note that your order total may change based on your location.
+	   </p>
+    	<p class="tr_gotham-medium" style="padding:0;">
+        Please check your order total on the summary page before submitting your order.
+        </p>
+    </div>
+	<div class="totals clearfix">
+		<?php echo $this->getChildHtml('totals'); ?>
+		<?php if(!$this->hasError()): ?><br/><br/>
+		<img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN);?>frontend/default/gmg_store/images/checkout.jpg" onclick="window.location='<?php echo Mage::getBaseUrl(); ?>checkout/onepage/';" class="right_right_button" style="margin-top:10px;margin-right:28px;" />
+		<br/><br/>
+		<img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN);?>frontend/default/gmg_store/images/continue.jpg" onclick="window.location='<?php echo Mage::getBaseUrl(); ?>';" class="right_right_button" style="margin-top:5px;margin-right:28px;" />
+		<?php endif; ?>
+	</div>
+
+<p style="height:200px">&nbsp;</p>
+<style type="text/css">
+<!--
+.tr_recently_viewed_header {
+	height:20px;border-bottom:1px solid #000;color:#000;
+}
+.tr_recently_viewed_header span {
+	background-color:#fff;border-bottom:5px solid #fff;font-size:18px;
+}
+-->
+</style>
+<?php echo $this->getLayout()->createBlock ( 'reports/product_viewed' )->setTemplate ( "reports/product_viewed.phtml" )->toHtml () ?>
+</div>
+<?php endif ?>

@@ -1,0 +1,64 @@
+<?php
+/* Get the categories that are active for the store */
+//$obj = new Mage_Catalog_Block_Navigation();
+//$store_cats=$obj->getStoreCategories();
+$first = 0;
+if($_GET['mode'] == "list"){
+	echo '<ul class="neue">';
+	if(!isset($_GET['parent'])){
+		$subcats = Mage::getModel('catalog/category')->load(2)->getChildrenCategories();
+		foreach ($subcats as $cat) {
+			echo '<li><a href="'.$cat->getId().'">'.$cat->getName().'</a></li>';
+		}
+	}else{
+		$subcats = Mage::getModel('catalog/category')->load($_GET['parent'])->getChildrenCategories();
+		$categories  = array();
+		foreach ($subcats as $cat) {
+			$categories[$cat->getPosition()]['id'] = $cat->getId();
+			$categories[$cat->getPosition()]['name'] = $cat->getName();
+			//echo '<option value="'.$cat->getId().'">'.$cat->getName().'</option>';
+		}
+		ksort($categories, SORT_NATURAL);
+		//ksort($categories, SORT_STRING);
+		foreach ($categories as $part) {
+			//$categories[$cat->getName()] = $cat->getId();
+			//echo '<option value="'.$url.'">'.$name.'</option>';
+            $cart_url = Mage::getModel("catalog/category")->load($part['id'])->getUrl();
+            if($part['name'] == "Accessories") $cart_url = Mage::getModel("catalog/category")->load(17938)->getUrl();//$this->getUrl('accessories.html');
+            echo '<li  style="text-align:left;"><a href="'.$cart_url .'">'.$part['name'].'</a></li>';
+		}
+		/*foreach ($subcats as $cat) {
+			$id = $cat->getId();
+			echo '<li><a href="'.Mage::getModel("catalog/category")->load($id)->getUrl().'">'.$cat->getName().'</a></li>';
+		}*/
+	}
+	echo '</ul>';
+}elseif($_GET['mode'] == "go"){
+	echo '<a href="'.Mage::getModel("catalog/category")->load($_GET['parent'])->getUrl().'"><img src="';
+	echo $this->getSkinUrl('images/go.png');
+	echo '" border="0" style="margin-top:3px;" /></a>';
+}else{
+	echo '<option value="">Select One</option>';
+	if(!isset($_GET['parent'])){
+		$subcats = Mage::getModel('catalog/category')->load(2)->getChildrenCategories();
+		foreach ($subcats as $cat) {
+			if(is_numeric($cat->getName())){
+				echo '<option value="'.$cat->getId().'">'.$cat->getName().'</option>';
+			}
+		}
+	}else{
+		$subcats = Mage::getModel('catalog/category')->load($_GET['parent'])->getChildrenCategories();
+		$categories  = array();
+		foreach ($subcats as $cat) {
+			$categories[$cat->getPosition()]['id'] = $cat->getId();
+			$categories[$cat->getPosition()]['name'] = $cat->getName();
+			//echo '<option value="'.$cat->getId().'">'.$cat->getName().'</option>';
+		}
+		ksort($categories, SORT_NATURAL);
+		foreach ($categories as $part) {
+			//$categories[$cat->getName()] = $cat->getId();
+			echo '<option value="'.$part['id'].'">'.$part['name'].'</option>';
+		}
+	}
+}
+?>
