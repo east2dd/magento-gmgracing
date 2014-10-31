@@ -28,19 +28,39 @@
  */
 ?>
 <?php
-$session = Mage::getSingleton ( 'checkout/session' );
-$qty = 0;
-foreach ( $session->getQuote ()->getAllItems () as $item ) {
-	$qty = $qty + $item->getQty ();
-}
-if (Mage::getSingleton ( 'customer/session' )->isLoggedIn ()) {
-	$name = urlencode ( Mage::getSingleton ( 'customer/session' )->getCustomer ()->getName () );
-	$loggedin = 'true';
-} else {
-	$name = '';
-	$loggedin = 'false';
-}
-$vars = urlencode ( base64_encode ( serialize ( array ('loggedin' => $loggedin, 'cartqty' => $qty, 'name' => $name ) ) ) );
 echo get_header('main');
 ?>
+<div id="product-filter">
+  <div class="container">
+    <div class="car-selector" ng-show="altSelectorShow!=true">
+      <label>SELETED CAR:</label>
+      <span class="car-description">YOU HAVE NO SELECTED</span>
+      <a href="#" ng-click="altSelectorShow=true" id="btn-change-selector"><span>Change</span> &gt;</a>
+    </div>
+
+    <form class="form-inline clearfix" role="form" ng-show="altSelectorShow==true">
+      <div class="form-group">
+        <label>CHOOSE YOUR CAR:</label>
+      </div>      
+      <div class="form-group">
+        <select class="selectpicker" ng-model="filter.year" ng-options="y.id as y.label for y in yearOptions" ng-disabled="yearOptions.length==0"></select>
+      </div>
+      <div class="form-group">
+        <select class="selectpicker" ng-model="filter.make" ng-options="m.id as m.label for m in makeOptions" ng-disabled="makeOptions.length==0"></select>
+      </div>
+      <div class="form-group">
+        <select class="selectpicker" ng-model="filter.model" ng-options="d.id as d.label for d in modelOptions" ng-disabled="modelOptions.length==0"></select>
+      </div>
+      <div class="form-group">
+        <div class="loading-animation">
+          <button type="submit" class="btn btn-white" ng-click="go()">GO</button>
+          <span class="spin">&nbsp;</span>
+        </div>
+      </div>
+      <div class="form-group pull-right">
+        <a href="#" ng-click="altSelectorShow=false"><img src="/public/store/images/close.png"></a>
+      </div>
+    </form>
+  </div>
+</div>
 <div class="container">

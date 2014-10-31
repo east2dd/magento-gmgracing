@@ -51,15 +51,15 @@
 </header>
 
 <script>
-  jQuery(function($){
-    $('#icon-search').on('click', function(){
-      $('#search-form-container').show().width(0);
-      $('#search-form-container').animate({
-        width: $('#search-form').width()
+  jQuery(function(){
+    jQuery('#icon-search').on('click', function(){
+      jQuery('#search-form-container').show().width(0);
+      jQuery('#search-form-container').animate({
+        width: jQuery('#search-form').width()
       }, 1000, function() {
         // Animation complete.
-        $('#icon-search').fadeOut(function(){
-          $('#search-form').fadeIn();
+        jQuery('#icon-search').fadeOut(function(){
+          jQuery('#search-form').fadeIn();
         });
       });
     });

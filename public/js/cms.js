@@ -1,7 +1,6 @@
 /*
  * refine vehicle script
  */
-
 function init_vehicle_search(){
   jQuery('.link-refine-vehicle').on("click", function(){
         jQuery('#form-refine-vehicle').toggle();
@@ -56,3 +55,5 @@ jQuery(function($){
   init_vehicle_search();
   init_partners();
 });
+
+//# sourceMappingURL=cms.js.map

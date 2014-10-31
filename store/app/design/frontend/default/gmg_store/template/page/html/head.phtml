@@ -35,20 +35,18 @@
 <link rel="shortcut icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
 
 <!--CMS-->
-<script src="/public/shared/js/jquery.js"></script>
-<script src="/public/shared/js/jquery.cookie.js"></script>
-<script src="/public/shared/js/underscore-min.js"></script>
-<script src="/public/shared/js/angular.min.js"></script>
-<script src="/public/shared/js/angular-cookies.min.js"></script>
+
 <link rel="stylesheet" type="text/css" media="all" href="/public/bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" media="all" href="/public/shared/style.css" />
 <link rel="stylesheet" type="text/css" media="all" href="/public/store/style.css" />
-<script src="/public/shared/js/jquery.cycle2.min.js"></script>
-<script src="/public/shared/js/gmg.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script src="/public/js/vendor.js"></script>
+
 <!--CMS-->
 
 <?php echo $this->getCssJsHtml() ?>
 <?php echo $this->getChildHtml() ?>
 <?php echo $this->helper('core/js')->getTranslatorScript() ?>
 <?php echo $this->getIncludes() ?>
+<script src="/public/js/app.js"></script>
+<script src="/public/js/shop.js"></script>

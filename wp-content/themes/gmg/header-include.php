@@ -5,12 +5,11 @@
 **/
 
 ?>
-<script src="/public/shared/js/jquery.js"></script>
-<script src="/public/shared/js/jquery.cycle2.min.js"></script>
-<script src="/public/bootstrap/js/bootstrap.min.js"></script>
-<script src="/public/shared/js/gmg.js"></script>
-<script src="<?php bloginfo('template_directory') ?>/js/gmg_custom.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script src="/public/js/vendor.js"></script>
+<script src="/public/js/app.js"></script>
+<script src="/public/js/cms.js"></script>
+
 <script type="text/javascript">
 
   var _gaq = _gaq || [];

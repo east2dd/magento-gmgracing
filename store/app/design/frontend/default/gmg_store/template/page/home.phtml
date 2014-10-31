@@ -1,0 +1,118 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Template for Mage_Page_Block_Html
+ */
+?>
+<div id="home">
+  <div class="narrow">
+    <div class="car-selector">
+      <div class="description">
+        to view products for your car, please enter your <strong>year</strong>, <strong>make</strong>, and <strong>model</strong> below
+      </div>
+    </div>
+
+    <form class="form-vertical" role="form">
+        <div class="form-group">
+          <select class="selectpicker" ng-model="filter.year" ng-options="y.id as y.label for y in yearOptions" ng-disabled="yearOptions.length==0">
+            <option style="display:none" value="">Year</option>
+          </select>
+          <select class="selectpicker" ng-model="filter.make" ng-options="m.id as m.label for m in makeOptions" ng-disabled="makeOptions.length==0">
+            <option style="display:none" value="">Make</option>
+          </select>
+          <select class="selectpicker" ng-model="filter.model" ng-options="d.id as d.label for d in modelOptions" ng-disabled="modelOptions.length==0">
+            <option style="display:none" value="">Model</option>
+          </select>
+        </div>
+        <div class="actions">
+          <button type="submit" class="btn btn-submit" ng-click="go()">SUBMIT</button>
+        </div>
+      
+    </form>
+
+    <div class="alternative">
+      &dash;&nbsp;&nbsp;Alternatively&nbsp;&nbsp;&dash;
+    </div>
+
+    <div class="description">
+      search for the product you’re looking for
+    </div>
+
+    <div id="product-search">
+      <form action="/store/catalogsearch/result/" id="search-form" method="get">
+        <ul class="clearfix">
+          <li class="pull-left">
+            <a href="#"><img src="/public/store/images/close-round.png"></a>
+          </li>
+          <li class="pull-left">
+              <input type="text" name="q" placeholder="Enter your search term"/>
+          </li>
+          <li class="pull-right action">
+            <a onclick="jQuery('#search-form').submit();"><span>SUBMIT</span> <img src="/public/store/images/arrow-round.png"></a>
+          </li>
+        </form>
+      </ul>
+    </div>
+  </div>
+  <div id="our-partners">
+      <div class="heading">OUR PARTNERS</div>
+        <p class="logos">
+            <a href=""><img src="/public/shared/images/partner-mobile1.png" /></a>
+            <a href=""><img src="/public/shared/images/partner-eibach.png" /></a>
+            <a href=""><img src="/public/shared/images/partner-stoptech.png" /></a>
+            <a href=""><img src="/public/shared/images/partner-pirelli.png" /></a>
+            <a href=""><img src="/public/shared/images/partner-brembo.png" /></a>
+            <a href=""><img src="/public/shared/images/partner-giac.png" /></a>
+            <a href=""><img src="/public/shared/images/partner-jrz.png" /></a>
+        </p>
+        <p class="logos">
+            <a href=""><img src="/public/shared/images/partner-posche.png" /></a>
+            <a href=""><img src="/public/shared/images/partner-audisport.png" /></a>
+            <a href=""><img src="/public/shared/images/partner-worldc.png" /></a>
+            <a href=""><img src="/public/shared/images/partner-alms.png" /></a>
+            <a href=""><img src="/public/shared/images/partner-usc.png" /></a>
+            <a href=""><img src="/public/shared/images/partner-super.png" /></a>
+        </p>
+        <div style="display:none;">
+            <img src="/public/shared/images/partner-mobile1-on.png" />
+            <img src="/public/shared/images/partner-eibach-on.png" />
+            <img src="/public/shared/images/partner-stoptech-on.png" />
+            <img src="/public/shared/images/partner-pirelli-on.png" />
+            <img src="/public/shared/images/partner-brembo-on.png" />
+            <img src="/public/shared/images/partner-giac-on.png" />
+            <img src="/public/shared/images/partner-jrz-on.png" />
+       
+            <img src="/public/shared/images/partner-posche-on.png" />
+            <img src="/public/shared/images/partner-audisport-on.png" />
+            <img src="/public/shared/images/partner-worldc-on.png" />
+            <img src="/public/shared/images/partner-alms-on.png" />
+            <img src="/public/shared/images/partner-usc-on.png" />
+            <img src="/public/shared/images/partner-super-on.png" />
+        </div>
+  </div>
+</div>

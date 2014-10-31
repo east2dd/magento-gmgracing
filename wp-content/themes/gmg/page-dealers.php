@@ -37,7 +37,6 @@ $areas = get_terms( 'area', array( 'parent' => 0 ) );
 }
 </style>
 
-<script src="<?php bloginfo("template_directory")?>/js/markerwithlabel.js"></script>
 <script>
   var locations = [];
 </script>
@@ -165,7 +164,7 @@ function initialize() {
        raiseOnDrag: true,
        title: locations[i]['shop'],
        map: map,
-       icon: {},
+       icon: '/',
        labelContent: "",
        labelAnchor: new google.maps.Point(20, 20),
        labelClass: "labels label-" + locations[i]['stockist'] + " dealer-" + locations[i]['post'], // the CSS class for the label

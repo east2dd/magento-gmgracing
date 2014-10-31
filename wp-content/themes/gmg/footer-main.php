@@ -98,8 +98,8 @@
 <!-- Start Google Map -->
 <div id="map"></div>
 <!-- End -->
+
 <!-- Start Google Map JavaScript -->
-<script type="text/javascript" src="<?php bloginfo('template_directory') ?>/js/gmaps.js"></script>
 <script type="text/javascript">
     var map;
     jQuery(document).ready(function(){
@@ -117,4 +117,4 @@
 
 </script>
 <!-- End -->
-<?php wp_footer(); ?>
+<?php //wp_footer(); ?>
