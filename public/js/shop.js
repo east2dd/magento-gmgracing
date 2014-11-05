@@ -51,6 +51,16 @@ app.controller('GmgStoreCtrl', function ($rootScope, $http, $timeout) {
   $rootScope.filterMake = {};
   $rootScope.filterModel = {};
 
+  if (jQuery.cookie('filter')){
+    $rootScope.filter = jQuery.cookie('filter');
+    $rootScope.selected_car = $rootScope.filter.year + ' ' + $rootScope.filter.make + ' ' + $rootScope.filter.model;
+  }
+
+  $rootScope.is_selected_category = function(category){
+    var filter = jQuery.cookie('filter');
+    return category.id == filter.category
+  }
+
   find_object = function(collection, id){
     return _.find(collection, function(obj){
       return obj.id == id;
@@ -101,6 +111,15 @@ app.controller('GmgStoreCtrl', function ($rootScope, $http, $timeout) {
     });
   }
 
+  save_filter = function(){
+    jQuery.cookie('filter', $rootScope.filter);
+  }
+
+  $rootScope.set_category = function(category){
+    $rootScope.filter.category = category.id;
+    save_filter();
+  }
+
   $rootScope.go = function(){
     var category = find_object($rootScope.modelOptions, $rootScope.filter.model);
 
@@ -110,7 +129,7 @@ app.controller('GmgStoreCtrl', function ($rootScope, $http, $timeout) {
     }
 
     if (category){
-      jQuery.cookie('filter', $rootScope.filter);
+      save_filter();
       window.location.href = category.url;
     }
   }

@@ -38,16 +38,22 @@
     </div>
 
     <form class="form-vertical" role="form">
-        <div class="form-group">
-          <select class="selectpicker" ng-model="filter.year" ng-options="y.id as y.label for y in yearOptions" ng-disabled="yearOptions.length==0">
-            <option style="display:none" value="">Year</option>
-          </select>
-          <select class="selectpicker" ng-model="filter.make" ng-options="m.id as m.label for m in makeOptions" ng-disabled="makeOptions.length==0">
-            <option style="display:none" value="">Make</option>
-          </select>
-          <select class="selectpicker" ng-model="filter.model" ng-options="d.id as d.label for d in modelOptions" ng-disabled="modelOptions.length==0">
-            <option style="display:none" value="">Model</option>
-          </select>
+        <div class="form-group clearfix">
+          <div class="col-sm-4">
+            <select class="selectpicker" ng-model="filter.year" ng-options="y.id as y.label for y in yearOptions" ng-disabled="yearOptions.length==0">
+              <option style="display:none" value="">Year</option>
+            </select>
+          </div>
+          <div class="col-sm-4">
+            <select class="selectpicker" ng-model="filter.make" ng-options="m.id as m.label for m in makeOptions" ng-disabled="makeOptions.length==0">
+              <option style="display:none" value="">Make</option>
+            </select>
+          </div>
+          <div class="col-sm-4">
+            <select class="selectpicker" ng-model="filter.model" ng-options="d.id as d.label for d in modelOptions" ng-disabled="modelOptions.length==0">
+              <option style="display:none" value="">Model</option>
+            </select>
+          </div>
         </div>
         <div class="actions">
           <button type="submit" class="btn btn-submit" ng-click="go()">SUBMIT</button>
@@ -67,13 +73,13 @@
       <form action="/store/catalogsearch/result/" id="search-form" method="get">
         <ul class="clearfix">
           <li class="pull-left">
-            <a href="#"><img src="/public/store/images/close-round.png"></a>
+            <a href="javascript: void(0); jQuery('#product-search-q').val('');"><img src="/public/store/images/close-round.png"></a>
           </li>
           <li class="pull-left">
-              <input type="text" name="q" placeholder="Enter your search term"/>
+              <input type="text" name="q" id="product-search-q" placeholder="Enter your search term"/>
           </li>
           <li class="pull-right action">
-            <a onclick="jQuery('#search-form').submit();"><span>SUBMIT</span> <img src="/public/store/images/arrow-round.png"></a>
+            <button><span>SUBMIT</span> <img src="/public/store/images/arrow-round.png"></button>
           </li>
         </form>
       </ul>
@@ -82,22 +88,38 @@
   <div id="our-partners">
       <div class="heading">OUR PARTNERS</div>
         <p class="logos">
-            <a href=""><img src="/public/shared/images/partner-mobile1.png" /></a>
-            <a href=""><img src="/public/shared/images/partner-eibach.png" /></a>
-            <a href=""><img src="/public/shared/images/partner-stoptech.png" /></a>
-            <a href=""><img src="/public/shared/images/partner-pirelli.png" /></a>
-            <a href=""><img src="/public/shared/images/partner-brembo.png" /></a>
-            <a href=""><img src="/public/shared/images/partner-giac.png" /></a>
-            <a href=""><img src="/public/shared/images/partner-jrz.png" /></a>
+            <a href=""><img src="/public/store/images/brand-1-aim.png" /></a>
+            <a href=""><img src="/public/store/images/brand-2-ap-racing.png" /></a>
+            <a href=""><img src="/public/store/images/brand-3-apr.png" /></a>
+            <a href=""><img src="/public/store/images/brand-4-billstein.png" /></a>
+            <a href=""><img src="/public/store/images/brand-5-bmc.png" /></a>
+            <a href=""><img src="/public/store/images/brand-6-cabonio.png" /></a>
+        </p>
+
+        <p class="logos">
+            <a href=""><img src="/public/store/images/brand-7-h-r.png" /></a>
+            <a href=""><img src="/public/store/images/brand-8-hoiser.png" /></a>
+            <a href=""><img src="/public/store/images/brand-9-ipe.png" /></a>
+            <a href=""><img src="/public/store/images/brand-10-kn.png" /></a>
+            <a href=""><img src="/public/store/images/brand-11-kw.png" /></a>
+            <a href=""><img src="/public/store/images/brand-12-motec.png" /></a>
+        </p>
+
+        <p class="logos">
+            <a href=""><img src="/public/store/images/brand-13-remus.png" /></a>
+            <a href=""><img src="/public/store/images/brand-14-recaro.png" /></a>
+            <a href=""><img src="/public/store/images/brand-15-bossen.png" /></a>
+            <a href=""><img src="/public/store/images/brand-16-ohlins.png" /></a>
+            <a href=""><img src="/public/store/images/brand-17-renn.png" /></a>
         </p>
         <p class="logos">
-            <a href=""><img src="/public/shared/images/partner-posche.png" /></a>
-            <a href=""><img src="/public/shared/images/partner-audisport.png" /></a>
-            <a href=""><img src="/public/shared/images/partner-worldc.png" /></a>
-            <a href=""><img src="/public/shared/images/partner-alms.png" /></a>
-            <a href=""><img src="/public/shared/images/partner-usc.png" /></a>
-            <a href=""><img src="/public/shared/images/partner-super.png" /></a>
+          <a href=""><img src="/public/store/images/brand-18-tarret.png" /></a>
+          <a href=""><img src="/public/store/images/brand-19-sachs.png" /></a>
+          <a href=""><img src="/public/store/images/brand-20-toyo.png" /></a>
+          <a href=""><img src="/public/store/images/brand-21-tilton.png" /></a>
         </p>
+
+
         <div style="display:none;">
             <img src="/public/shared/images/partner-mobile1-on.png" />
             <img src="/public/shared/images/partner-eibach-on.png" />

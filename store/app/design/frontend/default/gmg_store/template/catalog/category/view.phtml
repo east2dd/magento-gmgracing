@@ -38,47 +38,67 @@
 
   $_child_categories = $_category->getChildrenCategories();
 ?>
-<div class="row">
-	<div id="messages_product_view"><?php $messages = $this->getMessagesBlock()->getGroupedHtml(); echo $messages; ?></div>
+<div class="row" id="category">
+	<div class="col-sm-3">
+		<div class="selected-car">
+			<h5>SELECTED CAR:</h5>
 
-	<h1 class="page-title"><?php echo strtoupper($_category->getName()) ?></h1>
+			<div class="car-description">
+			{{filterYear.label}}<br/>
+			{{filterMake.label}}<br/>
+			{{filterModel.label}}
+			</div>
 
-	<?php if(count($_child_categories)>0): ?>
-		<?php 
-				foreach ($_child_categories as $_category): 
-								$_productCollection = $_category->getProductCollection();
-					if(count($_productCollection) > 0):
-				?>
-				<div class="category">
-					<h2 class="category-name stripe">
-						<div class="line"></div>
-						<span class="text"><?php echo strtoupper($_category->getName()) ?>&nbsp;</span>
-						&nbsp;
-					</h2>
-
-					<?php
-						$layout = Mage::getSingleton('core/layout');
-						$block = $layout->createBlock('catalog/product_list');
-						$block->setCategoryId($_category->getId());
-						$block->setTemplate('catalog/product/list.phtml'); 
-						echo $block->renderView();
-					?>
-					
-
-				</div>
-		<?php 
-					endif;
-				endforeach;
-		?>
-	<?php else: ?>
-		<div class="category">
-			<?php
-				$layout = Mage::getSingleton('core/layout');
-				$block = $layout->createBlock('catalog/product_list');
-				$block->setCategoryId($_category->getId());
-				$block->setTemplate('catalog/product/list.phtml'); 
-				echo $block->renderView();
-			?>
+			<div class="select-car text-right" ng-show="!altSelectorShow">
+				<a href="#" ng-click="altSelectorShow=true" id="btn-change-selector"><span>Change</span></a>
+			</div>
 		</div>
-	<?php endif;?>
+
+		<div class="categories">
+			<ul>
+				<li ng-repeat="category in categories" ng-show="category.product_count > 0" ng-class="{active: is_selected_category(category)}"><a href="{{category.url}}" ng-click="set_category(category)">{{category.label}}</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="col-sm-9">
+		<div id="messages_product_view"><?php $messages = $this->getMessagesBlock()->getGroupedHtml(); echo $messages; ?></div>
+		<?php if(count($_child_categories)>0): ?>
+			<h1 class="page-title"><?php echo strtoupper($_category->getName()) ?></h1>
+			<?php 
+					foreach ($_child_categories as $_category): 
+									$_productCollection = $_category->getProductCollection();
+						if(count($_productCollection) > 0):
+					?>
+					<div class="category">
+						<h2 class="category-name stripe">
+							<div class="line"></div>
+							<span class="text"><?php echo strtoupper($_category->getName()) ?>&nbsp;</span>
+							&nbsp;
+						</h2>
+
+						<?php
+							$layout = Mage::getSingleton('core/layout');
+							$block = $layout->createBlock('catalog/product_list');
+							$block->setCategoryId($_category->getId());
+							$block->setTemplate('catalog/product/list.phtml'); 
+							echo $block->renderView();
+						?>
+
+					</div>
+			<?php 
+						endif;
+					endforeach;
+			?>
+		<?php else: ?>
+			<div class="category">
+				<?php
+					$layout = Mage::getSingleton('core/layout');
+					$block = $layout->createBlock('catalog/product_list');
+					$block->setCategoryId($_category->getId());
+					$block->setTemplate('catalog/product/list.phtml'); 
+					echo $block->renderView();
+				?>
+			</div>
+		<?php endif;?>
+	</div>
 </div>

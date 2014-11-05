@@ -37,8 +37,9 @@ if($apiAlias == "category_children"){
         $results[] = array(
             'id'=>$_category->getId(), 
             'url' => $url, 
-            'label'=>$_category->getName(), 
-            'img_url'=> Mage::getBaseUrl('media').'catalog/category/'. $_category->getThumbnail()
+            'label'=>$_category->getName(),
+            'img_url'=> Mage::getBaseUrl('media').'catalog/category/'. $_category->getThumbnail(),
+            'product_count'=>$_category->getProductCount()
         );
     }
 

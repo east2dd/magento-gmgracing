@@ -24,7 +24,7 @@ function show_submenu(parent){
   //jQuery(submenu).css({left: -1 *  jQuery(parent).offset().left});
   //jQuery(submenu).width(jQuery(window).width());
 
-  jQuery(submenu).css({top: jQuery(parent).height() + 5});
+  jQuery(submenu).css({top: jQuery(parent).height()});
   jQuery('#menu-main-menu>li').removeClass('active');
   jQuery(parent).addClass('active');
   
@@ -36,7 +36,7 @@ function show_submenu(parent){
 
 function init_menu(){
   jQuery('#menu-main-menu .sub-menu').parent('li').addClass("parent");
-  
+  jQuery('#menu-main-menu .parent > a').append('<span class="caret"></span>')
   current_menu_id = jQuery('.current-menu-parent').attr('id');
   if(current_menu_id)
   { 
