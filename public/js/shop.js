@@ -1,4 +1,9 @@
-var app = angular.module('GmgStoreApp', ['ngCookies']);
+var app = angular.module('GmgStoreApp', ['ngCookies', 'localytics.directives']).config([
+    '$parseProvider', function($parseProvider) {
+      return $parseProvider.unwrapPromises(true);
+    }
+  ]);
+
 var api_path = "/store/api-v1";
 jQuery.cookie.json = true;
 jQuery.cookie.defaults.expires = 7

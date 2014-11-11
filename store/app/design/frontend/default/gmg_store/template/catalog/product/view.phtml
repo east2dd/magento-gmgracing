@@ -41,44 +41,38 @@
     $breadcrumb = Mage::helper('catalog')->getBreadcrumbPath(); 
   ?>
 </div>
-<div class="product-view row">
+<div class="product-view">
     <div class="product-essential">
     	<div class="row">
-        <div class="col-md-7 pull-left">
-            <div class="product-shop">
-                <div class="product-name" style="margin-top:35px">
-                    <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
-                </div>
-          <?php $_description = $this->getProduct()->getDescription(); ?>
-          <?php if ($_description): ?>
-            <div class="main-description">
-              <?php echo $this->helper('catalog/output')->productAttribute($this->getProduct(), $_description, 'description') ?>
+        <div class="col-md-6">
+            <div class="product-img-box">
+                  <?php echo $this->getChildHtml('media') ?>
             </div>
-          <?php endif; ?>
-          <div class="product-collateral" style="width:452px">
-            <?php echo $this->getChildHtml('info_tabs') ?>
-            <?php echo $this->getChildHtml('product_additional_data') ?>
+        </div>   
+
+	    	<div class="col-md-6">
+          <div class="product-shop">
+            <div class="product-name">
+                <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+            </div>
+            <?php $_description = $this->getProduct()->getDescription(); ?>
+            <?php if ($_description): ?>
+              <div class="main-description">
+                <?php echo $this->helper('catalog/output')->productAttribute($this->getProduct(), $_description, 'description') ?>
+              </div>
+            <?php endif; ?>
+
+            <?php /*echo $this->getChildHtml('other');?>
+            <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+            <?php endif;*/?>
           </div>
-          
 
-                <?php /*echo $this->getChildHtml('other');?>
-                <?php if ($_product->isSaleable() && $this->hasOptions()):?>
-                    <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
-                <?php endif;*/?>
-
-            </div>
-         </div>   
-
-	    	<div class="col-md-5 pull-right">
 			    <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
 			        <div class="no-display">
 			            <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
 			            <input type="hidden" name="related_product" id="related-products-field" value="" />
-			        </div>
-
-			        <div class="product-img-box">
-			            <?php echo $this->getChildHtml('media') ?>
-			        </div>        
+			        </div>   
 
 					<script type="text/javascript">
           //<![CDATA[
@@ -157,6 +151,11 @@
 					</div>
 					
 			    </form>
+
+          <div class="product-collateral">
+            <?php /*echo $this->getChildHtml('info_tabs') */ ?>
+            <?php echo $this->getChildHtml('product_additional_data') ?>
+          </div>
         </div>
 			</div>
 

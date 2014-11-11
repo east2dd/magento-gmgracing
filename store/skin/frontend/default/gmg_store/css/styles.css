@@ -346,7 +346,7 @@ p.required { font-size:11px; text-align:right; color:#EB340A; }
 /* Page Heading */
 .page-title { width:100%; overflow:hidden; margin:0 0 16px; }
 .page-title h1,
-.page-title h2 { font-size:23px; font-weight:normal; }
+.page-title h2 { font-size:2.0rem; font-weight:normal; }
 .page-title .separator { margin:0 3px; }
 .page-title .link-rss { float:right; margin:7px 0 0; }
 .title-buttons { text-align:right; }
@@ -977,7 +977,7 @@ ul.product-tabs { padding:0px;}
 }
 
 /* Product Shop */
-.product-view .product-shop { float:left; width:573px; color:#000; }
+.product-view .product-shop { color:#000; }
 .col1-layout .product-view .product-shop { float:left; width:576px; }
 .product-view .product-shop .product-name { margin:0 0 5px; }
 .product-view .product-shop .product-name h1 { font-size::31px;text-transform:uppercase; color:#ffffff; background-color:#006bb7; padding-left:13px; padding-top:10px; padding-bottom:10px;}
@@ -2032,7 +2032,7 @@ div.block.block-related{
 #home-slide{ margin-top: 30px; }
 #home-slide img{ width: 100%; }
 
-.page-title{border-bottom: 1px solid #2d2d2c;}
+.page-title{/*border-bottom: 1px solid #2d2d2c;*/}
 
 #car_catagories {
 	border-right: 1px solid #fff;

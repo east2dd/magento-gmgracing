@@ -65,9 +65,9 @@ if (!function_exists('isNew')) {
 
 		<?php echo (($i-1)%3==0 ? '<div class="row">' : ''); ?>
 		<div class="col-sm-4">
-			<div class="grid_product_container" onclick="setLocation('<?php echo $this->getUrl() . $_product->getUrlPath() ?>')">
+			<div onclick="setLocation('<?php echo $this->getUrl() . $_product->getUrlPath() ?>')">
 				<?php if (isNew($_product)): ?>
-					<div class=" grid_product_new">NEW</div>
+					<div class="grid_product_new">NEW</div>
 				<?php endif ?>
 				<div class="grid_product_inner text-center">
 					<img src="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize(287,183)?>" class="img-responsive">
@@ -76,21 +76,6 @@ if (!function_exists('isNew')) {
 					<p>
 						<span><?php echo $_product->getData('tag_line') ?></span><br />
 						<span><?php echo $_coreHelper->currency($_product->getFinalPrice(),true,false) ?></span>
-					</p>
-					<p>
-						<?php if($_product->isSaleable()): ?>
-							<a href="<?php echo $this->getAddToCartUrl($_product) ?>">
-								<img src="<?php echo $this->getSkinUrl('images/tr_add_to_cart_btn.png') ?>" />
-							</a>
-						<?php endif ?>
-					</p>
-					<p>
-						<a href="<?php echo $this->getUrl() . $_product->getUrlPath() ?>">MORE INFO</a>
-						<?php if ($this->helper('wishlist')->isAllow()) : ?> 
-						| 
-						<a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>">WISHLIST</a><?php endif ?> 
-						| 
-						<a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>">SHARE</a>
 					</p>
 				</div>
 				<div class="grid_product_name">

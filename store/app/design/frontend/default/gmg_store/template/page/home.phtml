@@ -40,17 +40,17 @@
     <form class="form-vertical" role="form">
         <div class="form-group clearfix">
           <div class="col-sm-4">
-            <select class="selectpicker" ng-model="filter.year" ng-options="y.id as y.label for y in yearOptions" ng-disabled="yearOptions.length==0">
+            <select chosen data-placeholder="Year" data-no_results_text="Year" disable-search="true" ng-model="filter.year" ng-options="y.id as y.label for y in yearOptions" ng-disabled="yearOptions.length==0">
               <option style="display:none" value="">Year</option>
             </select>
           </div>
           <div class="col-sm-4">
-            <select class="selectpicker" ng-model="filter.make" ng-options="m.id as m.label for m in makeOptions" ng-disabled="makeOptions.length==0">
+            <select chosen data-placeholder="Make" data-no_results_text="Make" disable-search="true" ng-model="filter.make" ng-options="m.id as m.label for m in makeOptions" ng-disabled="makeOptions.length==0">
               <option style="display:none" value="">Make</option>
             </select>
           </div>
           <div class="col-sm-4">
-            <select class="selectpicker" ng-model="filter.model" ng-options="d.id as d.label for d in modelOptions" ng-disabled="modelOptions.length==0">
+            <select chosen data-placeholder="Model" data-no_results_text="Model" disable-search="true" ng-model="filter.model" ng-options="d.id as d.label for d in modelOptions" ng-disabled="modelOptions.length==0">
               <option style="display:none" value="">Model</option>
             </select>
           </div>

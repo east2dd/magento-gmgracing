@@ -555,6 +555,34 @@ footer .social {
     height: 648px;
   }
 }
+/* line 401, /Volumes/projects/gmgracing/less/app/shared/style.less */
+.chosen-container .chosen-results {
+  padding: 0;
+  margin: 0;
+}
+/* line 406, /Volumes/projects/gmgracing/less/app/shared/style.less */
+.chosen-container .chosen-drop {
+  border: none;
+}
+/* line 410, /Volumes/projects/gmgracing/less/app/shared/style.less */
+.chosen-container li {
+  background: #e0e0e0;
+  color: #333332;
+}
+/* line 415, /Volumes/projects/gmgracing/less/app/shared/style.less */
+.chosen-container a,
+.chosen-container .chosen-single {
+  background: #e0e0e0;
+  background-image: none!important;
+  color: #333332;
+  border: 0!important;
+  font-size: 1.4rem;
+  font-family: 'gothambook';
+  line-height: 3.4rem;
+  height: 3.4rem;
+  box-shadow: none;
+  outline: none;
+}
 
 
 /*# sourceMappingURL=style.css.map*/

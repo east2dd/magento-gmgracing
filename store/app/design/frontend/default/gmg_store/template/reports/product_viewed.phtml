@@ -65,39 +65,22 @@ if (!function_exists('isNew')) {
 			if ($i>3) { break; } 
 			$_product = Mage::getModel('catalog/product')->load($product->getId()); 
 	?>
-	<div class="col-sm-4">
-		
-			<div class="grid_product_container" onclick="setLocation('<?php echo $_product->getProductUrl() ?>')">
+
+    <div class="col-sm-4">
+			<div onclick="setLocation('<?php echo $_product->getProductUrl() ?>')">
 				<?php if (isNew($_product)): ?>
-					<div class=" grid_product_new">NEW</div>
+					<div class="product-new">NEW</div>
 				<?php endif ?>
-				<div class="grid_product_inner text-center">
-					<img src="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize(287,183)?>" class="img-responsive">
-				</div>
-				<div class="grid_product_details">
-					<p>
-						<span><?php echo $_product->getData('tag_line') ?></span><br />
-						<span><?php echo $_coreHelper->currency($_product->getFinalPrice(),true,false) ?></span>
-					</p>
-					<p>
-						<?php if($_product->isSaleable()): ?>
-							<a href="<?php echo $this->getAddToCartUrl($_product) ?>">
-								<img src="<?php echo $this->getSkinUrl('images/tr_add_to_cart_btn.png') ?>" />
-							</a>
-						<?php endif ?>
-					</p>
-					<p>
-						<a href="<?php echo $_product->getProductUrl() ?>">MORE INFO</a>
-						<?php if ($this->helper('wishlist')->isAllow()) : ?> 
-						| 
-						<a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>">WISHLIST</a><?php endif ?> 
-						| 
-						<a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>">SHARE</a>
-					</p>
-				</div>
-				<div class="grid_product_name">
-					<?php echo strtoupper($_product->getName()) ?>
-				</div>
+        <div class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize(287,183)?>" class="img-responsive"></div>
+        <div class="product-brand">GMG RACING</div>
+        <div class="product-name">
+          <?php echo strtoupper($_product->getName()) ?>
+        </div>
+        <div class="product-price">
+          <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>">
+            <?php echo $_coreHelper->currency($_product->getFinalPrice(),true,false) ?>
+          </a>
+        </div>
 			</div>
 		</div>
 	<?php endforeach ?>
