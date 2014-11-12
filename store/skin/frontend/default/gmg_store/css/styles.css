@@ -944,17 +944,6 @@ f/********** Product Prices > */
 ul.product-tabs { padding:0px;}
 
 /* Product Images */
-.col3-layout .product-view .product-img-box { float:none; margin:0 auto; }
-.product-view .product-img-box .product-image { margin:0 0 10px; }
-.product-view .product-img-box .product-image-zoom { position:relative; width:300px; height:300px; overflow:hidden; z-index:9; }
-.product-view .product-img-box .product-image-zoom img { position:absolute; left:0; top:0; cursor:move; }
-.product-view .product-img-box .zoom-notice { margin:0 0 10px; text-align:center; }
-.product-view .product-img-box .zoom { position:relative; z-index:9; height:24px; margin:0 auto 13px; padding:0 28px; background:url(../images/slider_bg.gif) 50% 50% no-repeat; cursor:pointer; }
-.product-view .product-img-box .zoom.disabled { -moz-opacity:.3; -webkit-opacity:.3; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";/*IE8*/ opacity:.3; }
-.product-view .product-img-box .zoom #track { position:relative; height:18px; }
-.product-view .product-img-box .zoom #handle { position:absolute; left:0; top:3px; width:9px; height:18px; background:url(../images/magnifier_handle.gif) 0 0 no-repeat;  }
-.product-view .product-img-box .zoom .btn-zoom-out { position:absolute; left:10px; top:7px; }
-.product-view .product-img-box .zoom .btn-zoom-in { position:absolute; right:10px; top:7px; }
 .product-view .product-img-box .more-views ul { padding: 0; margin: 0; }
 
 
@@ -969,7 +958,6 @@ ul.product-tabs { padding:0px;}
 }
 
 /* Product Shop */
-.product-view .product-shop { color:#000; }
 .col1-layout .product-view .product-shop { float:left; width:576px; }
 .product-view .product-shop .product-name { margin:0 0 5px; }
 .product-view .product-shop .product-name h1 { text-transform: uppercase; font-size: 2.6rem; }

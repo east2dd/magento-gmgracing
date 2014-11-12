@@ -42,8 +42,10 @@
 <?php echo $this->getChildHtml('after_body_start') ?>
 <?php echo $this->getChildHtml('global_notices') ?>
 <?php echo $this->getChildHtml('header') ?>
+  <div class="container">
+    <div class="row"><?php echo $this->getChildHtml('breadcrumbs') ?></div>
+  </div>
   <div id="content" class="container">
-			<?php echo $this->getChildHtml('breadcrumbs') ?>
 			<?php echo $this->getChildHtml('global_messages') ?>
 			<?php echo $this->getChildHtml('content') ?>
 	</div>

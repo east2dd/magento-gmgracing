@@ -39,11 +39,6 @@
 </script>
 <div class="container">
   <div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
-  <div id="breadcrumb">
-    <?php 
-      $breadcrumb = Mage::helper('catalog')->getBreadcrumbPath(); 
-    ?>
-  </div>
 </div>
 
 <div class="product-view">
@@ -155,10 +150,12 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-7">
-          <h3>MORE INFO</h3>
-          <div class="short-description">
-            <?php $_description = $this->getProduct()->getDescription(); ?>
-            <?php echo $this->helper('catalog/output')->productAttribute($this->getProduct(), $_description, 'description') ?>
+          <div class="more-info">
+            <h3>MORE INFO</h3>
+            <div class="main-description">
+              <?php $_description = $this->getProduct()->getDescription(); ?>
+              <?php echo $this->helper('catalog/output')->productAttribute($this->getProduct(), $_description, 'description') ?>
+            </div>
           </div>
         </div>
         <div class="col-sm-5">
@@ -168,6 +165,7 @@
               $tech_spec = $_product->getTech_specs();
             ?>
             <?php if($performance_spec || $tech_spec):?>
+            <div class="features">
               <h3>FEATURES</h3>
               
               <div class="performance-specs">
@@ -177,6 +175,7 @@
               <div class="performance-specs">
                 <?php echo $_helper->productAttribute($_product, $_product->getTech_specs(), 'tech_specs') ?>
               </div>
+            </div>
             <?php endif; ?>
           </div>
         </div>

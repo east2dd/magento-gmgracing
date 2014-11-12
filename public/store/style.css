@@ -7,14 +7,18 @@ p {
   line-height: 2.2rem;
 }
 /* line 12, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+a {
+  cursor: pointer;
+}
+/* line 16, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #footer {
   margin-top: 5rem;
 }
-/* line 16, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 20, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 h1 {
   margin: 1rem 0;
 }
-/* line 20, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 24, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 h1,
 h2,
 h3,
@@ -24,39 +28,58 @@ h5 {
   text-transform: uppercase;
   font-weight: normal;
 }
-/* line 21, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 25, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 h2 {
   font-size: 2.2rem;
   font-family: 'gothamblack';
 }
-/* line 22, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 26, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 h3 {
   font-family: 'gothamblack';
   text-transform: none;
   font-size: 2rem;
 }
-/* line 24, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 28, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #content {
   min-height: 500px;
 }
-/* line 28, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 32, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .page-title {
   font-family: 'gothamblack';
   /*border-bottom: 1px solid #000;*/
   font-size: 2.8rem;
   margin: 0;
 }
-/* line 35, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 40, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+.breadcrumbs ul {
+  padding: 0;
+  margin-bottom: 7rem;
+}
+/* line 43, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+.breadcrumbs ul li {
+  font-size: 1.4rem;
+  font-family: 'gothambook';
+}
+/* line 46, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+.breadcrumbs ul li a {
+  color: #333332;
+}
+/* line 49, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+.breadcrumbs ul li span {
+  padding: 0 1rem;
+  background: url(images/right-arrow.png) no-repeat center center;
+}
+/* line 57, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .stripe {
   position: relative;
 }
-/* line 37, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 59, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .stripe .text {
   z-index: 9;
   background: #fff;
   position: absolute;
 }
-/* line 42, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 64, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .stripe .line {
   z-index: 1;
   position: absolute;
@@ -65,7 +88,7 @@ h3 {
   border-bottom: 1px solid #000;
   height: 1px;
 }
-/* line 52, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 74, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .btn-white {
   color: #666666;
   background-color: #cdcdcd;
@@ -111,26 +134,26 @@ fieldset[disabled] .btn-white.active {
   color: #cdcdcd;
   background-color: #666666;
 }
-/* line 57, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 79, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .category .category-name {
   font-family: 'gothamblack';
   font-size: 2.4rem;
   margin-bottom: 3rem;
 }
-/* line 65, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 87, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #home .narrow {
   max-width: 650px;
   margin: 0 auto;
 }
-/* line 71, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 93, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #home #our-partners .logos {
   margin-bottom: 4rem;
 }
-/* line 72, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 94, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #home #our-partners .logos a {
   padding: 1rem;
 }
-/* line 79, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 101, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #home .description {
   font-size: 2.4rem;
   font-family: 'gothambook';
@@ -140,25 +163,25 @@ fieldset[disabled] .btn-white.active {
   margin-bottom: 6rem;
   margin-top: 4rem;
 }
-/* line 87, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 109, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #home .description strong {
   font-family: 'gothamblack';
 }
-/* line 93, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 115, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #home .chosen-container .chosen-results {
   padding: 0;
   margin: 0;
 }
-/* line 98, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 120, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #home .chosen-container .chosen-drop {
   border: 0;
 }
-/* line 102, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 124, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #home .chosen-container li {
   background: #e0e0e0;
   color: #333332;
 }
-/* line 107, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 129, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #home .chosen-container .chosen-single {
   background: #e2e2e2;
   border: 0!important;
@@ -171,11 +194,11 @@ fieldset[disabled] .btn-white.active {
   height: 3.4rem;
   -webkit-appearance: none;
 }
-/* line 122, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 144, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #home form {
   text-align: center;
 }
-/* line 124, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 146, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #home form select {
   background: #e2e2e2;
   border: none;
@@ -187,11 +210,11 @@ fieldset[disabled] .btn-white.active {
   background: #e2e2e2 url(images/down-arrow-thin.png) no-repeat center right 1rem;
   width: 100%;
 }
-/* line 136, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 158, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #home form .actions {
   margin-top: 3rem;
 }
-/* line 140, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 162, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #home form .btn-submit {
   padding: 1rem 10rem;
   font-size: 1.8rem;
@@ -200,7 +223,7 @@ fieldset[disabled] .btn-white.active {
   border-radius: 1rem;
   outline: none;
 }
-/* line 150, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 172, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #home .alternative {
   font-size: 2.4rem;
   font-family: 'Georgia';
@@ -209,7 +232,7 @@ fieldset[disabled] .btn-white.active {
   text-align: center;
   margin: 7rem 0;
 }
-/* line 159, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 181, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #home #product-search {
   background: #e2e2e2;
   border-radius: 1rem;
@@ -217,17 +240,17 @@ fieldset[disabled] .btn-white.active {
   line-height: 6rem;
   margin-bottom: 8rem;
 }
-/* line 165, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 187, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #home #product-search a {
   padding: 1rem;
   text-decoration: none;
   cursor: pointer;
 }
-/* line 167, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 189, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #home #product-search a img {
   vertical-align: middle;
 }
-/* line 171, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 193, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #home #product-search input {
   background: none;
   border: none;
@@ -237,23 +260,23 @@ fieldset[disabled] .btn-white.active {
   font-family: 'Georgia';
   font-style: italic;
 }
-/* line 181, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 203, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #home #product-search ul {
   margin: 0;
   padding: 0;
 }
-/* line 183, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 205, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #home #product-search .action {
   font-size: 1.8rem;
   font-family: 'gothambook';
   background: url(../shared/images/nav-divider.png) no-repeat 0 0;
 }
-/* line 187, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 209, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #home #product-search .action span {
   padding-left: 1rem;
   color: #333;
 }
-/* line 193, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 215, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #home #product-search button {
   font-size: 1.8rem;
   background: none;
@@ -262,11 +285,11 @@ fieldset[disabled] .btn-white.active {
   padding: none;
   line-height: 3rem;
 }
-/* line 203, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 225, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #home #our-partners {
   margin-bottom: 8rem;
 }
-/* line 205, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 227, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #home #our-partners .heading {
   border-top: 1px solid #e2e2e2;
   border-bottom: 1px solid #e2e2e2;
@@ -277,36 +300,36 @@ fieldset[disabled] .btn-white.active {
   color: #333332;
   margin-bottom: 5rem;
 }
-/* line 216, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 238, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #home #our-partners .logos {
   text-align: center;
 }
-/* line 223, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 245, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .products .item {
   margin-bottom: 3rem;
   position: relative;
 }
-/* line 229, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 251, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .products .item .product-name a {
   font-family: 'gothamblack';
   line-height: 1.2em;
 }
-/* line 235, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 257, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .products .item .product-brand {
   color: #58585a;
   margin-bottom: 1.8rem;
 }
-/* line 240, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 262, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .products .item .product-price {
   font-family: 'gothambook' !important;
   color: #58585a;
 }
-/* line 248, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 270, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .product-essential .product-price {
   color: #5e5e5e;
   font-size: 1.8rem;
 }
-/* line 254, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 276, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #product-filter {
   background: #3044b5;
   color: #e0e0e0;
@@ -315,21 +338,21 @@ fieldset[disabled] .btn-white.active {
   text-align: center;
   font-family: "gothamlight";
 }
-/* line 263, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 285, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #product-filter label {
   margin-right: 1rem;
 }
-/* line 268, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 290, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #product-filter .chosen-container .chosen-results {
   padding: 0;
   margin: 0;
 }
-/* line 273, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 295, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #product-filter .chosen-container li {
   background: #e0e0e0;
   color: #333332;
 }
-/* line 277, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 299, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #product-filter .chosen-container a {
   background: #e0e0e0;
   color: #333332;
@@ -342,68 +365,68 @@ fieldset[disabled] .btn-white.active {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
-/* line 290, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 312, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #product-filter .car-selector .car-description {
   padding-right: 2rem;
 }
-/* line 295, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 317, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #product-filter #btn-change-selector {
   text-decoration: none;
 }
-/* line 297, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 319, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #product-filter #btn-change-selector span {
   text-decoration: underline;
   padding-right: 10px;
   background: url(images/right-arrow-white.png) center right no-repeat;
 }
-/* line 304, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 326, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #product-filter label {
   font-family: "gothamblack";
   font-size: 1.4rem;
   font-weight: normal;
   color: #fff;
 }
-/* line 311, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 333, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #product-filter .details {
   margin-top: 1.5rem;
   padding-top: 1.5rem;
   border-top: 1px solid #fff;
 }
-/* line 317, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 339, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #product-filter .selected-car-model {
   margin-bottom: 1.5rem;
 }
-/* line 321, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 343, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #product-filter select.select-year {
   max-width: 10rem;
   min-width: 10rem;
   marign-right: 3rem;
 }
-/* line 327, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 349, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #product-filter .border-left {
   border-left: 1px solid #fff;
   padding-left: 2rem;
   min-height: 15rem;
 }
-/* line 333, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 355, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #product-filter .border-right {
   border-right: 1px solid #fff;
   padding-right: 2rem;
   min-height: 15rem;
 }
-/* line 339, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 361, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #product-filter a {
   color: #e0e0e0;
 }
-/* line 341, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 363, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #product-filter a:hover {
   text-decoration: underline;
 }
-/* line 346, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 368, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #product-filter select:disabled {
   background: #ccc;
 }
-/* line 350, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 372, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #product-filter select {
   font-size: 1.4rem;
   color: #333332;
@@ -419,7 +442,7 @@ fieldset[disabled] .btn-white.active {
   padding-right: 0.5rem;
   background: #e0e0e0 url(images/down-arrow.png) no-repeat center right 5px;
 }
-/* line 366, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 388, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #product-filter .btn {
   border-radius: 0;
   -webkit-appearance: none;
@@ -429,32 +452,32 @@ fieldset[disabled] .btn-white.active {
   background: #e0e0e0;
   padding: 0.6rem 2rem;
 }
-/* line 376, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 398, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #product-filter h4,
 #product-filter h5 {
   font-family: "gothamblack";
 }
-/* line 381, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 403, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #product-filter .loading-animation .spin {
   padding: 1rem;
   background: url(images/loader.gif) center center no-repeat;
   display: none;
 }
-/* line 387, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 409, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #product-filter .loading-animation.loading .spin {
   display: block;
 }
-/* line 390, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 412, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #product-filter .loading-animation.loading .btn {
   display: none;
 }
-/* line 398, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 420, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #category .selected-car {
   background: #e0e0e0;
   padding: 2rem;
   margin-bottom: 2rem;
 }
-/* line 403, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 425, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #category .selected-car h5 {
   padding: 0;
   margin: 0;
@@ -464,36 +487,36 @@ fieldset[disabled] .btn-white.active {
   font-weight: normal;
   font-family: 'gothamblack';
 }
-/* line 412, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 434, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #category .selected-car .car-description {
   font-size: 1.6rem;
   font-family: 'gothamblack';
   text-transform: uppercase;
 }
-/* line 418, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 440, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #category .selected-car .select-car {
   margin-top: 1rem;
 }
-/* line 423, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 445, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #category #btn-change-selector {
   color: #333333;
 }
-/* line 425, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 447, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #category #btn-change-selector span {
   text-decoration: underline;
   padding-right: 10px;
   background: url(images/right-arrow.png) center right no-repeat;
 }
-/* line 432, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 454, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #category .categories {
   margin-bottom: 2rem;
 }
-/* line 434, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 456, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #category .categories ul {
   padding: 0;
   margin: 0;
 }
-/* line 438, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 460, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #category .categories ul li {
   font-size: 1.8rem;
   text-transform: uppercase;
@@ -501,24 +524,33 @@ fieldset[disabled] .btn-white.active {
   font-family: 'gothambook';
   padding: 0.6rem 1.8rem;
 }
-/* line 444, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 466, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 #category .categories ul li:hover,
 #category .categories ul li.active {
   background: #e0e0e0;
 }
-/* line 452, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 474, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .product-view h3 {
   margin-bottom: 2rem;
 }
-/* line 456, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 478, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+.product-view .product-image {
+  margin-bottom: 5rem;
+}
+/* line 482, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+.product-view .features,
+.product-view .more-info {
+  padding-bottom: 1.8rem;
+}
+/* line 486, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .product-view .product-right {
   margin-left: 2.5rem;
 }
-/* line 460, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 490, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .product-view .product-info {
   background: #f1f1f1;
 }
-/* line 464, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 494, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .product-view .cycle-prev {
   background: url(images/slider-prev.png) no-repeat center center;
   width: 30px;
@@ -527,8 +559,9 @@ fieldset[disabled] .btn-white.active {
   top: 50%;
   left: 0;
   z-index: 999999;
+  cursor: pointer;
 }
-/* line 473, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 504, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .product-view .cycle-next {
   background: url(images/slider-next.png) no-repeat center center;
   width: 30px;
@@ -537,12 +570,17 @@ fieldset[disabled] .btn-white.active {
   top: 50%;
   right: 0;
   z-index: 999999;
+  cursor: pointer;
 }
-/* line 483, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 515, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+.product-view .cycle-pager img {
+  cursor: pointer;
+}
+/* line 519, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .product-view .add-to-cart {
   text-align: center;
 }
-/* line 485, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 521, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .product-view .add-to-cart #qty {
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
@@ -556,7 +594,7 @@ fieldset[disabled] .btn-white.active {
   height: 5rem;
   width: 5rem;
 }
-/* line 497, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 533, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .product-view .add-to-cart .btn-add-to-cart {
   background: #58585a;
   color: #fff;
@@ -571,7 +609,7 @@ fieldset[disabled] .btn-white.active {
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
 }
-/* line 511, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 547, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .product-view .btn-gmg {
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
@@ -584,20 +622,16 @@ fieldset[disabled] .btn-white.active {
   background: #e0e0e0;
   border: 1px solid #e0e0e0;
 }
-/* line 522, /Volumes/projects/gmgracing/less/app/shop/magento.less */
-.product-view .more-views {
-  margin-bottom: 5rem;
-}
-/* line 526, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 558, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .product-view .product-info {
   margin-bottom: 5rem;
 }
-/* line 529, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 561, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .product-view .product-info ul {
   margin: 0;
   padding: 0;
 }
-/* line 532, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 564, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .product-view .product-info ul li {
   margin-bottom: 2rem;
   background: url(images/li-style.png) no-repeat left top 0.5rem;
