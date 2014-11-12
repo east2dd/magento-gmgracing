@@ -36,21 +36,33 @@
     $_fancybox = '';
 ?>
 
-<p class="product-image">
-    <?php
-        $_img = '<img class="img-responsive" src="'.$this->helper('catalog/image')->init($_product, 'image')->resize(512).'" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
-        echo $_helper->productAttribute($_product, $_img, 'image');
-    ?>
-</p>
 
 <?php if (count($this->getGalleryImages()) > 0): ?>
-<div class="more-views">
-  <ul class="row">
-  <?php foreach ($this->getGalleryImages() as $_image): ?>
-      <li class="col-sm-3">
-          <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(120); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" onclick="changemain('<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(395); ?>', '<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'small_image', $_image->getFile()) ?>', '<?php echo $this->htmlEscape($_image->getLabel()) ?>');" class="img-responsive" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>" />
-      </li>
-  <?php endforeach; ?>
-  </ul>
+<div class="product-image">
+
+    <div class="cycle-slideshow" 
+        data-cycle-fx=scrollHorz
+        data-cycle-timeout=0
+        data-cycle-pager="#no-template-pager"
+        data-cycle-pager-template=""
+        >
+
+        <div class="cycle-prev"></div>
+        <div class="cycle-next"></div>
+
+        <?php foreach ($this->getGalleryImages() as $_image): ?>
+              <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(512, 400); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" class="img-responsive" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>" />
+        <?php endforeach; ?>
+    </div>
+
+    <div class="row">
+      <div id=no-template-pager class="cycle-pager external">
+        <?php foreach ($this->getGalleryImages() as $_image): ?>
+            <div class="col-sm-3">
+              <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(120); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" class="img-responsive" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>" />
+            </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
 </div>
 <?php endif; ?>

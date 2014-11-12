@@ -6,8 +6,13 @@
 		</reference>
 	</default>
     <catalog_product_view>
-        <reference name="product.info">
+      <!--  <reference name="product.info">
 			<block type="videogallery/video" name="product.info.media" as="media"/>		
-    	</reference>
+    	</reference>-->
+
+      <reference name="product.info">
+        <block type="videogallery/video" name="product.info.video" as="video"/>   
+      </reference>
+
     </catalog_product_view>
 </layout>

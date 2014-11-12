@@ -519,10 +519,30 @@ fieldset[disabled] .btn-white.active {
   background: #f1f1f1;
 }
 /* line 464, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+.product-view .cycle-prev {
+  background: url(images/slider-prev.png) no-repeat center center;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 999999;
+}
+/* line 473, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+.product-view .cycle-next {
+  background: url(images/slider-next.png) no-repeat center center;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  z-index: 999999;
+}
+/* line 483, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .product-view .add-to-cart {
   text-align: center;
 }
-/* line 466, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 485, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .product-view .add-to-cart #qty {
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
@@ -536,7 +556,7 @@ fieldset[disabled] .btn-white.active {
   height: 5rem;
   width: 5rem;
 }
-/* line 478, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 497, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .product-view .add-to-cart .btn-add-to-cart {
   background: #58585a;
   color: #fff;
@@ -551,7 +571,7 @@ fieldset[disabled] .btn-white.active {
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
 }
-/* line 492, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 511, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .product-view .btn-gmg {
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
@@ -564,23 +584,23 @@ fieldset[disabled] .btn-white.active {
   background: #e0e0e0;
   border: 1px solid #e0e0e0;
 }
-/* line 503, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 522, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .product-view .more-views {
   margin-bottom: 5rem;
 }
-/* line 507, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 526, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .product-view .product-info {
   margin-bottom: 5rem;
 }
-/* line 510, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 529, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .product-view .product-info ul {
   margin: 0;
   padding: 0;
 }
-/* line 513, /Volumes/projects/gmgracing/less/app/shop/magento.less */
+/* line 532, /Volumes/projects/gmgracing/less/app/shop/magento.less */
 .product-view .product-info ul li {
   margin-bottom: 2rem;
-  background: url(images/li-style.png) no-repeat left top 0.7rem;
+  background: url(images/li-style.png) no-repeat left top 0.5rem;
   padding-left: 2rem;
   font-size: 1.6rem;
 }

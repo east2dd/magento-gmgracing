@@ -163,8 +163,13 @@
         </div>
         <div class="col-sm-5">
           <div class="product-right">
-            <h3>FEATURES</h3>
-            <?php if ($_product): ?>
+            <?php
+              $performance_spec = $_product->getPerf_specs();
+              $tech_spec = $_product->getTech_specs();
+            ?>
+            <?php if($performance_spec || $tech_spec):?>
+              <h3>FEATURES</h3>
+              
               <div class="performance-specs">
                 <?php echo $_helper->productAttribute($_product, $_product->getPerf_specs(), 'perf_specs') ?>
               </div>
@@ -173,11 +178,14 @@
                 <?php echo $_helper->productAttribute($_product, $_product->getTech_specs(), 'tech_specs') ?>
               </div>
             <?php endif; ?>
-
           </div>
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="container">
+    <?php echo $this->getChildHtml('video'); ?>
   </div>
 
   <div class="container">
