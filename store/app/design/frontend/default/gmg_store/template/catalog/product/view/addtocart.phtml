@@ -27,26 +27,37 @@
 <?php $_product = $this->getProduct(); ?>
 <?php $buttonTitle = $this->__('Add to Cart2'); ?>
 <?php if($_product->isSaleable()): ?>
-<hr />
-    <p style="float:right;width:188px;margin-bottom:10px">
-    <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN);?>frontend/default/gmg_store/images/add_to_cart.jpg" onclick="productAddToCartForm.submit(this)" class="pointer right" style="margin-top: 5px;margin-right:15px;" />
-    <?php $_wishlistSubmitUrl = $this->helper('wishlist')->getAddUrl($_product); ?>
-<?php if ($this->helper('wishlist')->isAllow()) : ?>
-    <a href="<?php echo $_wishlistSubmitUrl ?>" onclick="productAddToCartForm.submitLight(this, '<?php echo $_wishlistSubmitUrl ?>'); return false;" class="link-wishlist"><img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN);?>frontend/default/gmg_store/images/add_to_wish.jpg" class="pointer right" style="margin-top: 15px;margin-right:15px;" /></a>
-<?php endif; ?>
-    <?php if ($this->canEmailToFriend()): ?>
-    <a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"><img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN);?>frontend/default/gmg_store/images/recommend.jpg" class="pointer right" style="margin-top: 15px;margin-right:15px;" /></a>
-    <?php endif; ?>
-    </p>
-    <div class="add-to-cart tr_gotham-bold" style="background-color:transparent;border:0;padding-bottom:0;margin-left:15px;padding-left:0;width:150px;text-align:left">
-        <div style="float:left;clear:left">
+    <script language="javascript">
+        function decrease_qty(){
+            var qty = parseInt(jQuery('#qty').val());
+            if(qty>0)
+            {
+                jQuery('#qty').val(--qty);
+            }
+        }
+
+        function increase_qty(){
+            var qty = parseInt(jQuery('#qty').val());
+            jQuery('#qty').val(++qty);
+
+        } 
+    </script>
+
+
+    <div class="add-to-cart">
+
 		<?php if(!$_product->isGrouped()): ?>
-        <label for="qty"><?php echo $this->__('QUANTITY') ?></label>
-        <input type="text" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
+            <br/>
+
+            <a href="javascript: void(0); decrease_qty();" class="btn btn-default btn-gmg">-</a>
+            <input type="text" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
+            <a href="javascript: void(0); increase_qty();" class="btn btn-default btn-gmg">+</a>
+
         <?php endif; ?>
         <?php echo $this->getChildHtml('', true, true) ?>
-        </div>
-        <hr style="float:left;margin-top:20px;clear:left;width:150px;" />
-        <div style="float:left;margin-top:10px;clear:left"><?php echo number_format($_product->getFinalPrice(), 2, '.', '') ?></div>
+        <p>
+            <br/>
+            <a href="#" onclick="productAddToCartForm.submit(this)" class="btn btn-default btn-add-to-cart">Add to cart</a>
+        </p>
     </div>
 <?php endif; ?>

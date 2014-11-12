@@ -30,225 +30,27 @@
  * @see Mage_Catalog_Block_Product_View_Media
  */
 ?>
-<style type="text/css">
-<!--
-div.zoomdiv {
-z-index                 : 100;
-position                : absolute;
-top:0px;
-left:0px;
-width                   : 350px;
-height                  : 400px;
-background: transparent;
-border:0;
-display:none;
-text-align: right; 
-overflow: hidden;
-
-}
-
-
-img.jqzoom{
-cursor:crosshair;
-position:relative;
-}
-// -->
-</style>
-<script type="text/javascript">
-<!--
-function changemain(child, large, text)
-{
-	var t = document.getElementById('zoom_image');
-	t.src = child;
-	t.alt = large;
-	t.title = text;
-}
-
-//**************************************************************
-// jQZoom allows you to realize a small magnifier window,close
-// to the image or images on your web page easily.
-//
-// jqZoom version 1.2
-// Author Doc. Ing. Renzi Marco(www.mind-projects.it)
-// Released on Dec 05 2007
-// i'm searching for a job,pick me up!!!
-// mail: renzi.mrc@gmail.com
-//**************************************************************
-
-(function(jQuery){
-
-		jQuery.fn.jqueryzoom = function(options){
-
-		var settings = {
-				xzoom: 200,		//zoomed width default width
-				yzoom: 200,		//zoomed div default width
-				offset: 10,		//zoomed div default offset
-				position: "right"  //zoomed div default position,offset position is to the right of the image
-			};
-
-			if(options) {
-				jQuery.extend(settings, options);
-			}
-
-            var noalt ='';
-
-		jQuery(this).hover(function(){
-
-           
-		    var imageLeft = jQuery(this).get(0).offsetLeft;
-		    var imageRight = jQuery(this).get(0).offsetRight;
-		    var imageTop =  jQuery(this).get(0).offsetTop;
-		    var imageWidth = jQuery(this).get(0).offsetWidth;
-		    var imageHeight = jQuery(this).get(0).offsetHeight;
-
-		    var bigimage = jQuery(this).attr("alt");
-                noalt = jQuery(this).attr("alt");
-                jQuery(this).attr("alt",'');
-                
-
-		    if(jQuery("div.zoomdiv").get().length == 0){
-
-		    jQuery(this).after("<div class='zoomdiv'><img class='bigimg' src='"+bigimage+"'/></div>");
-
-		    }
-
-		    if(settings.position == "right"){
-
-		    leftpos = imageLeft + imageWidth + settings.offset;
-
-		    }else{
-
-		    leftpos = imageLeft - settings.xzoom - settings.offset;
-
-		    }
-
-		    jQuery("div.zoomdiv").css({ top: imageTop,left: leftpos });
-
-		    jQuery("div.zoomdiv").width(settings.xzoom);
-
-		    jQuery("div.zoomdiv").height(settings.yzoom);
-
-		    jQuery("div.zoomdiv").show();
-
-
-					jQuery(document.body).mousemove(function(e){
-
-				    var bigwidth = jQuery(".bigimg").get(0).offsetWidth;
-
-				    var bigheight = jQuery(".bigimg").get(0).offsetHeight;
-
-				    var scaley ='x';
-
-				    var scalex= 'y';
-
-
-				    if(isNaN(scalex)|isNaN(scaley)){
-
-				    var scalex = Math.round(bigwidth/imageWidth) ;
-
-				    var scaley = Math.round(bigheight/imageHeight);
-
-				    }
-
-					mouse = new MouseEvent(e);
-
-					imageLeft = 800;
-
-
-
-					scrolly = mouse.y - imageTop - (jQuery("div.zoomdiv").height()*1/scaley)/2 ;
-
-					jQuery("div.zoomdiv").get(0).scrollTop = scrolly * scaley  ;
-
-				    scrollx =    mouse.x - imageLeft - (jQuery("div.zoomdiv").width()*1/scalex)/2 ;
-
-					jQuery("div.zoomdiv").get(0).scrollLeft = (scrollx) * scalex ;
-
-
-				    });
-		    },function(){
-                   jQuery(this).attr("alt",noalt);
-		       jQuery("div.zoomdiv").hide();
-		       jQuery(document.body).unbind("mousemove");
-		       jQuery(".lenszoom").remove();
-		       jQuery("div.zoomdiv").remove();
-		    });
-
-		}
-
-})(jQuery);
-
-function MouseEvent(e) {
-this.x = e.pageX
-this.y = e.pageY
-}
-
-jQuery(document).ready(function(){
-jQuery("img.jqzoom").jqueryzoom({
-				xzoom: 543, //zooming div default width(default width value is 200)
-				yzoom: 395, //zooming div default width(default height value is 200)
-				offset: 10, //zooming div default offset(default offset value is 10)
-				position: "left" //zooming div position(default position value is "right")
-			});
-});
-// -->
-</script>
 <?php
     $_product = $this->getProduct();
     $_helper = $this->helper('catalog/output');
     $_fancybox = '';
 ?>
-<?php if ($_product->getImage() != 'no_selection' && $_product->getImage()): ?>
-<p class="product-image" style="text-align:center">
-     <?php
-        $_img = '<img src="'.$this->helper('catalog/image')->init($_product, 'image')->resize(395).'" alt="'.$_product->getMediaConfig()->getMediaUrl($_product->getData('image')).'" title="'.$this->htmlEscape($this->getImageLabel()).'" class="jqzoom img-responsive" id="zoom_image" />';
-        //echo $_helper->productAttribute($_product, $_img, 'image');
-		echo $_img;
-		echo '<div class="tr_gotham-medium" style="margin-left:5px;font-size:10px">HOVER OVER IMAGE TO ZOOM <a href="javascript:void(0);" class="full_size tr_gotham-medium" style="font-size:10px;border-bottom:1px solid #000;margin-left:20px;" id="tr_large_gallery">VIEW LARGER IMAGES</a></div>';
-    ?>
-</p>
-<?php else: ?>
+
 <p class="product-image">
     <?php
-        $_img = '<img class="img-responsive" src="'.$this->helper('catalog/image')->init($_product, 'image')->resize(300).'" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
+        $_img = '<img class="img-responsive" src="'.$this->helper('catalog/image')->init($_product, 'image')->resize(512).'" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
         echo $_helper->productAttribute($_product, $_img, 'image');
     ?>
 </p>
-<?php endif; ?>
+
 <?php if (count($this->getGalleryImages()) > 0): ?>
 <div class="more-views">
-	<hr/>
-    <div class="other-views tr_gotham-medium" style="margin-left:5px;font-size:10px"><?php echo strtoupper($this->__('Other Views')) ?></div>
-    <ul class="media-gallery-links">
-    <?php foreach ($this->getGalleryImages() as $_image): ?>
-        <li>
-            <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(66); ?>" width="66" height="66" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" onclick="changemain('<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(395); ?>', '<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'small_image', $_image->getFile()) ?>', '<?php echo $this->htmlEscape($_image->getLabel()) ?>');" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>" />
-        </li>
-<?php 
-$_fancybox .= <<<END
-		{
-			'href'	: '{$this->helper('catalog/image')->init($this->getProduct(), 'small_image', $_image->getFile())}',
-			'title'	: '{$this->htmlEscape($_image->getLabel())}'
-		},
-END;
-?>
-    <?php endforeach; ?>
-    </ul>
+  <ul class="row">
+  <?php foreach ($this->getGalleryImages() as $_image): ?>
+      <li class="col-sm-3">
+          <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(120); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" onclick="changemain('<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(395); ?>', '<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'small_image', $_image->getFile()) ?>', '<?php echo $this->htmlEscape($_image->getLabel()) ?>');" class="img-responsive" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>" />
+      </li>
+  <?php endforeach; ?>
+  </ul>
 </div>
-<?php endif; ?>
-<?php if (!empty($_fancybox)): ?>
-<script type="text/javascript">
-<!--
-jQuery("#tr_large_gallery").click(function() {
-	jQuery.fancybox([
-		<?php echo substr($_fancybox,0,-1) ?>
-	], {
-		'padding'			: 0,
-		'transitionIn'		: 'elastic',
-		'transitionOut'		: 'elastic',
-		'type'              : 'image'
-	});
-});
-// -->
-</script>
 <?php endif; ?>

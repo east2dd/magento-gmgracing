@@ -62,21 +62,21 @@ h5 {
 }
 /* line 56, /Volumes/projects/gmgracing/less/app/shared/style.less */
 h2 {
-  font-size: 22px;
-  font-family: 'gothamultra';
+  font-size: 2.2rem;
+  font-family: 'gothamblack';
 }
 /* line 57, /Volumes/projects/gmgracing/less/app/shared/style.less */
 h3 {
   font-family: 'gothammedium';
   text-transform: none;
-  font-size: 30px;
+  font-size: 3rem;
 }
-/* line 58, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 59, /Volumes/projects/gmgracing/less/app/shared/style.less */
 a {
   color: #3044b5;
   text-decoration: none;
 }
-/* line 59, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 60, /Volumes/projects/gmgracing/less/app/shared/style.less */
 a:hover {
   color: #428bca;
   text-decoration: none;
@@ -85,64 +85,64 @@ a:hover {
   -o-transition: color 100ms,200ms;
   transition: color 100ms,200ms;
 }
-/* line 68, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 69, /Volumes/projects/gmgracing/less/app/shared/style.less */
 input {
   outline: none;
   line-height: normal;
 }
-/* line 69, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 70, /Volumes/projects/gmgracing/less/app/shared/style.less */
 p {
   margin: 0px 0px 0.7em 0px;
   line-height: 24px;
 }
-/* line 71, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 72, /Volumes/projects/gmgracing/less/app/shared/style.less */
 strong {
   letter-spacing: 1px;
 }
-/* line 73, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 74, /Volumes/projects/gmgracing/less/app/shared/style.less */
 footer {
   font-family: 'gothambook', sans-serif;
   font-size: 17px;
   line-height: 1.2em;
 }
-/* line 78, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 79, /Volumes/projects/gmgracing/less/app/shared/style.less */
 footer h2 {
   margin-top: 25px;
 }
-/* line 79, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 80, /Volumes/projects/gmgracing/less/app/shared/style.less */
 footer p {
   margin-bottom: 10px;
 }
-/* line 80, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 81, /Volumes/projects/gmgracing/less/app/shared/style.less */
 footer a {
   color: #2d2d2c;
 }
-/* line 81, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 82, /Volumes/projects/gmgracing/less/app/shared/style.less */
 footer strong {
   font-family: 'gothambold', sans-serif;
   font-weight: 'normal';
 }
-/* line 85, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 86, /Volumes/projects/gmgracing/less/app/shared/style.less */
 footer .container {
   max-width: 1260px;
 }
-/* line 88, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 89, /Volumes/projects/gmgracing/less/app/shared/style.less */
 footer #newsletter h2 {
   background: url(images/icon-newsletter.png) no-repeat left center;
   padding-left: 50px;
   margin-bottom: 30px;
 }
-/* line 93, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 94, /Volumes/projects/gmgracing/less/app/shared/style.less */
 footer #contact-us h2 {
   background: url(images/icon-contactus.png) no-repeat left center;
   padding-left: 50px;
   margin-bottom: 30px;
 }
-/* line 98, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 99, /Volumes/projects/gmgracing/less/app/shared/style.less */
 footer #contact-us .address {
   margin-bottom: 20px;
 }
-/* line 101, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 102, /Volumes/projects/gmgracing/less/app/shared/style.less */
 footer .newsletter-box {
   width: 280px;
   height: 40px;
@@ -151,27 +151,27 @@ footer .newsletter-box {
   color: #2d2d2c;
   text-align: center;
 }
-/* line 110, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 111, /Volumes/projects/gmgracing/less/app/shared/style.less */
 footer #newsletter p {
   margin-bottom: 16px;
 }
-/* line 114, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 115, /Volumes/projects/gmgracing/less/app/shared/style.less */
 footer .blackline {
   margin: 30px 0px;
 }
-/* line 117, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 118, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .blackline {
   border-bottom: 1px solid #2d2d2d;
 }
-/* line 120, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 121, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .grayline {
   border-bottom: 1px solid #e2e2e2;
 }
-/* line 123, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 124, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .dottedline {
   border-bottom: 1px solid #e2e2e2;
 }
-/* line 126, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 127, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .navbar {
   border-radius: 0px;
   font-size: 13px;
@@ -180,15 +180,15 @@ footer .blackline {
   display: table;
   font-family: 'gothamblack';
 }
-/* line 131, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 132, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .navbar .navbar-header {
   min-height: 60px;
 }
-/* line 135, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 136, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .navbar li {
   position: initial;
 }
-/* line 138, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 139, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .navbar-default {
   background: #e0e0e0;
   border: none;
@@ -198,7 +198,7 @@ footer .blackline {
   z-index: 999999;
   width: 100%;
 }
-/* line 149, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 150, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .navbar form {
   display: none;
   margin-top: 20px;
@@ -206,7 +206,7 @@ footer .blackline {
   right: 140px;
   text-align: center;
 }
-/* line 156, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 157, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .navbar form input {
   background: #d0d0d0;
   border: none;
@@ -220,33 +220,33 @@ footer .blackline {
   padding: 0px;
   font-family: 'gothambold';
 }
-/* line 170, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 171, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .navbar form .form-group {
   max-width: 350px;
   width: 100%;
   margin: 0px auto;
   position: relative;
 }
-/* line 178, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 179, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .nav .caret {
   border-top-color: #000;
   border-bottom-color: #000;
 }
-/* line 184, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 185, /Volumes/projects/gmgracing/less/app/shared/style.less */
 #search-form-container {
   display: none;
   max-width: 300px;
 }
-/* line 189, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 190, /Volumes/projects/gmgracing/less/app/shared/style.less */
 #icon-search {
   text-align: right!important;
 }
-/* line 191, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 192, /Volumes/projects/gmgracing/less/app/shared/style.less */
 #search-form {
   padding: 0 15px;
   width: 100%;
 }
-/* line 196, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 197, /Volumes/projects/gmgracing/less/app/shared/style.less */
 #search-form .clear {
   background: url(images/icon-delete-1.png) center center no-repeat;
   width: 24px;
@@ -255,39 +255,39 @@ footer .blackline {
   right: 10px;
   top: 8px;
 }
-/* line 204, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 205, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .navbar-secondary {
   display: none;
 }
-/* line 205, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 206, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .navbar #logo {
   max-height: 40px;
 }
-/* line 207, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 208, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .navbar-default .navbar-nav {
   margin-top: 0px;
   margin-bottom: 0px;
 }
-/* line 208, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 209, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .navbar-default .navbar-nav > li {
   background: url(images/nav-divider.png) no-repeat 0px 0px;
   height: 70px;
   line-height: 70px;
   padding-left: 2px;
 }
-/* line 215, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 216, /Volumes/projects/gmgracing/less/app/shared/style.less */
 #menu-main-menu {
   background: url(images/nav-divider.png) no-repeat top right;
   padding-right: 2px;
 }
-/* line 220, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 221, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .navbar-default .navbar-nav > li.parent.active > a {
   padding-bottom: 8px;
   background-color: #fafafa;
   background-image: url(images/nav-bg-2.png);
   color: #3044b5;
 }
-/* line 226, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 227, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .navbar-default .navbar-nav > li > a {
   color: #2d2d2c;
   line-height: 70px;
@@ -298,26 +298,26 @@ footer .blackline {
   font-family: 'gothamblack', sans-serif;
   font-size: 14px;
 }
-/* line 237, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 238, /Volumes/projects/gmgracing/less/app/shared/style.less */
 header {
   width: 100%;
   z-index: 999;
   top: 0px;
 }
-/* line 238, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 239, /Volumes/projects/gmgracing/less/app/shared/style.less */
 header .navbar-default .navbar-right > li > a {
   width: 100%;
 }
-/* line 239, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 240, /Volumes/projects/gmgracing/less/app/shared/style.less */
 header a:hover {
   color: #3044b5;
 }
-/* line 241, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 242, /Volumes/projects/gmgracing/less/app/shared/style.less */
 #menu-main-menu > li.parent:hover > a {
   background-color: #fafafa;
   background-image: url(images/nav-bg-2.png);
 }
-/* line 247, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 248, /Volumes/projects/gmgracing/less/app/shared/style.less */
 #menu-main-menu > li:hover > a {
   color: #3044b5!important;
   background-color: #fafafa;
@@ -330,7 +330,7 @@ header a:hover {
   -o-transition: color 100ms,200ms;
   transition: color 100ms,200ms;
 }
-/* line 260, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 261, /Volumes/projects/gmgracing/less/app/shared/style.less */
 #menu-main-menu > li > a {
   letter-spacing: -1px;
   -webkit-transition: background-color 100ms, 200ms;
@@ -342,16 +342,16 @@ header a:hover {
   -o-transition: color 100ms,200ms;
   transition: color 100ms,200ms;
 }
-/* line 273, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 274, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .current-menu-item a {
   color: #3044b5!important;
 }
-/* line 276, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 277, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .current-menu-parent > a {
   background: #e2e2e2 url(images/nav-bg-2.png);
   color: #3044b5!important;
 }
-/* line 278, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 279, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .sub-menu {
   padding: 0px;
   display: none;
@@ -365,72 +365,72 @@ header a:hover {
   top: 75px;
   padding-top: 10px;
 }
-/* line 292, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 293, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .sub-menu li {
   display: inline-block;
 }
-/* line 293, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 294, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .sub-menu li {
   border-left: 1px solid #ababab;
   padding: 10px 15px;
   line-height: 1em;
   margin-top: 15px;
 }
-/* line 299, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 300, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .sub-menu li:last-child {
   border-right: 1px solid #ababab;
 }
-/* line 302, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 303, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .sub-menu li a {
   color: #2d2d2c;
   font-size: 14px;
   text-transform: uppercase;
   font-weight: bold;
 }
-/* line 309, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 310, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .sub-menu li a:hover {
   border-top: 1px solid #3044b5;
   border-bottom: 1px solid #3044b5;
   color: #3044b5;
   text-decoration: none;
 }
-/* line 316, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 317, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .pagination {
   text-align: center;
   display: block;
   margin-bottom: 30px;
 }
-/* line 317, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 318, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .pagination .current {
   background: none;
   color: black;
 }
-/* line 319, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 320, /Volumes/projects/gmgracing/less/app/shared/style.less */
 #bottom-foot {
   background: #e0e0e0;
   padding-bottom: 30px;
 }
-/* line 320, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 321, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .alignleft {
   float: left;
   margin-right: 15px;
   margin-top: 5px;
   margin-bottom: 5px;
 }
-/* line 321, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 322, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .alignright {
   float: right;
   margin-left: 15px;
 }
-/* line 323, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 324, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .readmore a {
   text-decoration: none!important;
 }
-/* line 324, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 325, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .readmore a:hover {
   background: #008fd5!important;
 }
-/* line 326, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 327, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .btn.btn-readmore {
   text-transform: uppercase;
   background: #006bb7;
@@ -438,11 +438,11 @@ header a:hover {
   font-family: 'gothamblack';
   border-radius: 0px;
 }
-/* line 327, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 328, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .btn.btn-readmore:hover {
   background: #428bca;
 }
-/* line 329, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 330, /Volumes/projects/gmgracing/less/app/shared/style.less */
 #sidebar h2 {
   text-transform: uppercase;
   background: #006bb7;
@@ -450,55 +450,55 @@ header a:hover {
   padding: 10px;
   font-size: 24px;
 }
-/* line 336, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 337, /Volumes/projects/gmgracing/less/app/shared/style.less */
 #sidebar ul > li > ul {
   margin-left: 10px;
 }
-/* line 340, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 341, /Volumes/projects/gmgracing/less/app/shared/style.less */
 h2.post-title {
   text-transform: uppercase;
 }
-/* line 341, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 342, /Volumes/projects/gmgracing/less/app/shared/style.less */
 h2.page-title {
   text-transform: uppercase;
   line-height: 40px;
   border-top: 1px solid #2d2d2c;
   border-bottom: 1px solid #2d2d2c;
 }
-/* line 343, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 344, /Volumes/projects/gmgracing/less/app/shared/style.less */
 h2 .page-title {
   border-top: 1px solid #2d2d2c;
   border-bottom: 1px solid #2d2d2c;
 }
-/* line 345, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 346, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .table-striped > tbody > tr:nth-child(odd) > td {
   background-color: #e0e0e0;
 }
-/* line 347, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 348, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .widget_recent_entries li {
   margin-bottom: 5px;
 }
-/* line 348, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 349, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .page-head {
   background-color: rgba(255, 255, 255, 0.95);
 }
 /*
 * small device menu
 */
-/* line 353, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 354, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .device-xs .navbar-collapse {
   background: #e2e2e2;
 }
-/* line 356, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 357, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .device-xs #menu-main-menu > li.parent > a {
   background-image: none;
 }
-/* line 357, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 358, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .device-xs #menu-main-menu > li {
   height: auto;
   position: relative;
 }
-/* line 358, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 359, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .device-xs #menu-main-menu .sub-menu {
   padding: 0px;
   z-index: 99999;
@@ -507,11 +507,11 @@ h2 .page-title {
   position: relative;
   top: 0px!important;
 }
-/* line 360, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 361, /Volumes/projects/gmgracing/less/app/shared/style.less */
 footer .social {
   line-height: 40px;
 }
-/* line 362, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 363, /Volumes/projects/gmgracing/less/app/shared/style.less */
 #map {
   width: 100%;
   height: 300px;
@@ -520,56 +520,56 @@ footer .social {
   left: -9999px;
   top: 0;
 }
-/* line 370, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 371, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .map-show {
   position: relative !important;
   left: 0px !important;
 }
 @media only screen and (max-width: 320px) {
-  /* line 375, /Volumes/projects/gmgracing/less/app/shared/style.less */
+  /* line 376, /Volumes/projects/gmgracing/less/app/shared/style.less */
   #map {
     height: 274px;
   }
 }
 @media only screen and (min-width: 321px) and (max-device-width: 480px) {
-  /* line 380, /Volumes/projects/gmgracing/less/app/shared/style.less */
+  /* line 381, /Volumes/projects/gmgracing/less/app/shared/style.less */
   #map {
     height: 120px;
   }
 }
 @media (min-width: 768px) {
-  /* line 385, /Volumes/projects/gmgracing/less/app/shared/style.less */
+  /* line 386, /Volumes/projects/gmgracing/less/app/shared/style.less */
   #map {
     height: 462px;
   }
 }
 @media (min-width: 992px) {
-  /* line 390, /Volumes/projects/gmgracing/less/app/shared/style.less */
+  /* line 391, /Volumes/projects/gmgracing/less/app/shared/style.less */
   #map {
     height: 572px;
   }
 }
 @media (min-width: 1380px) {
-  /* line 395, /Volumes/projects/gmgracing/less/app/shared/style.less */
+  /* line 396, /Volumes/projects/gmgracing/less/app/shared/style.less */
   #map {
     height: 648px;
   }
 }
-/* line 401, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 402, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .chosen-container .chosen-results {
   padding: 0;
   margin: 0;
 }
-/* line 406, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 407, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .chosen-container .chosen-drop {
   border: none;
 }
-/* line 410, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 411, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .chosen-container li {
   background: #e0e0e0;
   color: #333332;
 }
-/* line 415, /Volumes/projects/gmgracing/less/app/shared/style.less */
+/* line 416, /Volumes/projects/gmgracing/less/app/shared/style.less */
 .chosen-container a,
 .chosen-container .chosen-single {
   background: #e0e0e0;
