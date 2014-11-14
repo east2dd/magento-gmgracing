@@ -45,14 +45,20 @@
         data-cycle-timeout=0
         data-cycle-pager="#no-template-pager"
         data-cycle-pager-template=""
+        data-cycle-slides=">.fancybox"
         >
 
         <div class="cycle-prev"></div>
         <div class="cycle-next"></div>
 
         <?php foreach ($this->getGalleryImages() as $_image): ?>
-              <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(512, 400); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" class="img-responsive" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>" />
+            <a class="fancybox" rel="gallery1" href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile()); ?>">
+              <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(512, 400); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>" class="img-responsive" />
+            </a>
         <?php endforeach; ?>
+    </div>
+    <div class="clearfix">
+        <div class="cycle-magnify pull-right"></div>
     </div>
 
     <div class="row">
@@ -65,4 +71,22 @@
       </div>
     </div>
 </div>
+<script>
+jQuery(document).ready(function($) {
+    $(".cycle-magnify").on('click', function(){
+        var url = $(".cycle-slide-active").attr("href");
+        $.fancybox.open([
+        {
+            href : url
+        }
+        ], {
+            padding : 0
+        });
+    });
+
+    $(".cycle-slide").on('click', function(e){
+        e.preventDefault();
+    });
+});
+</script>
 <?php endif; ?>
