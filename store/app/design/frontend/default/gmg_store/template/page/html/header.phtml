@@ -60,14 +60,17 @@ echo get_header('main');
         </select>
       </div>
       <div class="form-group">
-        <div class="loading-animation">
+        <div class="loading-animation pull-left">
           <button type="submit" class="btn btn-white" ng-click="go()">SUBMIT</button>
           <span class="spin">&nbsp;</span>
         </div>
+
+        <div class="pull-left">
+          &nbsp;
+          <a href="#" ng-click="altSelectorShow=false"><img src="/public/store/images/close.png"></a>
+        </div>
       </div>
-      <div class="form-group pull-right">
-        <a href="#" ng-click="altSelectorShow=false"><img src="/public/store/images/close.png"></a>
-      </div>
+      
     </form>
   </div>
 </div>
