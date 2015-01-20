@@ -186,15 +186,11 @@
   </div>
 
   <div class="container">
+  	<?php echo $this->getChildHtml('product_related'); ?>
+  </div>
 
-    <div class="row">
-    	<?php echo $this->getChildHtml('product_related'); ?>
-      <br/>
-    </div>
-
-    <div class="row">
-    	<?php echo $this->getLayout()->createBlock('reports/product_viewed')->setTemplate("reports/product_viewed.phtml")->toHtml(); ?>
-    </div>
+  <div class="container">
+    <?php echo $this->getLayout()->createBlock('reports/product_viewed')->setTemplate("reports/product_viewed.phtml")->toHtml(); ?>
   </div>
 
 </div>
