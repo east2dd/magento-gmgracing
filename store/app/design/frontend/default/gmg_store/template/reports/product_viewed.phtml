@@ -68,20 +68,20 @@ if (!function_exists('isNew')) {
 	?>
 
     <div class="col-sm-4">
-			<div onclick="setLocation('<?php echo $_product->getProductUrl() ?>')">
+			<div class="product" onclick="setLocation('<?php echo $_product->getProductUrl() ?>')">
 				<?php if (isNew($_product)): ?>
 					<div class="product-new">NEW</div>
 				<?php endif ?>
-        <div class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize(287,183)?>" class="img-responsive"></div>
-        <div class="product-brand">GMG RACING</div>
-        <div class="product-name">
-          <?php echo strtoupper($_product->getName()) ?>
-        </div>
-        <div class="product-price">
-          <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>">
-            <?php echo $_coreHelper->currency($_product->getFinalPrice(),true,false) ?>
-          </a>
-        </div>
+                <div class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize(287,183)?>" class="img-responsive"></div>
+                <div class="product-brand">GMG RACING</div>
+                <div class="product-name">
+                  <?php echo strtoupper($_product->getName()) ?>
+                </div>
+                <div class="product-price">
+                  <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>">
+                    <?php echo $_coreHelper->currency($_product->getFinalPrice(),true,false) ?>
+                  </a>
+                </div>
 			</div>
 		</div>
 	<?php endforeach ?>
