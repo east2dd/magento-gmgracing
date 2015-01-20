@@ -24,26 +24,42 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<?php if($this->getItems()->getSize()): ?>
+<?php if($this->getItems()->count()): ?>
 <div class="page-title">
     <h1>RECOMMENDED PRODUCTS</h1>
 </div>
 <div class="block block-related">
     <div class="block-content">
-        <ol class="mini-products-list" id="block-related">
-        <?php foreach($this->getItems() as $_item): ?>
-            <li class="item">
-                <div class="product">
-					<div id="related-hover"><?php echo $this->getPriceHtml($_item, true, '-related') ?></div>
-                    <a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_item->getName()) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(267,200) ?>" width="267" height="200" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" /></a>
-					
-                    <div class="product-details">
-                        <p class="product-name"><a href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->htmlEscape($_item->getName()) ?></a></p>
+        <div class="mini-products-list products" id="block-related">
+            <div class="row">
+                <?php 
+                    $i = 0;
+                    $_product_count = $this->getItems()->count();
+                    foreach($this->getItems() as $_item): 
+                        $i++;
+                        $_item = Mage::getModel('catalog/product')->load($_item->getId());
+                ?>
+                    <div class="item col-sm-4">
+                        <div class="product">
+                            <div class="product-image">
+                                <a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_item->getName()) ?>">
+                                    <img class="img-responsive" src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(434,400) ?>" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" />
+                                </a>
+                            </div>
+        					
+
+                            <div class="product-brand">GMG RACING</div>
+                            <div class="product-name"><a href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->htmlEscape($_item->getName()) ?></a></div>
+                            <div class="product-price"><?php echo $this->getPriceHtml($_item, true, '-related') ?></div>
+                        
+                        </div>
                     </div>
-                </div>
-            </li>
-        <?php endforeach ?>
-        </ol>
+                    <?
+                        echo ($i%3==0 && $i!=$_product_count ? '</div><div class="row">' : '');
+                    ?>
+                <?php endforeach ?>
+            </div>
+        </div>
         <script type="text/javascript">decorateList('block-related', 'none-recursive')</script>
     </div>
 </div>

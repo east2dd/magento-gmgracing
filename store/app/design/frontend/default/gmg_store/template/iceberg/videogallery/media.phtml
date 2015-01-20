@@ -19,11 +19,28 @@
 		$_video = $_collection[0];
 		$_model = Mage::helper('videogallery/video')->getVideoByValue( $_video['value'] , $_video['provider']);
 
-		echo $_model->getEmbedCode($_helper->getDefaultVideoWidth(), $_helper->getDefaultVideoHeight());
+		echo $_model->getEmbedCode('1024', '612');
 	?>
 	
 	<?php endif; ?>
 
 	<script>
+		function fix_video_object(){
+			var object = jQuery('#vg-style-01 .video-object');
+			object.width('100%');
+
+			var height = object.width() * 612 / 1024;
+			object.height(height);
+		}
+
+		jQuery( window ).resize(function() {
+		  fix_video_object();
+		});
+		
+		fix_video_object();
+		
+		
+
+		jQuery('#ytplayer').attr('width', '100%').attr('height', '100%');
 	</script>
 </div>
