@@ -49,13 +49,13 @@
         					
 
                             <div class="product-brand">GMG RACING</div>
-                            <div class="product-name"><a href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->htmlEscape($_item->getName()) ?></a></div>
-                            <div class="product-price"><?php echo $this->getPriceHtml($_item, true, '-related') ?></div>
+                            <div class="product-name"><a href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->htmlEscape($_item->getName()); ?></a></div>
+                            <div class="product-price"><?php echo $this->getPriceHtml($_item, true, '-related'); ?></div>
                         
                         </div>
                     </div>
                     <?
-                        echo ($i%3==0 && $i!=$_product_count ? '</div><div class="row">' : '');
+                        echo ($i%3==0 && $i!=$_product_count) ? '</div><div class="row">' : '';
                     ?>
                 <?php endforeach ?>
             </div>
