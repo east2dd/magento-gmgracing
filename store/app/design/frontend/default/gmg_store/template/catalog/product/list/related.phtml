@@ -24,7 +24,7 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<?php if($this->getItems()->count()): ?>
+<?php if($this->getItems()->getSize()): ?>
 <div class="page-title">
     <h1>RECOMMENDED PRODUCTS</h1>
 </div>
@@ -34,7 +34,7 @@
             <div class="row">
                 <?php 
                     $i = 0;
-                    $_product_count = $this->getItems()->count();
+                    $_product_count = $this->getItems()->getSize();
                     foreach($this->getItems() as $_item): 
                         $i++;
                         $_item = Mage::getModel('catalog/product')->load($_item->getId());
