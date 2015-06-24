@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2015 Amasty (https://www.amasty.com)
+ * @package Amasty_Finder
+ */
+-->
+<config>
+    <modules>
+        <Amasty_Finder>
+            <version>2.1.5</version>
+        </Amasty_Finder>
+    </modules>
+    <global>
+        <models>
+            <amfinder>
+                <class>Amasty_Finder_Model</class>
+                <resourceModel>amfinder_mysql4</resourceModel>
+            </amfinder>
+            <amfinder_mysql4>
+                <class>Amasty_Finder_Model_Mysql4</class>
+                <entities>
+                    <finder>
+                        <table>am_finder_finder</table>
+                    </finder>
+                    <dropdown>
+                        <table>am_finder_dropdown</table>
+                    </dropdown>
+                    <value>
+                        <table>am_finder_value</table>
+                    </value>
+                    <universal>
+                        <table>am_finder_universal</table>
+                    </universal>                                        
+                    <map>
+                        <table>am_finder_map</table>
+                    </map>
+                </entities>
+            </amfinder_mysql4>
+        </models>
+
+        <resources>
+            <amfinder_setup>
+                <setup>
+                    <module>Amasty_Finder</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </amfinder_setup>
+
+            <amfinder_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </amfinder_write>
+
+            <amfinder_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </amfinder_read>
+        </resources>
+
+        <blocks>
+            <amfinder>
+                <class>Amasty_Finder_Block</class>
+            </amfinder>
+            
+        </blocks>
+
+        <helpers>
+            <amfinder>
+                <class>Amasty_Finder_Helper</class>
+            </amfinder>
+        </helpers>
+    </global>
+
+     <frontend>
+        <routers>
+            <amfinder>
+                <use>standard</use>
+                <args>
+                    <module>Amasty_Finder</module>
+                    <frontName>amfinder</frontName>
+                </args>
+            </amfinder>
+        </routers> 
+        <translate>
+            <modules>
+                <Amasty_Finder>
+                    <files>
+                        <default>Amasty_Finder.csv</default>
+                    </files>
+                </Amasty_Finder>
+            </modules>
+        </translate>
+        <layout>
+              <updates>
+                  <amfinder module="Amasty_Finder">
+                      <file>amfinder.xml</file>
+                  </amfinder>
+              </updates>
+        </layout>
+    </frontend>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <amasty_finder before="Mage_Adminhtml">Amasty_Finder_Adminhtml</amasty_finder>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>    
+
+
+   <adminhtml>
+        <menu>
+		    <catalog>
+                <children>
+                    <amfinder translate="title" module="amfinder">
+                        <title>Product Finders</title>
+                        <sort_order>910</sort_order>
+                        <action>adminhtml/finder/index</action>
+                    </amfinder>
+                </children>
+            </catalog>
+		</menu>
+
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+                <admin>
+                    <children>
+                        <catalog>
+                            <children>
+                                <amfinder>
+                                    <title>Product Finders</title>
+                                </amfinder>
+                            </children>
+                        </catalog>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <amfinder>
+                                            <title>Product Finders</title>
+                                        </amfinder>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                     </children>
+                </admin>
+			</resources>
+		</acl>
+        <translate>
+            <modules>
+                <Amasty_Finder>
+                    <files>
+                        <default>Amasty_Finder.csv</default>
+                    </files>
+                </Amasty_Finder>
+            </modules>
+        </translate>
+    </adminhtml>
+
+    <default>
+        <amfinder>
+           <general>
+                <category_search>0</category_search>
+                <partial_search>0</partial_search>
+                <universal>1</universal>
+                <seo_urls>0</seo_urls> 
+                <auto_submit>0</auto_submit>               
+                <separator>-</separator>                
+                <suffix></suffix> 
+                <reset_home>0</reset_home>
+                <clear_other_conditions>0</clear_other_conditions>
+            </general>
+        </amfinder>
+    </default>  
+
+</config>

@@ -1,0 +1,41 @@
+@CHARSET "UTF-8";
+.amfinder-vertical,
+.amfinder-horizontal
+{
+	border: 1px solid #C4C1BC;
+	background: #F8F7F5;
+	padding: 8px;
+}
+
+.amfinder-vertical .dropdown-title,
+.amfinder-horizontal .dropdown-title
+{
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.amfinder-vertical .dropdown-element
+{
+	padding-bottom: 4px;
+}
+
+/* Responsive finder styles */
+
+.amfinder-responsive { display: block; }
+.amfinder-responsive .amfinder-title { display: none; }
+.amfinder-responsive .amfinder-title span { position: relative; }
+.amfinder-responsive .amfinder-toggle { padding: 10px; display: block; }
+.amfinder-responsive .amfinder-buttons { display: block; width: 100%; }
+.amfinder-responsive li { display: inline-block; min-width: 160px; margin-bottom: 20px; }
+.amfinder-responsive li.last { display: block; width: 100%; }
+.amfinder-responsive li div select { width: 100%; }
+
+@media only screen and (max-width: 770px) {
+    .amfinder-responsive li { display: block; width: 100%; margin-bottom: 20px; }
+    .amfinder-responsive .amfinder-toggle { border: 1px solid #cccccc; display: none; border-top: none; }
+    .amfinder-responsive .amfinder-title { display: block; color: #636363; font-family: "Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size: 14px; font-style: normal; line-height: 1.4; text-transform: uppercase; background-color: #f4f4f4; border: 1px solid #cccccc; padding-bottom: 7px; padding-left: 24px; padding-right: 10px; padding-top: 10px; }
+    .amfinder-responsive .amfinder-title:hover { cursor: pointer; }
+    .amfinder-responsive .amfinder-title span:before { content: ''; position: absolute; width: 0; height: 0; display: block; border-top: 4px solid transparent; border-bottom: 4px solid transparent; border-left: 4px solid #3399cc; border-right: none; left: -15px; top: 50%; margin-top: -5px; }
+    .amfinder-responsive.open .amfinder-title span:before { border-top: 4px solid #3399cc; border-bottom: none; border-left: 4px solid transparent; border-right: 4px solid transparent; }
+    .amfinder-responsive.open .amfinder-toggle { display: block; }
+}
