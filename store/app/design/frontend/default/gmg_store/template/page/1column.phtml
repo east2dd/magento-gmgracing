@@ -32,19 +32,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html dir="ltr" lang="en-US"
- ng-app = 'GmgStoreApp'
  xmlns:og='http://opengraphprotocol.org/schema/'
  xmlns:fb='http://www.facebook.com/2008/fbml'>
 <head>
 <?php echo $this->getChildHtml('head') ?>
 </head>
-<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?> ng-controller="GmgStoreCtrl">
+<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
 <?php echo $this->getChildHtml('after_body_start') ?>
 <?php echo $this->getChildHtml('global_notices') ?>
 <?php echo $this->getChildHtml('header') ?>
-  <div class="container">
+  <!-- <div class="container">
     <?php echo $this->getChildHtml('breadcrumbs') ?>
-  </div>
+  </div> -->
   <div id="content" class="container">
 			<?php echo $this->getChildHtml('global_messages') ?>
 			<?php echo $this->getChildHtml('content') ?>

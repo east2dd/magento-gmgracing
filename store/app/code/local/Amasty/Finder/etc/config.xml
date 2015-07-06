@@ -83,7 +83,7 @@
                 <use>standard</use>
                 <args>
                     <module>Amasty_Finder</module>
-                    <frontName>amfinder</frontName>
+                    <frontName>products</frontName>
                 </args>
             </amfinder>
         </routers> 

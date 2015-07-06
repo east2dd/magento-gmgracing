@@ -1,0 +1,36 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2015 Amasty (https://www.amasty.com)
+ * @package Amasty_Finder
+ */
+?>
+<?php $finderId = 'amfinder_' . uniqid(); ?>
+<div id="selected-car">
+<div class="block-title">SELECTED CAR</div>
+
+<div class="block-body">
+<?php foreach ($this->getFinder()->getDropdowns() as $dropdown): ?>
+	<div>
+		<?php foreach($this->getDropdownValues($dropdown) as $v): ?>
+			<?php if ($v['selected']):?>
+                <?php echo $this->htmlEscape($v['label']) ?>
+            <?php endif ?>
+		<?php endforeach ?>
+	</div>
+<?php endforeach ?>
+</div>
+
+<div class="block-footer text-right">
+    <a href="javascript: void(0);" onclick="showProductFilter();">Change</a>
+</div>
+
+</div>
+
+<script>
+jQuery('#product-filter').hide();
+function showProductFilter(){
+    jQuery('#product-filter').slideToggle();
+    jQuery('.chosen-select').trigger("chosen:updated");
+}
+</script>

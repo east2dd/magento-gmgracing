@@ -15,7 +15,7 @@ class Amasty_Finder_Model_Dropdown extends Mage_Core_Model_Abstract
     {
         $options[] = array(
             'value'    => 0, 
-            'label'    => Mage::helper('amfinder')->__('Please Select ...'),
+            'label'    => $this->getName(),
             'selected' => false,
         );
         

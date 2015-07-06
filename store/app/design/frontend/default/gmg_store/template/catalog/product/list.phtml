@@ -20,7 +20,7 @@
  *
  * @category    design
  * @package     base_default
- * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
@@ -32,46 +32,62 @@
  */
 ?>
 <?php
+    $_productCollection=$this->getLoadedProductCollection();
     $_helper = $this->helper('catalog/output');
-    $product_collection = NULL;
-    $_category = Mage::getModel('catalog/category')->load($this->getCategoryId());
-    if($_category)
-    {
-    	$product_collection = $_category->getProductCollection();
-    }else{
-    	$product_collection = $this->getLoadedProductCollection();
-    }
 ?>
+<?php if(!$_productCollection->count()): ?>
+<p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
+<?php else: ?>
+<div class="category-products">
+    <?php // echo $this->getToolbarHtml() ?>
+    
+    <?php if($this->getMode()!='grid'): ?>
+        <?php // List mode ?>
+        <?php $_iterator = 0; ?>
+        <ol class="products-list" id="products-list">
+            WE ONLY PROVIDE GRID MODE NOW
+        <?php foreach ($_productCollection as $_product): ?>
+        <?php endforeach; ?>
+        </ol>
+        <script type="text/javascript">decorateList('products-list', 'none-recursive')</script>
 
-<div class="products">
-	<div class="row">
-		<?php 
+    <?php else: ?>
 
-      if (count($product_collection)>0):
-  			$i=1;
-  			foreach($product_collection as $product):
-  				$_product = Mage::getModel('catalog/product')->load($product->getId());
-  		?>
-          <div class="col-sm-4">
-          	<div class="item product">
-                <div class="product-image"><img class="img-responsive" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(287,250); ?>"/></div>
+        <?php // Grid Mode ?>
 
-                <div class="product-brand">GMG RACING</div>
-                <div class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></div>
-                <div class="product-price">
-                  <?php echo $this->getPriceHtml($_product, true) ?>
-                </div>
+        <?php $_collectionSize = $_productCollection->count() ?>
+        <?php 
+            //$_columnCount = $this->getColumnCount(); 
+            $_columnCount = 3; 
+        ?>
+        <?php $i=0; foreach ($_productCollection as $_product): ?>
+            <?php if ($i++%$_columnCount==0): ?>
+            <ul class="products row">
+            <?php endif ?>
+                <li class="col-sm-4 item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">
+                    <div class="item product">
+                        <div class="product-image">
+                            <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>">
+                                <img class="img-responsive" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(287,250); ?>"/>
+                            </a>
+                        </div>
+                        <div class="product-brand"><?php echo $_product->getData('tag_line')? $_product->getData('tag_line') : 'GMG RACING'; ?></div>
+                        <div class="product-name">
+                            <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>">
+                                <?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
+                            </a>
+                        </div>
+                        <div class="product-price">
+                          <?php echo $this->getPriceHtml($_product, true) ?>
+                        </div>
+                     </div>
+                </li>
+            <?php if ($i%$_columnCount==0 || $i==$_collectionSize): ?>
+            </ul>
+            <?php endif ?>
+            <?php endforeach ?>
+            <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
+        <?php endif; ?>
 
-             </div>
-          </div>
-
-          <?php 
-          if(($i++ % 3) == 0): ?>
-          	<div class="clearfix"></div>
-        	<?php endif;?>
-     
-    <?php endforeach;
-      endif;
-     ?>
-  </div>
 </div>
+<?php endif; ?>

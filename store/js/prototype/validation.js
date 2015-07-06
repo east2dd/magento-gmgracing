@@ -408,33 +408,72 @@ Object.extend(Validation, {
 });
 
 Validation.add('IsEmpty', '', function(v) {
-    return  (v == '' || (v == null) || (v.length == 0) || /^\s+$/.test(v)); // || /^\s+$/.test(v));
+    return  (v == '' || (v == null) || (v.length == 0) || /^\s+$/.test(v));
 });
 
 Validation.addAllThese([
-    ['validate-select', 'Please select an option.', function(v) {
+    ['validate-no-html-tags', 'HTML tags are not allowed', function(v) {
+				return !/<(\/)?\w+/.test(v);
+			}],
+	['validate-select', 'Please select an option.', function(v) {
                 return ((v != "none") && (v != null) && (v.length != 0));
             }],
     ['required-entry', 'This is a required field.', function(v) {
                 return !Validation.get('IsEmpty').test(v);
             }],
     ['validate-number', 'Please enter a valid number in this field.', function(v) {
-                return Validation.get('IsEmpty').test(v) || (!isNaN(parseNumber(v)) && !/^\s+$/.test(parseNumber(v)));
+                return Validation.get('IsEmpty').test(v)
+                    || (!isNaN(parseNumber(v)) && /^\s*-?\d*(\.\d*)?\s*$/.test(v));
+            }],
+    ['validate-number-range', 'The value is not within the specified range.', function(v, elm) {
+                if (Validation.get('IsEmpty').test(v)) {
+                    return true;
+                }
+
+                var numValue = parseNumber(v);
+                if (isNaN(numValue)) {
+                    return false;
+                }
+
+                var reRange = /^number-range-(-?[\d.,]+)?-(-?[\d.,]+)?$/,
+                    result = true;
+
+                $w(elm.className).each(function(name) {
+                    var m = reRange.exec(name);
+                    if (m) {
+                        result = result
+                            && (m[1] == null || m[1] == '' || numValue >= parseNumber(m[1]))
+                            && (m[2] == null || m[2] == '' || numValue <= parseNumber(m[2]));
+                    }
+                });
+
+                return result;
             }],
     ['validate-digits', 'Please use numbers only in this field. Please avoid spaces or other characters such as dots or commas.', function(v) {
                 return Validation.get('IsEmpty').test(v) ||  !/[^\d]/.test(v);
             }],
     ['validate-digits-range', 'The value is not within the specified range.', function(v, elm) {
-                var result = Validation.get('IsEmpty').test(v) ||  !/[^\d]/.test(v);
-                var reRange = new RegExp(/^digits-range-[0-9]+-[0-9]+$/);
-                $w(elm.className).each(function(name, index) {
-                    if (name.match(reRange) && result) {
-                        var min = parseInt(name.split('-')[2], 10);
-                        var max = parseInt(name.split('-')[3], 10);
-                        var val = parseInt(v, 10);
-                        result = (v >= min) && (v <= max);
+                if (Validation.get('IsEmpty').test(v)) {
+                    return true;
+                }
+
+                var numValue = parseNumber(v);
+                if (isNaN(numValue)) {
+                    return false;
+                }
+
+                var reRange = /^digits-range-(-?\d+)?-(-?\d+)?$/,
+                    result = true;
+
+                $w(elm.className).each(function(name) {
+                    var m = reRange.exec(name);
+                    if (m) {
+                        result = result
+                            && (m[1] == null || m[1] == '' || numValue >= parseNumber(m[1]))
+                            && (m[2] == null || m[2] == '' || numValue <= parseNumber(m[2]));
                     }
                 });
+
                 return result;
             }],
     ['validate-alpha', 'Please use letters only (a-z or A-Z) in this field.', function (v) {
@@ -444,7 +483,10 @@ Validation.addAllThese([
                 return Validation.get('IsEmpty').test(v) ||  /^[a-z]+[a-z0-9_]+$/.test(v)
             }],
     ['validate-alphanum', 'Please use only letters (a-z or A-Z) or numbers (0-9) only in this field. No spaces or other characters are allowed.', function(v) {
-                return Validation.get('IsEmpty').test(v) ||  /^[a-zA-Z0-9]+$/.test(v) /*!/\W/.test(v)*/
+                return Validation.get('IsEmpty').test(v) || /^[a-zA-Z0-9]+$/.test(v)
+            }],
+    ['validate-alphanum-with-spaces', 'Please use only letters (a-z or A-Z), numbers (0-9) or spaces only in this field.', function(v) {
+                    return Validation.get('IsEmpty').test(v) || /^[a-zA-Z0-9 ]+$/.test(v)
             }],
     ['validate-street', 'Please use only letters (a-z or A-Z) or numbers (0-9) or spaces and # only in this field.', function(v) {
                 return Validation.get('IsEmpty').test(v) ||  /^[ \w]{3,}([A-Za-z]\.)?([ \w]*\#\d+)?(\r\n| )[ \w]{3,}/.test(v)
@@ -462,6 +504,25 @@ Validation.addAllThese([
                 var test = new Date(v);
                 return Validation.get('IsEmpty').test(v) || !isNaN(test);
             }],
+    ['validate-date-range', 'The From Date value should be less than or equal to the To Date value.', function(v, elm) {
+            var m = /\bdate-range-(\w+)-(\w+)\b/.exec(elm.className);
+            if (!m || m[2] == 'to' || Validation.get('IsEmpty').test(v)) {
+                return true;
+            }
+
+            var currentYear = new Date().getFullYear() + '';
+            var normalizedTime = function(v) {
+                v = v.split(/[.\/]/);
+                if (v[2] && v[2].length < 4) {
+                    v[2] = currentYear.substr(0, v[2].length) + v[2];
+                }
+                return new Date(v.join('/')).getTime();
+            };
+
+            var dependentElements = Element.select(elm.form, '.validate-date-range.date-range-' + m[1] + '-to');
+            return !dependentElements.length || Validation.get('IsEmpty').test(dependentElements[0].value)
+                || normalizedTime(v) <= normalizedTime(dependentElements[0].value);
+        }],
     ['validate-email', 'Please enter a valid email address. For example johndoe@domain.com.', function (v) {
                 //return Validation.get('IsEmpty').test(v) || /\w{1,}[@][\w\-]{1,}([.]([\w\-]{1,})){1,3}$/.test(v)
                 //return Validation.get('IsEmpty').test(v) || /^[\!\#$%\*/?|\^\{\}`~&\'\+\-=_a-z0-9][\!\#$%\*/?|\^\{\}`~&\'\+\-=_a-z0-9\.]{1,30}[\!\#$%\*/?|\^\{\}`~&\'\+\-=_a-z0-9]@([a-z0-9_-]{1,30}\.){1,5}[a-z]{2,4}$/i.test(v)
@@ -502,9 +563,19 @@ Validation.addAllThese([
                 }
                 return (pass.value == conf.value);
             }],
+    ['validate-both-passwords', 'Please make sure your passwords match.', function(v, input) {
+                var dependentInput = $(input.form[input.name == 'password' ? 'confirmation' : 'password']),
+                    isEqualValues  = input.value == dependentInput.value;
+
+                if (isEqualValues && dependentInput.hasClassName('validation-failed')) {
+                    Validation.test(this.className, dependentInput);
+                }
+
+                return dependentInput.value == '' || isEqualValues;
+            }],
     ['validate-url', 'Please enter a valid URL. Protocol is required (http://, https:// or ftp://)', function (v) {
                 v = (v || '').replace(/^\s+/, '').replace(/\s+$/, '');
-                return Validation.get('IsEmpty').test(v) || /^(http|https|ftp):\/\/(([A-Z0-9]([A-Z0-9_-]*[A-Z0-9]|))(\.[A-Z0-9]([A-Z0-9_-]*[A-Z0-9]|))*)(:(\d+))?(\/[A-Z0-9~](([A-Z0-9_~-]|\.)*[A-Z0-9~]|))*\/?$/i.test(v)
+                return Validation.get('IsEmpty').test(v) || /^(http|https|ftp):\/\/(([A-Z0-9]([A-Z0-9_-]*[A-Z0-9]|))(\.[A-Z0-9]([A-Z0-9_-]*[A-Z0-9]|))*)(:(\d+))?(\/[A-Z0-9~](([A-Z0-9_~-]|\.)*[A-Z0-9~]|))*\/?(.*)?$/i.test(v)
             }],
     ['validate-clean-url', 'Please enter a valid URL. For example http://www.example.com or www.example.com', function (v) {
                 return Validation.get('IsEmpty').test(v) || /^(http|https|ftp):\/\/(([A-Z0-9][A-Z0-9_-]*)(\.[A-Z0-9][A-Z0-9_-]*)+.(com|org|net|dk|at|us|tv|info|uk|co.uk|biz|se)$)(:(\d+))?\/?/i.test(v) || /^(www)((\.[A-Z0-9][A-Z0-9_-]*)+.(com|org|net|dk|at|us|tv|info|uk|co.uk|biz|se)$)(:(\d+))?\/?/i.test(v)
@@ -568,30 +639,30 @@ Validation.addAllThese([
                     return false;
                 }
             }],
-    ['validate-not-negative-number', 'Please enter a valid number in this field.', function(v) {
+    ['validate-not-negative-number', 'Please enter a number 0 or greater in this field.', function(v) {
+                if (Validation.get('IsEmpty').test(v)) {
+                    return true;
+                }
                 v = parseNumber(v);
-                return (!isNaN(v) && v>=0);
+                return !isNaN(v) && v >= 0;
             }],
+    ['validate-zero-or-greater', 'Please enter a number 0 or greater in this field.', function(v) {
+            return Validation.get('validate-not-negative-number').test(v);
+        }],
+    ['validate-greater-than-zero', 'Please enter a number greater than 0 in this field.', function(v) {
+            if (Validation.get('IsEmpty').test(v)) {
+                return true;
+            }
+            v = parseNumber(v);
+            return !isNaN(v) && v > 0;
+        }],
     ['validate-state', 'Please select State/Province.', function(v) {
                 return (v!=0 || v == '');
             }],
-
     ['validate-new-password', 'Please enter 6 or more characters. Leading or trailing spaces will be ignored.', function(v) {
                 if (!Validation.get('validate-password').test(v)) return false;
                 if (Validation.get('IsEmpty').test(v) && v != '') return false;
                 return true;
-            }],
-    ['validate-greater-than-zero', 'Please enter a number greater than 0 in this field.', function(v) {
-                if(v.length)
-                    return parseFloat(v) > 0;
-                else
-                    return true;
-            }],
-    ['validate-zero-or-greater', 'Please enter a number 0 or greater in this field.', function(v) {
-                if(v.length)
-                    return parseFloat(v) >= 0;
-                else
-                    return true;
             }],
     ['validate-cc-number', 'Please enter a valid credit card number.', function(v, elm) {
                 // remove non-numerics
@@ -626,17 +697,17 @@ Validation.addAllThese([
                     return true;
                 }
 
-                // Matched credit card type
-                var ccMatchedType = '';
-
+                var validationFailure = false;
                 Validation.creditCartTypes.each(function (pair) {
-                    if (pair.value[0] && v.match(pair.value[0])) {
-                        ccMatchedType = pair.key;
+                    if (pair.key == ccType) {
+                        if (pair.value[0] && !v.match(pair.value[0])) {
+                            validationFailure = true;
+                        }
                         throw $break;
                     }
                 });
 
-                if(ccMatchedType != ccType) {
+                if (validationFailure) {
                     return false;
                 }
 
@@ -799,20 +870,21 @@ function parseNumber(v)
 }
 
 /**
- * Hash with credit card types wich can be simply extended in payment modules
+ * Hash with credit card types which can be simply extended in payment modules
  * 0 - regexp for card number
  * 1 - regexp for cvn
  * 2 - check or not credit card number trough Luhn algorithm by
- *     function validateCreditCard wich you can find above in this file
+ *     function validateCreditCard which you can find above in this file
  */
 Validation.creditCartTypes = $H({
 //    'SS': [new RegExp('^((6759[0-9]{12})|(5018|5020|5038|6304|6759|6761|6763[0-9]{12,19})|(49[013][1356][0-9]{12})|(6333[0-9]{12})|(6334[0-4]\d{11})|(633110[0-9]{10})|(564182[0-9]{10}))([0-9]{2,3})?$'), new RegExp('^([0-9]{3}|[0-9]{4})?$'), true],
     'SO': [new RegExp('^(6334[5-9]([0-9]{11}|[0-9]{13,14}))|(6767([0-9]{12}|[0-9]{14,15}))$'), new RegExp('^([0-9]{3}|[0-9]{4})?$'), true],
-    'SM': [new RegExp('(^(5[0678])[0-9]{11,18}$)|(^(6[^05])[0-9]{11,18}$)|(^(601)[^1][0-9]{9,16}$)|(^(6011)[0-9]{9,11}$)|(^(6011)[0-9]{13,16}$)|(^(65)[0-9]{11,13}$)|(^(65)[0-9]{15,18}$)|(^(49030)[2-9]([0-9]{10}$|[0-9]{12,13}$))|(^(49033)[5-9]([0-9]{10}$|[0-9]{12,13}$))|(^(49110)[1-2]([0-9]{10}$|[0-9]{12,13}$))|(^(49117)[4-9]([0-9]{10}$|[0-9]{12,13}$))|(^(49118)[0-2]([0-9]{10}$|[0-9]{12,13}$))|(^(4936)([0-9]{12}$|[0-9]{14,15}$))'), new RegExp('^([0-9]{3}|[0-9]{4})?$'), true],
     'VI': [new RegExp('^4[0-9]{12}([0-9]{3})?$'), new RegExp('^[0-9]{3}$'), true],
     'MC': [new RegExp('^5[1-5][0-9]{14}$'), new RegExp('^[0-9]{3}$'), true],
     'AE': [new RegExp('^3[47][0-9]{13}$'), new RegExp('^[0-9]{4}$'), true],
-    'DI': [new RegExp('^6011[0-9]{12}$'), new RegExp('^[0-9]{3}$'), true],
-    'JCB': [new RegExp('^(3[0-9]{15}|(2131|1800)[0-9]{11})$'), new RegExp('^[0-9]{4}$'), true],
+    'DI': [new RegExp('^(30[0-5][0-9]{13}|3095[0-9]{12}|35(2[8-9][0-9]{12}|[3-8][0-9]{13})|36[0-9]{12}|3[8-9][0-9]{14}|6011(0[0-9]{11}|[2-4][0-9]{11}|74[0-9]{10}|7[7-9][0-9]{10}|8[6-9][0-9]{10}|9[0-9]{11})|62(2(12[6-9][0-9]{10}|1[3-9][0-9]{11}|[2-8][0-9]{12}|9[0-1][0-9]{11}|92[0-5][0-9]{10})|[4-6][0-9]{13}|8[2-8][0-9]{12})|6(4[4-9][0-9]{13}|5[0-9]{14}))$'), new RegExp('^[0-9]{3}$'), true],
+    'JCB': [new RegExp('^(30[0-5][0-9]{13}|3095[0-9]{12}|35(2[8-9][0-9]{12}|[3-8][0-9]{13})|36[0-9]{12}|3[8-9][0-9]{14}|6011(0[0-9]{11}|[2-4][0-9]{11}|74[0-9]{10}|7[7-9][0-9]{10}|8[6-9][0-9]{10}|9[0-9]{11})|62(2(12[6-9][0-9]{10}|1[3-9][0-9]{11}|[2-8][0-9]{12}|9[0-1][0-9]{11}|92[0-5][0-9]{10})|[4-6][0-9]{13}|8[2-8][0-9]{12})|6(4[4-9][0-9]{13}|5[0-9]{14}))$'), new RegExp('^[0-9]{3,4}$'), true],
+    'DICL': [new RegExp('^(30[0-5][0-9]{13}|3095[0-9]{12}|35(2[8-9][0-9]{12}|[3-8][0-9]{13})|36[0-9]{12}|3[8-9][0-9]{14}|6011(0[0-9]{11}|[2-4][0-9]{11}|74[0-9]{10}|7[7-9][0-9]{10}|8[6-9][0-9]{10}|9[0-9]{11})|62(2(12[6-9][0-9]{10}|1[3-9][0-9]{11}|[2-8][0-9]{12}|9[0-1][0-9]{11}|92[0-5][0-9]{10})|[4-6][0-9]{13}|8[2-8][0-9]{12})|6(4[4-9][0-9]{13}|5[0-9]{14}))$'), new RegExp('^[0-9]{3}$'), true],
+    'SM': [new RegExp('(^(5[0678])[0-9]{11,18}$)|(^(6[^05])[0-9]{11,18}$)|(^(601)[^1][0-9]{9,16}$)|(^(6011)[0-9]{9,11}$)|(^(6011)[0-9]{13,16}$)|(^(65)[0-9]{11,13}$)|(^(65)[0-9]{15,18}$)|(^(49030)[2-9]([0-9]{10}$|[0-9]{12,13}$))|(^(49033)[5-9]([0-9]{10}$|[0-9]{12,13}$))|(^(49110)[1-2]([0-9]{10}$|[0-9]{12,13}$))|(^(49117)[4-9]([0-9]{10}$|[0-9]{12,13}$))|(^(49118)[0-2]([0-9]{10}$|[0-9]{12,13}$))|(^(4936)([0-9]{12}$|[0-9]{14,15}$))'), new RegExp('^([0-9]{3}|[0-9]{4})?$'), true],
     'OT': [false, new RegExp('^([0-9]{3}|[0-9]{4})?$'), false]
 });

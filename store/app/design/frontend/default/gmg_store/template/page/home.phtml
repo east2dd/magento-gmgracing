@@ -29,6 +29,10 @@
  * Template for Mage_Page_Block_Html
  */
 ?>
+<script>
+jQuery('#product-filter').hide();
+</script>
+
 <div id="home">
   <div class="narrow">
     <div class="car-selector">
@@ -36,30 +40,11 @@
         to view products for your car, please enter your <strong>year</strong>, <strong>make</strong>, and <strong>model</strong> below
       </div>
     </div>
-
-    <form class="form-vertical" role="form">
-        <div class="form-group clearfix">
-          <div class="col-sm-4">
-            <select chosen data-placeholder="Year" data-no_results_text="Year" disable-search="true" ng-model="filter.year" ng-options="y.id as y.label for y in yearOptions" ng-disabled="yearOptions.length==0">
-              <option style="display:none" value="">Year</option>
-            </select>
-          </div>
-          <div class="col-sm-4">
-            <select chosen data-placeholder="Make" data-no_results_text="Make" disable-search="true" ng-model="filter.make" ng-options="m.id as m.label for m in makeOptions" ng-disabled="makeOptions.length==0">
-              <option style="display:none" value="">Make</option>
-            </select>
-          </div>
-          <div class="col-sm-4">
-            <select chosen data-placeholder="Model" data-no_results_text="Model" disable-search="true" ng-model="filter.model" ng-options="d.id as d.label for d in modelOptions" ng-disabled="modelOptions.length==0">
-              <option style="display:none" value="">Model</option>
-            </select>
-          </div>
-        </div>
-        <div class="actions">
-          <button type="submit" class="btn btn-submit" ng-click="go()">SUBMIT</button>
-        </div>
-      
-    </form>
+    <div class="filter">
+      <?php
+        echo $this->getLayout()->createBlock('cms/block')->setBlockId('home-finder')->toHtml();
+      ?>
+    </div>
 
     <div class="alternative">
       &dash;&nbsp;&nbsp;Alternatively&nbsp;&nbsp;&dash;

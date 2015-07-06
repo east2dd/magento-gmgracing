@@ -1,0 +1,62 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2015 Amasty (https://www.amasty.com)
+ * @package Amasty_Finder
+ */
+?>
+<?php $finderId = 'amfinder_' . uniqid(); ?>
+<form method="post" action="<?php echo $this->getActionUrl() ?>">
+    <input type="hidden" name="finder_id" value="<?php echo $this->getId() ?>"/>
+    <input type="hidden" name="back_url" value="<?php echo $this->getBackUrl() ?>"/>
+    <input type="hidden" name="category_id" value="<?php echo $this->getCurrentCategoryId() ?>"/>
+    <div class="amfinder-responsive" id="<?php echo $finderId ?>Container">
+        <div class="amfinder-title">
+            <span><?php echo $this->getFinder()->getName() ?></span>
+        </div>
+        <ul class="amfinder-toggle">
+            <?php foreach ($this->getFinder()->getDropdowns() as $dropdown): ?>
+                <li>
+                    <div class="dropdown-title"><?php echo $this->htmlEscape($dropdown->getName()) ?></div>
+                    <div class="dropdown-element">
+                        <select <?php echo $this->getDropdownAttributes($dropdown)?>">
+                            <?php foreach($this->getDropdownValues($dropdown) as $v): ?>
+                                <option value="<?php echo $v['value'] ?>"<?php if ($v['selected']):?>selected="selected"<?php endif ?>>
+                                    <?php echo $this->htmlEscape($v['label']) ?>
+                                </option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                </li>
+            <?php endforeach ?>
+            <li class="last">
+                <div class="amfinder-buttons" style="display:<?php echo ($this->isButtonsVisible() ? 'block' : 'none')?>">
+                    <button class="button" title="<?php echo $this->__('Find') ?>" type="submit"><span><span><?php echo $this->__('Find') ?></span></span></button>
+                    <button class="button" name="reset" value="1" title="<?php echo $this->__('Reset') ?>" type="submit"><span><span><?php echo $this->__('Reset') ?></span></span></button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</form>
+<script type="text/javascript">
+    var <?php echo $finderId ?>  = new amFinder(
+        '<?php echo $finderId ?>Container',
+        '<?php echo $this->getAjaxUrl() ?>',
+        '<?php echo $this->__('Loading...')?>',
+        '<?php echo Mage::getStoreConfig('amfinder/general/partial_search')?>',
+        <?php echo intval(Mage::getStoreConfig('amfinder/general/auto_submit')) ?>
+    );
+
+
+    $$('.amfinder-title').each(function (e) {
+        e.observe('click', function () {
+            var block = this.up();
+            if (block.hasClassName('open')) {
+                block.removeClassName('open');
+            } else {
+                block.addClassName('open');
+            }
+        });
+    });
+</script>
+<br />

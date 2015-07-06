@@ -14,7 +14,9 @@ class Amasty_Finder_IndexController extends Mage_Core_Controller_Front_Action
         
         $dropdowns = $this->getRequest()->getParam('finder');
         if ($dropdowns){
-            $finder->saveFilter($dropdowns, $this->getRequest()->getParam('category_id'));
+
+            // $finder->saveFilter($dropdowns, $this->getRequest()->getParam('category_id'));
+            $finder->saveFilter($dropdowns, null);
         }
 
         $backUrl = Mage::helper('core')->urlDecode($this->getRequest()->getParam('back_url'));
@@ -38,8 +40,6 @@ class Amasty_Finder_IndexController extends Mage_Core_Controller_Front_Action
             }         
         }
 
-         
-        
         $this->getResponse()->setRedirect($backUrl);
     }
     

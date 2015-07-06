@@ -1144,6 +1144,8 @@ class Mage_Catalog_Model_Resource_Product_Collection extends Mage_Catalog_Model_
         if (!isset($this->_productLimitationFilters['customer_group_id']) && is_null($customerGroupId)) {
             $customerGroupId = Mage::getSingleton('customer/session')->getCustomerGroupId();
         }
+
+
         if (!isset($this->_productLimitationFilters['website_id']) && is_null($websiteId)) {
             $websiteId       = Mage::app()->getStore($this->getStoreId())->getWebsiteId();
         }

@@ -19,6 +19,7 @@ amFinder.prototype = {
     	$$('#' + this.containerId + ' select').each(function(select){
     		select.observe('change', this.onChange.bindAsEventListener(this));
     		this.selects[this.selects.length] = select;
+            jQuery(select).chosen({disable_search_threshold: 10}).change(this.onChange.bindAsEventListener(this) );
     	}.bind(this));
     },
         
@@ -68,6 +69,8 @@ amFinder.prototype = {
                     	if (itemsFound){
                     		$(selectToReload).disabled = false;
                     	}
+
+                        jQuery(selectToReload).trigger("chosen:updated");
                     }
                 }.bind(this)
             });
@@ -102,17 +105,20 @@ amFinder.prototype = {
     		if (this.selects[i].id == select.id){
     			startClearing = true;
     		}
+
     	}
+
+        jQuery('.chosen-select').trigger("chosen:updated");
     	var type = (((this.isLast(select) && !this.isNeedLast) && select.value > 0) || ((this.isNeedLast) && ((select.value > 0) || (!this.isFirst(select))))) ? 'block' : 'none';
+        var visible = (((this.isLast(select) && !this.isNeedLast) && select.value > 0) || ((this.isNeedLast) && ((select.value > 0) || (!this.isFirst(select))))) ? true : false;
         
         if ('block' == type && this.autoSubmit && this.isLast(select))
         {
             $$('#' + this.containerId + ' .amfinder-buttons button')[0].form.submit();
         } else {
-            $$('#' + this.containerId + ' .amfinder-buttons')[0].style.display = type;            
+            // $$('#' + this.containerId + ' .amfinder-buttons')[0].style.display = type;
+            $$('#' + this.containerId + ' .amfinder-buttons button')[0].disabled = !visible;            
         }
-        
-
     },
     
     showLoading: function(selectToReload)

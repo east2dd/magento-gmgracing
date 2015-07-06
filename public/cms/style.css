@@ -1,58 +1,58 @@
 /****************************************************************************
  * Home page
  */
-/* line 5, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 5, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .home .container {
   max-width: 1260px;
 }
-/* line 8, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 8, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .home .featured p {
   line-height: 1.2em;
   font-size: 14px;
 }
-/* line 13, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 13, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .home .featured a {
   color: #2d2d2c;
 }
-/* line 18, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 18, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #our-partners {
   margin-top: 90px;
   margin-bottom: 100px;
 }
-/* line 22, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 22, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #our-partners h2 {
   font-size: 18px;
   margin: 10px 0px;
 }
-/* line 26, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 26, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #our-partners a {
   padding: 10px;
 }
-/* line 27, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 27, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #our-partners .logos {
   margin: 18px 0px;
 }
-/* line 29, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 29, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #progress {
   height: 4px;
   width: 0px;
   background: #3044b5;
   z-index: 500;
 }
-/* line 31, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 31, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .home .cycle-slideshow {
   max-width: 1600px;
   margin: 0px auto;
 }
-/* line 32, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 32, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .cycle-slide {
   width: 100%;
 }
-/* line 33, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 33, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .cycle-pager {
   text-align: center;
 }
-/* line 34, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 34, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .cycle-pager span {
   font-size: 70px;
   line-height: 70px;
@@ -61,12 +61,12 @@
   text-indent: -9999px;
   background: url(images/icon-circle.png) no-repeat center center;
 }
-/* line 35, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 35, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .cycle-pager span.cycle-pager-active {
   color: #3b3b3a;
   background: url(images/icon-delete.png) no-repeat center center;
 }
-/* line 37, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 37, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .featured-title {
   text-align: center;
   margin-bottom: 15px;
@@ -75,25 +75,25 @@
   font-size: 30px;
   font-family: 'gothamblack';
 }
-/* line 38, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 38, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .featured .post-excerpt {
   min-height: 100px;
 }
-/* line 39, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 39, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .featured-content h4 {
   margin-top: 20px;
   font-size: 24px;
   overflow: hidden;
 }
-/* line 40, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 40, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .cycle-slideshow {
   text-align: center;
 }
-/* line 43, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 43, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .instagram #masonryContainer {
   padding: 0px;
 }
-/* line 44, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 44, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .instagram #masonryContainer .masonryItem {
   padding: 0px;
   margin: 0px;
@@ -101,7 +101,7 @@
   left: 0px;
   width: 100%;
 }
-/* line 45, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 45, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .instagram .scode-content-info {
   display: inline-block;
   font-family: 'gothamblack';
@@ -109,28 +109,28 @@
   color: #6c6c6c;
   padding: 10px;
 }
-/* line 46, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 46, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .instagram .statistic {
   text-align: center;
   padding: 20px 0px;
   margin: 0px 20px;
   border-bottom: 1px solid #e0e0e0;
 }
-/* line 47, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 47, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .instagram .statistic img {
   display: none;
 }
-/* line 48, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 48, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .instagram .statistic .like {
   padding-left: 30px;
   background: url(images/icon-like.png) no-repeat center left;
 }
-/* line 49, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 49, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .instagram .statistic .comment {
   padding-left: 30px;
   background: url(images/icon-comment.png) no-repeat center left;
 }
-/* line 50, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 50, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .instagram .sinst-author-section {
   text-align: center;
   font-family: 'gothamultra';
@@ -138,19 +138,19 @@
   padding: 20px;
   color: #656565;
 }
-/* line 51, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 51, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .instagram .sinst-author-section .sinst-comment-author {
   color: #656565;
 }
-/* line 52, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 52, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .instagram .sinst-author-section img {
   display: none;
 }
-/* line 53, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 53, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .instagram #masonryContainer .item-holder {
   border: 2px solid #e0e0e0;
 }
-/* line 54, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 54, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .instagram #masonryContainer .item-holder img {
   width: 100%;
   margin: 0px;
@@ -159,42 +159,42 @@
 /****************************************************************************
  * Racing News
  */
-/* line 60, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 60, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .post-content {
   margin-bottom: 20px;
 }
-/* line 62, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 62, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .post .post-title {
   font-family: 'gothammedium';
   font-size: 30px;
   margin-bottom: 10px;
 }
-/* line 63, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 63, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .news .post-title {
   margin-bottom: 0px;
 }
-/* line 64, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 64, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .post-title {
   margin-bottom: 0px;
 }
-/* line 65, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 65, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .post-title a {
   color: #2d2d2c;
   font-size: 24px;
   text-transform: uppercase;
 }
-/* line 66, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 66, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .post-meta {
   margin-bottom: 25px;
   font-family: 'gothammedium';
   font-size: 14px;
 }
-/* line 67, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 67, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .post-meta a {
   color: #006bb7;
   text-decoration: none;
 }
-/* line 69, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 69, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .widget-title {
   color: #FFFFFF;
   background: #006bb7;
@@ -203,268 +203,268 @@
   font-size: 24px;
   margin-bottom: 5px;
 }
-/* line 70, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 70, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .widget-container {
   margin-bottom: 30px;
   font-size: 15px!important;
 }
-/* line 72, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 72, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .page-numbers {
   background: #000;
   color: #FFFFFF;
   padding: 5px;
   text-transform: uppercase;
 }
-/* line 73, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 73, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .page-numbers.dots {
   background: none;
   color: #000;
 }
-/* line 74, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 74, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .post-thumbnail img {
   width: 100%;
 }
-/* line 75, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 75, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .fb-comments {
   display: block!important;
 }
-/* line 77, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 77, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .news .post {
   margin-bottom: 30px;
   padding-bottom: 30px;
   border-bottom: 1px dotted #333333;
 }
-/* line 78, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 78, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #featured {
   margin-bottom: 100px;
 }
-/* line 79, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 79, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #featured .post-meta {
   margin-bottom: 40px;
 }
-/* line 80, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 80, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #featured .post-title a {
   font-size: 30px;
 }
-/* line 81, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 81, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #featured .post-thumbnail img {
   width: 100%;
 }
-/* line 83, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 83, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #sidebar {
   font-family: 'gothammedium';
 }
-/* line 84, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 84, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #sidebar ul {
   padding: 0px;
 }
-/* line 85, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 85, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #sidebar ul li {
   list-style: none;
 }
-/* line 86, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 86, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #sidebar .flickr-image img {
   width: 100%;
 }
-/* line 87, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 87, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #sidebar a {
   color: #2d2d2c;
   text-transform: uppercase;
   font-size: 15px!important;
 }
-/* line 88, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 88, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #sidebar a:hover {
   color: #006bb7;
   text-decoration: none;
 }
-/* line 89, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 89, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #sidebar .advanced_recent_posts_widget ul li {
   border: none;
   margin-bottom: 20px;
 }
-/* line 93, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 93, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #sidebar h2 {
   margin: 0px;
   margin-bottom: 5px;
 }
-/* line 94, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 94, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #sidebar .widget {
   margin-bottom: 30px;
 }
-/* line 95, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 95, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .widget_flickr img {
   width: 100%;
   height: auto;
 }
-/* line 96, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 96, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .widget_flickr > a {
   display: none;
 }
 /****************************************************************************
  * Projects
  */
-/* line 101, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 101, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .projects #adv-custom-pager a {
   margin-bottom: 20px;
 }
-/* line 102, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 102, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .projects .project-title {
   font-family: 'gothambook';
 }
-/* line 103, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 103, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .projects h5 {
   font-family: 'gothambook';
 }
-/* line 104, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 104, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .projects strong {
   font-family: 'gothambold';
 }
-/* line 105, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 105, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .project-category {
   border-bottom: 1px dotted #333333;
   line-height: 25px;
   margin-bottom: 50px;
 }
-/* line 110, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 110, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .project-title {
   border-bottom: 1px dotted #333333;
   line-height: 25px;
   text-transform: uppercase;
 }
-/* line 115, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 115, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .project-title a {
   color: #2d2d2c;
 }
-/* line 117, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 117, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .project .post-title {
   font-family: 'gothammedium';
   font-size: 30px;
   margin-bottom: 10px;
 }
-/* line 118, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 118, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .project .post-content {
   margin-bottom: 50px;
 }
-/* line 121, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 121, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .project .infos label {
   font-family: 'gothammedium';
 }
-/* line 124, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 124, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .project .infos {
   font-family: 'gothambook';
 }
-/* line 126, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 126, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .refine-vehicle {
   margin-top: 50px;
   position: relative;
 }
-/* line 127, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 127, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .refine-vehicle a {
   color: #2d2d2c;
 }
-/* line 128, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 128, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .refine-vehicle .popover {
   margin-top: 50px;
 }
-/* line 129, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 129, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .refine-vehicle .popover .arrow {
   left: 70%;
 }
-/* line 131, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 131, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #adv-custom-pager {
   margin-top: 20px;
 }
-/* line 132, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 132, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .projects .table-striped td {
   border: none;
 }
-/* line 133, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 133, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .projects .infos {
   margin-bottom: 50px;
 }
-/* line 136, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 136, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .projects .comments {
   margin-bottom: 50px;
 }
 /*
  * About us page
  */
-/* line 143, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 143, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .page-featured-image {
   margin-bottom: 50px;
 }
-/* line 144, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 144, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .page-featured-image img {
   width: 100%;
 }
-/* line 145, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 145, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .page-content {
   margin-bottom: 50px;
 }
 /*
  * Staff
  */
-/* line 152, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 152, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .staff {
   margin-bottom: 90px;
 }
-/* line 153, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 153, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .staff-contact {
   color: #3044b5;
   font-family: 'gothamblack';
 }
-/* line 154, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 154, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .staff-position {
   text-transform: capitalize;
   font-size: 14px;
   font-family: 'gothambook';
 }
-/* line 155, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 155, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .staff-name {
   text-transform: capitalize;
   margin-bottom: 10px;
   font-size: 18px;
   font-family: 'gothammedium';
 }
-/* line 156, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 156, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .staff-description {
   margin-top: 30px;
 }
-/* line 157, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 157, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .staffs #featured {
   margin-top: 30px;
 }
-/* line 158, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 158, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .staffs #featured > div:last-child {
   float: right;
 }
-/* line 159, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 159, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .staffs #featured .staff-name {
   font-size: 30px;
 }
-/* line 160, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 160, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .staffs #featured .staff-position {
   font-size: 18px;
   text-transform: uppercase;
 }
-/* line 161, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 161, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .staffs #featured a {
   font-size: 18px;
   color: #3044b5;
   text-transform: uppercase;
 }
-/* line 162, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 162, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .staffs .glyphicon {
   color: #3044b5;
   background: url(images/email_big.png) no-repeat center center;
   width: 23px;
   height: 14px;
 }
-/* line 168, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 168, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #staffs {
   margin-top: 90px;
 }
-/* line 170, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 170, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #staffs .glyphicon {
   background: url(images/email_big.png) no-repeat center center;
   width: 23px;
@@ -473,16 +473,16 @@
 /*
  * Services
  */
-/* line 182, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 182, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .service {
   font-size: 16px;
   line-height: 24px;
 }
-/* line 183, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 183, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .service h2 {
   font-family: 'gothamultra';
 }
-/* line 184, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 184, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .service h3 {
   font-family: 'gothamblack';
   font-size: 30px;
@@ -490,29 +490,29 @@
   margin-top: 40px;
   margin-bottom: 25px;
 }
-/* line 185, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 185, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .service .service-content {
   margin-top: 55px;
 }
-/* line 186, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 186, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .service #professional-services {
   margin-top: 35px;
 }
-/* line 187, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 187, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .service #equipment {
   margin-top: 35px;
   margin-bottom: 100px;
 }
-/* line 189, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 189, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .service p {
   margin-bottom: 20px;
 }
-/* line 190, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 190, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .service ul {
   padding-left: 20px;
   margin-bottom: 20px;
 }
-/* line 192, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 192, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .service #professional-services .service-name {
   font-family: 'gothammedium';
   font-size: 20px;
@@ -520,59 +520,59 @@
   line-height: 20px;
   padding-bottom: 15px;
 }
-/* line 193, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 193, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .service #professional-services ul {
   margin-top: -20px;
 }
-/* line 195, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 195, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #capabilities {
   margin-top: 20px;
 }
-/* line 196, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 196, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #capabilities .stripe {
   padding: 0px 0px;
   position: relative;
   min-height: 370px;
 }
-/* line 197, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 197, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #capabilities .stripe.odd {
   background: #e2e2e2;
 }
-/* line 198, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 198, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #capabilities .stripe .stripe-colors .col-sm-6 {
   padding: 0px;
 }
-/* line 199, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 199, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #capabilities .stripe p {
   margin: 0px;
 }
-/* line 200, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 200, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #capabilities .stripe-background {
   position: absolute;
   top: 0px;
   width: 100%;
 }
-/* line 201, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 201, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #capabilities .stripe-colors {
   width: 100%;
   position: absolute;
   top: 0px;
 }
-/* line 203, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 203, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #capabilities .stripe h3 {
   font-family: 'gothammedium';
   padding-top: 20px;
   text-transform: uppercase;
 }
-/* line 204, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 204, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #capabilities .stripe .image {
   height: 370px;
 }
-/* line 205, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 205, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #capabilities .stripe .readmore {
   margin-top: 20px;
 }
-/* line 206, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 206, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #capabilities .stripe .readmore a {
   text-transform: uppercase;
   background: #006bb7;
@@ -581,50 +581,50 @@
   font-family: 'gothamblack';
   font-size: 18px;
 }
-/* line 208, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 208, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .services-wrapper {
   margin: 30px 0px;
 }
-/* line 209, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 209, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #services {
   margin: 30px 0px;
 }
-/* line 211, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 211, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #services .service {
   margin-bottom: 100px;
   border-bottom: 10px solid #e0e0e0;
   padding-bottom: 20px;
   font-size: 14px;
 }
-/* line 212, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 212, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #services .service p {
   font-size: 14px;
   line-height: 1.3em;
 }
-/* line 213, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 213, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #services .service a {
   font-weight: bold;
 }
-/* line 214, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 214, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #services .service .service-title {
   margin: 20px 0px;
   font-size: 18px;
   font-family: "gothamblack";
   text-transform: uppercase;
 }
-/* line 216, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 216, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .cycle-prev {
   left: 0px;
   top: 45%;
   background: url(images/cycle-left-arrow.png) no-repeat center center;
 }
-/* line 221, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 221, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .cycle-next {
   right: 0px;
   top: 45%;
   background: url(images/cycle-right-arrow.png) no-repeat center center;
 }
-/* line 226, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 226, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .cycle-arrow {
   display: none;
   position: absolute;
@@ -633,18 +633,18 @@
   z-index: 999;
   cursor: pointer;
 }
-/* line 227, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 227, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 .cycle-slideshow:hover .cycle-arrow {
   display: block;
 }
 /*
 * Careers
 */
-/* line 232, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 232, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #openings a {
   color: #2d2d2c;
 }
-/* line 233, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 233, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #openings.fixed-position {
   position: fixed;
   top: 50px;
@@ -652,53 +652,53 @@
 /*
 * Dealers
 */
-/* line 239, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 239, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #dealers .container {
   max-width: 1260px;
 }
-/* line 243, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 243, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #dealers {
   margin-bottom: 100px;
 }
-/* line 245, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 245, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #dealers .featured {
   margin-bottom: 20px;
 }
-/* line 246, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 246, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #dealers .stockist-types {
   margin-bottom: 50px;
 }
-/* line 247, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 247, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #dealers .stockist-types span {
   padding-right: 40px;
   font-family: 'gothammedium';
 }
-/* line 248, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 248, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #dealers h1.page-title {
   font-size: 24px;
   border-bottom: 1px solid #2d2d2c;
   margin-bottom: 50px;
 }
-/* line 249, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 249, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #dealers .page-content {
   margin-bottom: 50px;
 }
-/* line 250, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 250, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #dealers .shop-excerpt p {
   font-size: 15px;
   line-height: 1.2em;
 }
-/* line 251, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 251, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #dealers .dealer {
   margin-bottom: 50px;
 }
-/* line 252, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 252, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #dealers h2.section-title {
   font-size: 24px;
   font-family: 'gothamblack';
   margin-bottom: 30px;
 }
-/* line 253, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 253, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #dealers .dealer h2 {
   font-size: 20px;
   font-family: 'gothamblack';
@@ -706,15 +706,15 @@
   border-bottom: 1px solid #2d2d2d;
   max-width: 260px;
 }
-/* line 254, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 254, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #dealers .stockist-premier {
   background: url(images/icon-logo-blue.png) no-repeat;
 }
-/* line 255, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 255, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #dealers .stockist-platinum {
   background: url(images/icon-logo-yellow.png) no-repeat;
 }
-/* line 256, /Volumes/projects/gmgracing/less/app/cms/wordpress.less */
+/* line 256, /Volumes/projects/gmgracing.com/gmgracing/less/app/cms/wordpress.less */
 #dealers .stockist-authorized {
   background: url(images/icon-logo-red.png) no-repeat;
 }

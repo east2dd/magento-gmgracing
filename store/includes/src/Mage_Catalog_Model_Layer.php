@@ -120,7 +120,7 @@ class Mage_Catalog_Model_Layer extends Varien_Object
             ->addMinimalPrice()
             ->addFinalPrice()
             ->addTaxPercents()
-            //->addStoreFilter()
+            ->addStoreFilter()
             ->addUrlRewrite($this->getCurrentCategory()->getId());
 
         Mage::getSingleton('catalog/product_status')->addVisibleFilterToCollection($collection);
