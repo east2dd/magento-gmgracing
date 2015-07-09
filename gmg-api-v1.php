@@ -30,7 +30,8 @@
           'name'=>get_the_title(),
           'description'=>get_the_excerpt(),
           'date'=>get_the_date(),
-          'image'=>$url
+          'image'=>$url,
+          'url'=>get_permalink($post->ID)
       );
     }
   }

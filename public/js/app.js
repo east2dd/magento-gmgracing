@@ -150,6 +150,7 @@ function init_search(){
     e.preventDefault();
     e.stopPropagation();
     var query = jQuery('#input-search').val();
+
     jQuery('#search-results').show();
     search_products(query);
     search_journals(query);
@@ -279,12 +280,12 @@ var PostItem = React.createClass({displayName: "PostItem",
     return (
       React.createElement("div", {className: "post col-sm-4"}, 
         React.createElement("div", {className: "post-image"}, 
-          React.createElement("a", {href: this.props.data.image}, 
+          React.createElement("a", {href: this.props.data.url}, 
             React.createElement("img", {className: "img-responsive", src: this.props.data.image})
           )
         ), 
         React.createElement("div", {className: "post-title"}, 
-          React.createElement("a", {href: this.props.data.name}, 
+          React.createElement("a", {href: this.props.data.url}, 
             this.props.data.name
           )
         ), 

@@ -18,7 +18,7 @@
               <label>SEARCH</label>
             </p>
             <p>
-              <input type="text" name="q" placeholder=" TYPE TO SEARCH" id="input-search" autofocus="autofocus" value="">
+              <input type="text" name="q" placeholder=" TYPE TO SEARCH" id="input-search" autofocus="autofocus" value="" required>
             </p>
         </div>
       </form>

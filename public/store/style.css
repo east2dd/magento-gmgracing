@@ -793,6 +793,34 @@ fieldset[disabled] .btn-white.active {
 #main-categories li.selected {
   background: #cdcdcd;
 }
+/* line 736, /Volumes/projects/anthony/gmgracing/www/less/app/shop/magento.less */
+.toolbar .pager {
+  background: none;
+  border-radius: 0;
+  border: none;
+}
+/* line 740, /Volumes/projects/anthony/gmgracing/www/less/app/shop/magento.less */
+.toolbar .pager li {
+  border-top: 1px solid #fff;
+  background: none;
+  color: #333336;
+  padding: 1rem;
+  margin: 0 0.5rem;
+}
+/* line 746, /Volumes/projects/anthony/gmgracing/www/less/app/shop/magento.less */
+.toolbar .pager li.current {
+  border-top: 1px solid #006bb6!important;
+}
+/* line 750, /Volumes/projects/anthony/gmgracing/www/less/app/shop/magento.less */
+.toolbar .pager li:hover {
+  border-top: 1px solid #d0d0d0;
+}
+/* line 753, /Volumes/projects/anthony/gmgracing/www/less/app/shop/magento.less */
+.toolbar .pager li a {
+  border: none!important;
+  border-radius: 0;
+  padding: 0;
+}
 
 
 /*# sourceMappingURL=style.css.map*/
