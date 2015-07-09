@@ -823,7 +823,11 @@ fieldset[disabled] .btn-white.active {
   padding: 0;
 }
 /* line 764, /Volumes/projects/anthony/gmgracing/www/less/app/shop/magento.less */
-.category-products ul {
+#product-list .product-image {
+  margin-bottom: 1rem;
+}
+/* line 768, /Volumes/projects/anthony/gmgracing/www/less/app/shop/magento.less */
+#product-list ul {
   margin: 0;
   padding: 0;
 }

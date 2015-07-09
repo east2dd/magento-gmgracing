@@ -38,9 +38,7 @@
 <?php if(!$_productCollection->count()): ?>
 <p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
 <?php else: ?>
-<div class="category-products">
-    
-    
+<div id="product-list">
     <?php if($this->getMode()!='grid'): ?>
         <?php // List mode ?>
         <?php $_iterator = 0; ?>
