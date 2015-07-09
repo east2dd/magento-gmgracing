@@ -12,10 +12,10 @@ if (isset($_SERVER['MAGE_IS_DEVELOPER_MODE'])) {
     Mage::setIsDeveloperMode(true);
 }
 
+ini_set('display_errors', 1);
 // emulate index.php entry point for correct URLs generation in API
 Mage::register('custom_entry_point', true);
 Mage::$headersSentThrowsException = false;
-Mage::init('admin');
 Mage::app()->loadAreaPart(Mage_Core_Model_App_Area::AREA_GLOBAL, Mage_Core_Model_App_Area::PART_EVENTS);
 Mage::app()->loadAreaPart(Mage_Core_Model_App_Area::AREA_ADMINHTML, Mage_Core_Model_App_Area::PART_EVENTS);
 
@@ -23,40 +23,68 @@ Mage::app()->loadAreaPart(Mage_Core_Model_App_Area::AREA_ADMINHTML, Mage_Core_Mo
 $apiAlias = Mage::app()->getRequest()->getParam('type');
 $request = Mage::app()->getRequest();
 
-if($apiAlias == "category_children"){
-    $category_id = $request->getParam("id");
-    $category  = Mage::getModel('catalog/category')->load($category_id);
-    $child_categories = $category->getChildrenCategories();
+// Api logic goes under right here
 
-    $results = [];
-    foreach($child_categories as $_category)
+if ($apiAlias == "product_search"){
+    
+    // simulate the magento search engine, copied from core
+    $query = Mage::helper('catalogsearch')->getQuery();
+    $query->setStoreId(Mage::app()->getStore()->getId());
+
+    if ($query->getQueryText()) {
+        if (Mage::helper('catalogsearch')->isMinQueryLength()) {
+            $query->setId(0)
+                ->setIsActive(1)
+                ->setIsProcessed(1);
+        }
+        else {
+            if ($query->getId()) {
+                $query->setPopularity($query->getPopularity()+1);
+            }
+            else {
+                $query->setPopularity(1);
+            }
+            $query->prepare();
+        }
+        Mage::helper('catalogsearch')->checkNotes();
+
+        if (!Mage::helper('catalogsearch')->isMinQueryLength()) {
+            $query->save();
+        }
+    }
+
+    $collection = Mage::getSingleton('catalogsearch/layer')->getProductCollection();
+
+    // compose results as json
+    $results = array();
+    $results['query'] = $query->getQueryText();
+    $results['found'] = $collection->getSize();
+
+    if ($results['found'] > 3)
     {
-        $_category  = Mage::getModel('catalog/category')->load($_category->getId());
+        $results['count'] = 3;
+    }else{
+        $results['count'] = $results['found'];
+    }
 
-        $url = str_replace('api-v1.php', 'index.php', $_category->getUrl());
-        $results[] = array(
-            'id'=>$_category->getId(), 
-            'url' => $url, 
-            'label'=>$_category->getName(),
-            'img_url'=> Mage::getBaseUrl('media').'catalog/category/'. $_category->getThumbnail(),
-            'product_count'=>$_category->getProductCount()
+    $i=0;
+
+    $products = [];
+    foreach ($collection as $product){
+        $i++;
+        if ($i > 3){
+            break;
+        }
+        $products[] = array(
+            'id'=>$product->getId(),
+            'name'=>$product->getName(),
+            'description'=>$product->getShortDescription(),
+            'price'=>Mage::helper('core')->currency($product->getFinalPrice(), true, false),
+            'url'=>$product->getProductUrl(),
+            'image'=>(String)Mage::helper('catalog/image')->init($product, 'thumbnail')->resize(400)
         );
     }
 
+    $results['items'] = $products;
     echo json_encode($results);
-}elseif ($apiAlias == "product_gmg_categories"){
-    $product_id = $request->getParam("id");
-    $product = Mage::getModel('catalog/product')->load($product_id);
-
-    $year_pid = 2;
-
-    $cats = $product->getCategoryIds();
-    foreach ($cats as $category_id) {
-        $_cat = Mage::getModel('catalog/category')->load($category_id);
-        $_parent_id = $_cat->getParentCategory()->getId();
-        if($_parent_id == $year_pid){
-            $_parent = Mage::getModel('catalog/category')->load($_parent_id);
-            echo $_cat->getName();
-        }
-    }
 }

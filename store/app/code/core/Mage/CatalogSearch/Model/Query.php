@@ -100,6 +100,7 @@ class Mage_CatalogSearch_Model_Query extends Mage_Core_Model_Abstract
     public function getResultCollection()
     {
         $collection = $this->getData('result_collection');
+
         if (is_null($collection)) {
             $collection = $this->getSearchCollection();
 

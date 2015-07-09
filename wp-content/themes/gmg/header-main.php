@@ -9,21 +9,46 @@
 <div class="device visible-md"></div>
 <div class="device visible-lg"></div>
 <div class="device visible-xs"></div>
+<div id="search">
+  <div id="search-form-container">
+      <form id="search-form" class="navbar-left" role="search" action="/search/">
+        <div class="container">
+            <a id="icon-close" class="close" href="#"></a>
+            <p>
+              <label>SEARCH</label>
+            </p>
+            <p>
+              <input type="text" name="q" placeholder=" TYPE TO SEARCH" id="input-search" autofocus="autofocus" value="">
+            </p>
+        </div>
+      </form>
 
-<div id="search-form-container">
-    <form id="search-form" class="navbar-left" role="search" action="/search-result/">
-      <div class="container">
-        <div class="row">
-          <a class="clear" href="#"></a>
-          <p>
-            <label>SEARCH</label>
-          </p>
-          <p>
-            <input type="text" name="q" placeholder=" TYPE TO SEARCH" id="input-search" autofocus="autofocus">
-          </p>
+      <div id="search-results">
+        <div class="container">
+          <div class="products">
+            <h2>PRODUCTS</h2>
+            <div id="searched-product-results">
+            </div>
+
+            <div class="row"><div class="col-sm-4"><hr></div></div>
+          </div>
+
+          <div class="journals">
+            <h2>JOURNALS</h2>
+            <div id="searched-journal-results">
+            </div>
+            <div class="row"><div class="col-sm-4"><hr></div></div>
+          </div>
+
+          <div class="project-cars">
+            <h2>PROJECT CARS</h2>
+            <div id="searched-project-results">
+            </div>
+            <div class="row"><div class="col-sm-4"><hr></div></div>
+          </div>
         </div>
       </div>
-    </form>
+  </div>
 </div>
 
 <header>
@@ -55,17 +80,16 @@
       </div>
     </nav>
 </header>
-<?php
-  
-?>
+
 <script>
-  jQuery(function(){
-    jQuery('#icon-search').on('click', function(){
-      jQuery('#search-form-container').show();
+  jQuery(function($){
+    $('#icon-search').on('click', function(){
+      $('#search').fadeIn();
     });
 
-    jQuery('#search-form a').on('click', function(){
-      jQuery('#search-form-container').hide();
+    $('#icon-close').on('click', function(){
+      $('#search').fadeOut();
     });
+
   });
 </script>

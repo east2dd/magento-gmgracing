@@ -17,40 +17,32 @@ Tags: none
 
 */
 @media (min-width: 1200px) {
-  /* line 24, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+  /* line 24, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
   .container {
     max-width: 1024px;
   }
 }
-@media (max-width: 767px) {
-  /* line 29, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
-  #search-form {
-    display: block;
-    position: relative;
-    left: auto;
-    right: auto;
-  }
-}
-/* line 37, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 29, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 body {
   font-size: 15px;
   line-height: 1.2em;
-  color: #2d2d2c;
+  color: #333336;
   font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Helvetica', 'Arial', 'Verdana', 'Sans-serif', 'helvetica_neue_lt_com55_roman';
 }
-/* line 44, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 36, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 header {
   width: 100%;
+  border-bottom: 1px solid #d0d0d0!important;
 }
-/* line 46, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 38, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 header .navbar-nav.navbar-right:last-child {
   margin-right: 0px!important;
 }
-/* line 50, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 42, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 header img {
   vertical-align: middle;
 }
-/* line 55, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 48, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 h1,
 h2,
 h3,
@@ -60,23 +52,23 @@ h5 {
   text-transform: uppercase;
   font-weight: normal;
 }
-/* line 56, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 49, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 h2 {
   font-size: 2.2rem;
   font-family: 'gothamblack';
 }
-/* line 57, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 50, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 h3 {
   font-family: 'gothammedium';
   text-transform: none;
   font-size: 3rem;
 }
-/* line 59, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 52, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 a {
   color: #3044b5;
   text-decoration: none;
 }
-/* line 60, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 53, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 a:hover {
   color: #428bca;
   text-decoration: none;
@@ -85,64 +77,64 @@ a:hover {
   -o-transition: color 100ms,200ms;
   transition: color 100ms,200ms;
 }
-/* line 69, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 62, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 input {
   outline: none;
   line-height: normal;
 }
-/* line 70, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 63, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 p {
   margin: 0px 0px 0.7em 0px;
   line-height: 24px;
 }
-/* line 72, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 65, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 strong {
   letter-spacing: 1px;
 }
-/* line 74, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 67, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 footer {
   font-family: 'gothambook', sans-serif;
   font-size: 17px;
   line-height: 1.2em;
 }
-/* line 79, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 72, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 footer h2 {
   margin-top: 25px;
 }
-/* line 80, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 73, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 footer p {
   margin-bottom: 10px;
 }
-/* line 81, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 74, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 footer a {
   color: #2d2d2c;
 }
-/* line 82, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 75, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 footer strong {
   font-family: 'gothambold', sans-serif;
   font-weight: 'normal';
 }
-/* line 86, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 79, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 footer .container {
   max-width: 1260px;
 }
-/* line 89, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 82, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 footer #newsletter h2 {
   background: url(images/icon-newsletter.png) no-repeat left center;
   padding-left: 50px;
   margin-bottom: 30px;
 }
-/* line 94, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 87, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 footer #contact-us h2 {
   background: url(images/icon-contactus.png) no-repeat left center;
   padding-left: 50px;
   margin-bottom: 30px;
 }
-/* line 99, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 92, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 footer #contact-us .address {
   margin-bottom: 20px;
 }
-/* line 102, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 95, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 footer .newsletter-box {
   width: 280px;
   height: 40px;
@@ -151,32 +143,32 @@ footer .newsletter-box {
   color: #2d2d2c;
   text-align: center;
 }
-/* line 111, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 104, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 footer #newsletter p {
   margin-bottom: 16px;
 }
-/* line 115, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 108, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 footer .blackline {
   margin: 30px 0px;
 }
-/* line 119, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 112, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 #content {
   min-height: 50rem;
   font-family: 'gothambook';
 }
-/* line 123, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 116, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .blackline {
   border-bottom: 1px solid #2d2d2d;
 }
-/* line 126, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 119, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .grayline {
   border-bottom: 1px solid #e2e2e2;
 }
-/* line 129, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 122, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .dottedline {
   border-bottom: 1px solid #e2e2e2;
 }
-/* line 132, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 125, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .navbar {
   border-radius: 0px;
   font-size: 13px;
@@ -185,15 +177,15 @@ footer .blackline {
   display: table;
   font-family: 'gothamblack';
 }
-/* line 137, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 130, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .navbar .navbar-header {
   min-height: 60px;
 }
-/* line 141, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 134, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .navbar li {
   position: initial;
 }
-/* line 144, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 137, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .navbar-default {
   background: #e0e0e0;
   border: none;
@@ -203,7 +195,7 @@ footer .blackline {
   z-index: 999999;
   width: 100%;
 }
-/* line 155, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 148, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .navbar form {
   display: none;
   margin-top: 20px;
@@ -211,7 +203,7 @@ footer .blackline {
   right: 140px;
   text-align: center;
 }
-/* line 162, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 155, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .navbar form input {
   background: #d0d0d0;
   border: none;
@@ -225,100 +217,51 @@ footer .blackline {
   padding: 0px;
   font-family: 'gothambold';
 }
-/* line 176, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 169, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .navbar form .form-group {
   max-width: 350px;
   width: 100%;
   margin: 0px auto;
   position: relative;
 }
-/* line 184, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 177, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .nav .caret {
   border-top-color: #000;
   border-bottom-color: #000;
 }
-/* line 190, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
-#search-form-container {
-  display: none;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 9999999;
-  background: rgba(255, 255, 255, 0.98);
-}
-/* line 198, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
-#search-form-container #search-form {
-  padding: 20px 0px;
-  width: 100%;
-}
-/* line 201, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
-#search-form-container #search-form .container {
-  position: relative;
-}
-/* line 205, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
-#search-form-container #search-form input {
-  width: 100%;
-  font-size: 36px;
-  line-height: 1.5em;
-  border: none;
-  font-family: 'gothambook';
-}
-/* line 213, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
-#search-form-container #search-form label {
-  font-size: 24px;
-  margin-bottom: 90px;
-  line-height: 46px;
-}
-/* line 222, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
-#icon-search {
-  text-align: right!important;
-}
-/* line 226, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
-#search-form .clear {
-  background: url(images/icon-x.png) center center no-repeat;
-  width: 46px;
-  height: 46px;
-  position: absolute;
-  right: 0px;
-  top: 0px;
-}
-/* line 234, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
-#search-form .clear:hover {
-  background: url(images/icon-x-hover.png) center center no-repeat;
-}
-/* line 238, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 183, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .navbar-secondary {
   display: none;
 }
-/* line 239, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 184, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .navbar #logo {
   max-height: 40px;
 }
-/* line 241, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 186, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .navbar-default .navbar-nav {
   margin-top: 0px;
   margin-bottom: 0px;
 }
-/* line 242, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 187, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .navbar-default .navbar-nav > li {
   background: url(images/nav-divider.png) no-repeat 0px 0px;
   height: 70px;
   line-height: 70px;
   padding-left: 2px;
 }
-/* line 249, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 194, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 #menu-main-menu {
   background: url(images/nav-divider.png) no-repeat top right;
   padding-right: 2px;
 }
-/* line 254, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 199, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .navbar-default .navbar-nav > li.parent.active > a {
   padding-bottom: 8px;
   background-color: #fafafa;
   background-image: url(images/nav-bg-2.png);
   color: #3044b5;
 }
-/* line 260, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 205, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .navbar-default .navbar-nav > li > a {
   color: #2d2d2c;
   line-height: 70px;
@@ -329,26 +272,26 @@ footer .blackline {
   font-family: 'gothamblack', sans-serif;
   font-size: 14px;
 }
-/* line 271, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 216, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 header {
   width: 100%;
   z-index: 999;
   top: 0px;
 }
-/* line 272, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 217, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 header .navbar-default .navbar-right > li > a {
   width: 100%;
 }
-/* line 273, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 218, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 header a:hover {
   color: #3044b5;
 }
-/* line 275, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 220, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 #menu-main-menu > li.parent:hover > a {
   background-color: #fafafa;
   background-image: url(images/nav-bg-2.png);
 }
-/* line 281, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 226, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 #menu-main-menu > li:hover > a {
   color: #3044b5!important;
   background-color: #fafafa;
@@ -361,7 +304,7 @@ header a:hover {
   -o-transition: color 100ms,200ms;
   transition: color 100ms,200ms;
 }
-/* line 294, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 239, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 #menu-main-menu > li > a {
   letter-spacing: -1px;
   -webkit-transition: background-color 100ms, 200ms;
@@ -373,16 +316,16 @@ header a:hover {
   -o-transition: color 100ms,200ms;
   transition: color 100ms,200ms;
 }
-/* line 307, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 252, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .current-menu-item a {
   color: #3044b5!important;
 }
-/* line 310, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 255, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .current-menu-parent > a {
   background: #e2e2e2 url(images/nav-bg-2.png);
   color: #3044b5!important;
 }
-/* line 312, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 257, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .sub-menu {
   padding: 0px;
   display: none;
@@ -396,72 +339,72 @@ header a:hover {
   top: 75px;
   padding-top: 10px;
 }
-/* line 326, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 271, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .sub-menu li {
   display: inline-block;
 }
-/* line 327, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 272, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .sub-menu li {
   border-left: 1px solid #ababab;
   padding: 10px 15px;
   line-height: 1em;
   margin-top: 15px;
 }
-/* line 333, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 278, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .sub-menu li:last-child {
   border-right: 1px solid #ababab;
 }
-/* line 336, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 281, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .sub-menu li a {
   color: #2d2d2c;
   font-size: 14px;
   text-transform: uppercase;
   font-weight: bold;
 }
-/* line 343, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 288, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .sub-menu li a:hover {
   border-top: 1px solid #3044b5;
   border-bottom: 1px solid #3044b5;
   color: #3044b5;
   text-decoration: none;
 }
-/* line 350, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 295, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .pagination {
   text-align: center;
   display: block;
   margin-bottom: 30px;
 }
-/* line 351, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 296, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .pagination .current {
   background: none;
   color: black;
 }
-/* line 353, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 298, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 #bottom-foot {
   background: #e0e0e0;
   padding-bottom: 30px;
 }
-/* line 354, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 299, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .alignleft {
   float: left;
   margin-right: 15px;
   margin-top: 5px;
   margin-bottom: 5px;
 }
-/* line 355, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 300, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .alignright {
   float: right;
   margin-left: 15px;
 }
-/* line 357, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 302, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .readmore a {
   text-decoration: none!important;
 }
-/* line 358, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 303, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .readmore a:hover {
   background: #008fd5!important;
 }
-/* line 360, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 305, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .btn.btn-readmore {
   text-transform: uppercase;
   background: #006bb7;
@@ -469,11 +412,11 @@ header a:hover {
   font-family: 'gothamblack';
   border-radius: 0px;
 }
-/* line 361, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 306, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .btn.btn-readmore:hover {
   background: #428bca;
 }
-/* line 363, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 308, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 #sidebar h2 {
   text-transform: uppercase;
   background: #006bb7;
@@ -481,55 +424,55 @@ header a:hover {
   padding: 10px;
   font-size: 24px;
 }
-/* line 370, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 315, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 #sidebar ul > li > ul {
   margin-left: 10px;
 }
-/* line 374, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 319, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 h2.post-title {
   text-transform: uppercase;
 }
-/* line 375, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 320, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 h2.page-title {
   text-transform: uppercase;
   line-height: 40px;
   border-top: 1px solid #2d2d2c;
   border-bottom: 1px solid #2d2d2c;
 }
-/* line 377, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 322, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 h2 .page-title {
   border-top: 1px solid #2d2d2c;
   border-bottom: 1px solid #2d2d2c;
 }
-/* line 379, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 324, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .table-striped > tbody > tr:nth-child(odd) > td {
   background-color: #e0e0e0;
 }
-/* line 381, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 326, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .widget_recent_entries li {
   margin-bottom: 5px;
 }
-/* line 382, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 327, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .page-head {
   background-color: rgba(255, 255, 255, 0.95);
 }
 /*
 * small device menu
 */
-/* line 387, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 332, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .device-xs .navbar-collapse {
   background: #e2e2e2;
 }
-/* line 390, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 335, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .device-xs #menu-main-menu > li.parent > a {
   background-image: none;
 }
-/* line 391, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 336, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .device-xs #menu-main-menu > li {
   height: auto;
   position: relative;
 }
-/* line 392, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 337, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .device-xs #menu-main-menu .sub-menu {
   padding: 0px;
   z-index: 99999;
@@ -538,11 +481,11 @@ h2 .page-title {
   position: relative;
   top: 0px!important;
 }
-/* line 394, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 339, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 footer .social {
   line-height: 40px;
 }
-/* line 396, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 341, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 #map {
   width: 100%;
   height: 300px;
@@ -551,56 +494,56 @@ footer .social {
   left: -9999px;
   top: 0;
 }
-/* line 404, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 349, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .map-show {
   position: relative !important;
   left: 0px !important;
 }
 @media only screen and (max-width: 320px) {
-  /* line 409, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+  /* line 354, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
   #map {
     height: 274px;
   }
 }
 @media only screen and (min-width: 321px) and (max-device-width: 480px) {
-  /* line 414, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+  /* line 359, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
   #map {
     height: 120px;
   }
 }
 @media (min-width: 768px) {
-  /* line 419, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+  /* line 364, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
   #map {
     height: 462px;
   }
 }
 @media (min-width: 992px) {
-  /* line 424, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+  /* line 369, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
   #map {
     height: 572px;
   }
 }
 @media (min-width: 1380px) {
-  /* line 429, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+  /* line 374, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
   #map {
     height: 648px;
   }
 }
-/* line 435, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 380, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .chosen-container .chosen-results {
   padding: 0;
   margin: 0;
 }
-/* line 440, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 385, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .chosen-container .chosen-drop {
   border: none;
 }
-/* line 444, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 389, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .chosen-container li {
   background: #e0e0e0;
   color: #333332;
 }
-/* line 449, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
+/* line 394, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 .chosen-container a,
 .chosen-container .chosen-single {
   background: #e0e0e0;
@@ -614,35 +557,176 @@ footer .social {
   box-shadow: none;
   outline: none;
 }
-/* line 465, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
-.search-result .post .post-title,
-.search-result .product .post-title,
-.search-result .post .product-title,
-.search-result .product .product-title {
+/* line 408, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#search {
+  z-index: 9999999;
+  background: #fff;
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+/* line 416, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#search #search-results {
+  display: none;
+}
+/* line 420, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#search .loader-container {
+  text-align: center;
+  position: relative;
+}
+/* line 424, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#search .loader {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 50%;
+  background: url(images/loader.gif) center center no-repeat;
+}
+/* line 433, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#search-form {
+  padding: 20px 0px;
+  width: 100%;
+}
+/* line 437, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#search-form .container {
+  position: relative;
+}
+/* line 441, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#search-form input {
+  width: 100%;
+  font-size: 36px;
+  line-height: 1.5em;
+  border: none;
+  font-family: 'gothambook';
+  text-transform: uppercase;
+}
+/* line 450, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#search-form label {
+  font-size: 24px;
+  margin-bottom: 90px;
+  line-height: 46px;
+}
+/* line 456, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#search-form #icon-close {
+  background: url(images/icon-x.png) center center no-repeat;
+  width: 46px;
+  height: 46px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+/* line 464, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#search-form #icon-close:hover {
+  background: url(images/icon-x-hover.png) center center no-repeat;
+}
+/* line 470, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#search-results {
+  background: #fff;
+}
+/* line 472, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#search-results #search-form {
+  background: #f1f1f1;
+  margin-bottom: 3rem;
+}
+/* line 475, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#search-results #search-form input {
+  background: #f1f1f1;
+  border-bottom: 1px solid #d0d0d0!important;
+  color: #333336;
+  text-transform: uppercase;
+}
+/* line 483, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#search-results h2 {
+  margin-top: 4rem;
+}
+/* line 487, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#search-results .post,
+#search-results .product {
+  margin-bottom: 7rem;
+}
+/* line 489, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#search-results .post .post-title,
+#search-results .product .post-title,
+#search-results .post .product-title,
+#search-results .product .product-title {
   margin: 1.5rem 0;
 }
-/* line 467, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
-.search-result .post .post-title a,
-.search-result .product .post-title a,
-.search-result .post .product-title a,
-.search-result .product .product-title a {
+/* line 491, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#search-results .post .post-title a,
+#search-results .product .post-title a,
+#search-results .post .product-title a,
+#search-results .product .product-title a {
   font-family: 'gothamblack';
   font-size: 1.6rem;
   text-transform: uppercase;
   color: #2d2d2c;
 }
-/* line 476, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
-.search-result .search-meta {
+/* line 500, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#search-results .meta {
   padding: 1rem 0 5rem 0;
 }
-/* line 479, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
-.search-result .search-meta a {
+/* line 503, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#search-results .meta a {
   color: #f05323;
   text-decoration: underline;
+  margin-left: 30px;
 }
-/* line 485, /Volumes/projects/gmgracing.com/gmgracing/less/app/shared/style.less */
-.search-result hr {
+/* line 510, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#search-results hr {
   margin: 7rem 0;
+}
+/* line 514, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#search-results #search-tabs {
+  margin-bottom: 6rem;
+}
+/* line 516, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#search-results #search-tabs a {
+  font-size: 2.4rem;
+  font-family: 'gothamblack';
+  color: #333336;
+}
+/* line 519, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#search-results #search-tabs a:hover,
+#search-results #search-tabs a.active {
+  border-bottom: 5px solid #006bb6;
+}
+/* line 527, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#pagination {
+  font-family: 'gothambook';
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 15rem;
+}
+/* line 534, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#pagination .page-numbers {
+  background: none;
+  color: #333336;
+  padding-top: 1rem;
+  margin: 0 0.5rem;
+}
+/* line 538, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#pagination .page-numbers.current {
+  border-top: 1px solid #006bb6;
+}
+/* line 543, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#pagination a {
+  background: none;
+  color: #333336;
+}
+/* line 546, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#pagination a.next {
+  background: url(images/btn-right-arrow.png) no-repeat center right;
+  padding-right: 2rem;
+}
+/* line 550, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#pagination a.prev {
+  background: url(images/btn-left-arrow.png) no-repeat center left;
+  padding-left: 2rem;
+}
+/* line 554, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+#pagination a:hover {
+  border-top: 1px solid #d0d0d0;
 }
 
 
