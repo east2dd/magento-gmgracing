@@ -30,8 +30,38 @@
 <?php
 echo get_header('main');
 ?>
+<?php if ($this->helper('catalogsearch')->getEscapedQueryText()):?>
+<div id="search-box">
+  <div class="search-result" id="search-results">
+      <div id="search-form-container">
+        <form id="search-form" class="navbar-left" role="search" action="" method="get">
+          <div class="container">
+              <a class="clear" href="/"></a>
+              <p>
+                <label>SEARCH RESULTS FOR:</label>
+              </p>
+              <p>
+                <input type="text" name="q" placeholder=" TYPE TO SEARCH" id="input-search" autofocus="autofocus" value="<?php echo $this->helper('catalogsearch')->getEscapedQueryText(); ?>">
+              </p>
+          </div>
+        </form>
+      </div>
+
+      <div id="search-tabs">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4"><a href="#" class="active">PRODUCTS</a></div>
+          <div class="col-sm-4"><a href="/?s=<?php echo $_GET['q']; ?>&post_type=post&category_name=journal">JOURNALS</a></div>
+          <div class="col-sm-4"><a href="/?s=<?php echo $_GET['q']; ?>&post_type=project">PROJECT CARS</a></div>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
+<?php else: ?>
 <div id="product-filter">
   <div class="container">
     <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('finder')->toHtml(); ?> 
   </div>
 </div>
+<?php endif; ?>

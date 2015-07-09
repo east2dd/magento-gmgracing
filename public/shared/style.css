@@ -685,48 +685,50 @@ footer .social {
 #search-results #search-tabs a {
   font-size: 2.4rem;
   font-family: 'gothamblack';
+  text-decoration: none;
   color: #333336;
 }
-/* line 520, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+/* line 521, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 #search-results #search-tabs a:hover,
 #search-results #search-tabs a.active {
   border-bottom: 5px solid #006bb6;
+  text-decoration: none;
 }
-/* line 528, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+/* line 530, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 #pagination {
   font-family: 'gothambook';
   font-size: 1.8rem;
   text-align: center;
   margin-bottom: 15rem;
 }
-/* line 535, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+/* line 537, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 #pagination .page-numbers {
   background: none;
   color: #333336;
   padding: 1rem;
   margin: 0 0.5rem;
 }
-/* line 540, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+/* line 542, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 #pagination .page-numbers.current {
   border-top: 1px solid #006bb6;
 }
-/* line 544, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+/* line 546, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 #pagination a {
   background: none;
   color: #333336;
 }
-/* line 547, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+/* line 549, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 #pagination a.next {
   background: url(images/btn-right-arrow.png) no-repeat center right;
   padding-right: 2rem;
 }
-/* line 551, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+/* line 553, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 #pagination a.prev,
 #pagination a.previous {
   background: url(images/btn-left-arrow.png) no-repeat center left;
   padding-left: 2rem;
 }
-/* line 555, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
+/* line 557, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
 #pagination a:hover {
   border-top: 1px solid #d0d0d0;
 }

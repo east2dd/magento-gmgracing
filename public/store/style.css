@@ -831,6 +831,16 @@ fieldset[disabled] .btn-white.active {
   margin: 0;
   padding: 0;
 }
+/* line 775, /Volumes/projects/anthony/gmgracing/www/less/app/shop/magento.less */
+.search-results .product-name {
+  margin-bottom: 1rem;
+}
+/* line 778, /Volumes/projects/anthony/gmgracing/www/less/app/shop/magento.less */
+.search-results .product-link,
+.search-results .product-link a {
+  color: #b12837;
+  text-decoration: underline;
+}
 
 
 /*# sourceMappingURL=style.css.map*/

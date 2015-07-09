@@ -60,9 +60,9 @@
         ?>
         <?php $i=0; foreach ($_productCollection as $_product): ?>
             <?php if ($i++%$_columnCount==0): ?>
-            <ul class="products row">
+            <div class="products row">
             <?php endif ?>
-                <li class="col-sm-4 item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">
+                <div class="col-sm-4 item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">
                     <div class="item product">
                         <div class="product-image">
                             <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>">
@@ -79,9 +79,9 @@
                           <?php echo $this->getPriceHtml($_product, true) ?>
                         </div>
                      </div>
-                </li>
+                </div>
             <?php if ($i%$_columnCount==0 || $i==$_collectionSize): ?>
-            </ul>
+            </div>
             <?php endif ?>
             <?php endforeach ?>
             <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
