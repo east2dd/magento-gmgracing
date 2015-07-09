@@ -821,6 +821,11 @@ fieldset[disabled] .btn-white.active {
   border-radius: 0;
   padding: 0;
 }
+/* line 763, /Volumes/projects/anthony/gmgracing/www/less/app/shop/magento.less */
+.category-products ul {
+  margin: 0;
+  padding: 0;
+}
 
 
 /*# sourceMappingURL=style.css.map*/
