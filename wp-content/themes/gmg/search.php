@@ -10,14 +10,16 @@
 get_header(); ?>
 <div class="search-result" id="search-results">
   <div id="search-form-container">
-      <form id="search-form" class="navbar-left" role="search" action="/search/">
+      <form id="search-form" class="navbar-left" role="search" action="" method="get">
         <div class="container">
             <a class="clear" href="/"></a>
             <p>
               <label>SEARCH RESULTS FOR:</label>
             </p>
             <p>
-              <input type="text" name="q" placeholder=" TYPE TO SEARCH" id="input-search" autofocus="autofocus" value="<?php echo $_GET['s'];?>">
+              <input type="text" name="s" placeholder=" TYPE TO SEARCH" id="input-search" autofocus="autofocus" value="<?php echo $_GET['s'];?>">
+              <input type="hidden" name="post_type" value="<?php echo $_GET['post_type']; ?>">
+              <input type="hidden" name="category_name" value="<?php echo $_GET['category_name']; ?>">
             </p>
         </div>
       </form>
