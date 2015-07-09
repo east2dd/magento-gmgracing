@@ -58,7 +58,7 @@
                     </a>
                 </div>
                 <div class="product-description">
-                    <?php echo $_product->getShortDescription() ?>
+                    <?php echo $this->htmlEscape($_product->getShortDescription()) ?>
                 </div>
                 <div class="product-link">
                     <br/>
