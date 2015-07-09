@@ -181,12 +181,12 @@ var ProductItem = React.createClass({displayName: "ProductItem",
     return (
       React.createElement("div", {className: "product col-sm-4"}, 
         React.createElement("div", {className: "product-image"}, 
-          React.createElement("a", {href: this.props.data.image}, 
+          React.createElement("a", {href: this.props.data.url}, 
             React.createElement("img", {className: "img-responsive", src: this.props.data.image})
           )
         ), 
         React.createElement("div", {className: "product-title"}, 
-          React.createElement("a", {href: this.props.data.image}, 
+          React.createElement("a", {href: this.props.data.url}, 
             this.props.data.name
           )
         ), 
