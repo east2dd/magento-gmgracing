@@ -721,7 +721,8 @@ footer .social {
   padding-right: 2rem;
 }
 /* line 551, /Volumes/projects/anthony/gmgracing/www/less/app/shared/style.less */
-#pagination a.prev {
+#pagination a.prev,
+#pagination a.previous {
   background: url(images/btn-left-arrow.png) no-repeat center left;
   padding-left: 2rem;
 }
