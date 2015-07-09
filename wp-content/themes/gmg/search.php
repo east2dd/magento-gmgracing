@@ -42,10 +42,10 @@ get_header(); ?>
       ?>
         <div class="post">
           <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-3">
                 <div class="post-thumbnail"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('full', array('class'=>'img-responsive'));?></a></div>
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-9">
               <div class="post-brand">GMG RACING</div>
               <div class="post-title"><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></div>
               <div class="post-excerpt"><?php the_excerpt(); ?></div>
