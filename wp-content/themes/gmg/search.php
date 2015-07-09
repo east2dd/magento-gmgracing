@@ -29,7 +29,7 @@ get_header(); ?>
     <div class="container">
       <div class="row">
         <div class="col-sm-4"><a href="/store/catalogsearch/result?q=<?php echo $_GET['s']; ?>">PRODUCTS</a></div>
-        <div class="col-sm-4"><a href="/?s=<?php echo $_GET['s']; ?>&post_type=post&category_name=<?php echo $_GET['category_name']; ?>" class="<?php if($_GET['post_type']!='project'){ echo 'active'; } ?>">JOURNALS</a></div>
+        <div class="col-sm-4"><a href="/?s=<?php echo $_GET['s']; ?>&post_type=post&category_name=journal" class="<?php if($_GET['post_type']!='project'){ echo 'active'; } ?>">JOURNALS</a></div>
         <div class="col-sm-4"><a href="/?s=<?php echo $_GET['s']; ?>&post_type=project" class="<?php if($_GET['post_type']=='project'){ echo 'active'; } ?>">PROJECT CARS</a></div>
       </div>
     </div>
