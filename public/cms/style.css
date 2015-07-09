@@ -718,6 +718,11 @@
 #dealers .stockist-authorized {
   background: url(images/icon-logo-red.png) no-repeat;
 }
+/* line 262, /Volumes/projects/anthony/gmgracing/www/less/app/cms/wordpress.less */
+#search-results .post-link a {
+  color: #b12837;
+  text-decoration: underline;
+}
 
 
 /*# sourceMappingURL=style.css.map*/
